@@ -1,0 +1,11 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  },
+  "globals": {
+    "localStorage": true,
+    "AppLib": true,
+    "LodashGS": true
+  }
+}

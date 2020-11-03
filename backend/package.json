@@ -1,0 +1,62 @@
+{
+  "name": "backend",
+  "description": "WoW botting backend",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "John Young",
+    "email": "jyoung1985@live.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/",
+    "config": "config/"
+  },
+  "engines": {
+    "node": "^12.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run mocha",
+    "lint": "eslint src/. test/. --config .eslintrc.json --fix",
+    "dev": "nodemon src/",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": []
+  },
+  "dependencies": {
+    "@feathersjs/configuration": "^4.5.9",
+    "@feathersjs/errors": "^4.5.9",
+    "@feathersjs/express": "^4.5.9",
+    "@feathersjs/feathers": "^4.5.9",
+    "@feathersjs/socketio": "^4.5.9",
+    "@feathersjs/transport-commons": "^4.5.9",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "datauri": "^3.0.0",
+    "feathers-memory": "^4.1.0",
+    "helmet": "^3.23.3",
+    "jimp": "^0.16.1",
+    "robotjs": "^0.6.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "axios": "^0.21.0",
+    "eslint": "^7.12.1",
+    "mocha": "^8.2.0",
+    "nodemon": "^2.0.6"
+  }
+}
