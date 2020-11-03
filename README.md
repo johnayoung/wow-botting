@@ -1,3 +1,3 @@
 # Ascend
 
-Learning Goal-Oriented-Action-Programming (GOAP) by applying to World of Warcraft.
+Applying Goal-Oriented-Action-Programming (GOAP) A.I. to World of Warcraft.
