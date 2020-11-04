@@ -52,6 +52,9 @@ module.exports = function (app) {
   app.service('state').publish('created', () => app.channel('anonymous'));
   app.service('state').publish('patched', () => app.channel('anonymous'));
 
+  app.service('agent').publish('created', () => app.channel('anonymous'));
+  app.service('agent').publish('removed', () => app.channel('anonymous'));
+
   // With the userid and email organization from above you can easily select involved users
   // app.service('messages').publish(() => {
   //   return [

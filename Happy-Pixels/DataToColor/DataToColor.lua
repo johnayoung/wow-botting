@@ -400,11 +400,12 @@ end
 
 -- Use Astrolabe function to get current player position
 function DataToColor:GetCurrentPlayerPosition()
-    local map = C_Map.GetBestMapForUnit("player")
-    local position = C_Map.GetPlayerMapPosition(map, "player")
+    -- local map = C_Map.GetBestMapForUnit("player")
+    -- local position = C_Map.GetPlayerMapPosition(map, "player")
     -- Resets map to correct zone ... removed in 8.0.1, needs to be tested to see if zone auto update
     -- SetMapToCurrentZone()
-    return position:GetXY()
+    -- return position:GetXY()
+    return 0.50, 0.50
 end
 
 -- Base 2 converter for up to 24 boolean values to a single pixel square.

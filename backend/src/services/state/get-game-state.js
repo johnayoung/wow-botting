@@ -1,10 +1,10 @@
 const { readFileSync } = require('fs');
 const { resolve } = require('path');
 const robot = require('robotjs');
+const getSpellState = require('./get-spell-state');
 const bufferToPng = require('./buffer-to-png');
 const assignBinaryVariables = require('./assign-binary-variables');
 const SquareReader = require('./square-reader');
-const coordinates = require('./coordinates.json');
 
 const raw = readFileSync(resolve(__dirname, 'coordinates.json'), 'utf-8');
 const config = JSON.parse(raw);
@@ -57,7 +57,7 @@ function getGameState() {
   const pixel = {
     xMin: 0,
     yMin: 0,
-    xMax: 73,
+    xMax: 185,
     yMax: 35,
   };
 
@@ -103,9 +103,8 @@ function getGameState() {
       reader.getStringAtCell(config[17]) + reader.getStringAtCell(config[18]),
     // Targets current percentage of health
     targetHealth: reader.getIntAtCell(config[19]),
+    spells: getSpellState(config, reader),
   };
-
-  console.log(gameState);
 
   return gameState;
 }

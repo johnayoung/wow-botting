@@ -2,12 +2,14 @@
 -- Note: This library is not yet finalized.
 -- @class file
 -- @name AceTab-3.0
--- @release $Id: AceTab-3.0.lua 1148 2016-07-18 09:13:02Z nevcairiel $
+-- @release $Id: AceTab-3.0.lua 947 2010-06-29 16:44:48Z nevcairiel $
 
-local ACETAB_MAJOR, ACETAB_MINOR = 'AceTab-3.0', 9
+local ACETAB_MAJOR, ACETAB_MINOR = 'AceTab-3.0', 8
 local AceTab, oldminor = LibStub:NewLibrary(ACETAB_MAJOR, ACETAB_MINOR)
 
 if not AceTab then return end -- No upgrade needed
+
+local is335 = GetBuildInfo() >= "3.3.5"
 
 AceTab.registry = AceTab.registry or {}
 
@@ -36,7 +38,7 @@ end
 local function hookFrame(f)
 	if f.hookedByAceTab3 then return end
 	f.hookedByAceTab3 = true
-	if f == ChatEdit_GetActiveWindow() then
+	if f == (is335 and ChatEdit_GetActiveWindow() or ChatFrameEditBox) then
 		local origCTP = ChatEdit_CustomTabPressed
 		function ChatEdit_CustomTabPressed(...)
 			if AceTab:OnTabPressed(f) then
@@ -100,33 +102,30 @@ function AceTab:RegisterTabCompletion(descriptor, prematches, wordlist, usagefun
 	if postfunc and type(postfunc) ~= 'function' then error("Usage: RegisterTabCompletion(descriptor, prematches, wordlist, usagefunc, listenframes, postfunc, pmoverwrite): 'postfunc' - function expected.", 3) end
 	if pmoverwrite and type(pmoverwrite) ~= 'boolean' and type(pmoverwrite) ~= 'number' then error("Usage: RegisterTabCompletion(descriptor, prematches, wordlist, usagefunc, listenframes, postfunc, pmoverwrite): 'pmoverwrite' - boolean or number expected.", 3) end
 
-	local pmtable
-
-	if type(prematches) == 'table' then
-		pmtable = prematches
-		notfallbacks[descriptor] = true
-	else
-		pmtable = {}
-		-- Mark this group as a fallback group if no value was passed.
-		if not prematches then
-			pmtable[1] = ""
+	local pmtable = type(prematches) == 'table' and prematches or {}
+	-- Mark this group as a fallback group if no value was passed.
+	if not prematches then
+		pmtable[1] = ""
+		fallbacks[descriptor] = true
+	-- Make prematches into a one-element table if it was passed as a string.
+	elseif type(prematches) == 'string' then
+		pmtable[1] = prematches
+		if prematches == "" then
 			fallbacks[descriptor] = true
-		-- Make prematches into a one-element table if it was passed as a string.
-		elseif type(prematches) == 'string' then
-			pmtable[1] = prematches
-			if prematches == "" then
-				fallbacks[descriptor] = true
-			else
-				notfallbacks[descriptor] = true
-			end
+		else
+			notfallbacks[descriptor] = true
 		end
 	end
 
 	-- Make listenframes into a one-element table if it was not passed a table of frames.
 	if not listenframes then  -- default
-		listenframes = {}
-		for i = 1, NUM_CHAT_WINDOWS do
-			listenframes[i] = _G["ChatFrame"..i.."EditBox"]
+		if is335 then
+			listenframes = {}
+			for i = 1, NUM_CHAT_WINDOWS do
+				listenframes[i] = _G["ChatFrame"..i.."EditBox"]
+			end
+		else
+			listenframes = { ChatFrameEditBox }
 		end
 	elseif type(listenframes) ~= 'table' or type(listenframes[0]) == 'userdata' and type(listenframes.IsObjectType) == 'function' then  -- single frame or framename
 		listenframes = { listenframes }
@@ -300,7 +299,7 @@ local function fillMatches(this, desc, fallback)
 						-- Finally, increment our match count and set firstMatch, if appropriate.
 						for _, m in ipairs(cands) do
 							if strfind(strlower(m), strlower(text_pmendToCursor), 1, 1) == 1 then  -- we have a matching completion!
-								hasNonFallback = hasNonFallback or (not fallback)
+								hasNonFallback = not fallback
 								matches[m] = entry.postfunc and entry.postfunc(m, prematchEnd + 1, text_all) or m
 								numMatches = numMatches + 1
 								if numMatches == 1 then
@@ -321,7 +320,7 @@ function AceTab:OnTabPressed(this)
 	if this:GetText() == '' then return true end
 
 	-- allow Blizzard to handle slash commands, themselves
-	if this == ChatEdit_GetActiveWindow() then
+	if this == (is335 and ChatEdit_GetActiveWindow() or ChatFrameEditBox) then
 		local command = this:GetText()
 		if strfind(command, "^/[%a%d_]+$") then
 			return true
@@ -429,18 +428,16 @@ function AceTab:OnTabPressed(this)
 				end
 			end
 
-			if next(matches) then
-				-- Replace the original string with the greatest common substring of all valid completions.
-				this.at3curMatch = 1
-				this.at3origWord = strsub(text_precursor, this.at3matchStart, this.at3matchStart + pmolengths[desc] - 1) .. allGCBS or ""
-				this.at3origMatch = allGCBS or ""
-				this.at3lastWord = this.at3origWord
-				this.at3lastMatch = this.at3origMatch
+			-- Replace the original string with the greatest common substring of all valid completions.
+			this.at3curMatch = 1
+			this.at3origWord = strsub(text_precursor, this.at3matchStart, this.at3matchStart + pmolengths[desc] - 1) .. allGCBS or ""
+			this.at3origMatch = allGCBS or ""
+			this.at3lastWord = this.at3origWord
+			this.at3lastMatch = this.at3origMatch
 
-				this:HighlightText(this.at3matchStart-1, cursor)
-				this:Insert(this.at3origWord)
-				this.at3_last_precursor = getTextBeforeCursor(this) or ''
-			end
+			this:HighlightText(this.at3matchStart-1, cursor)
+			this:Insert(this.at3origWord)
+			this.at3_last_precursor = getTextBeforeCursor(this) or ''
 		end
 	end
 end

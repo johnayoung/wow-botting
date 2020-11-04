@@ -1,5 +1,0 @@
-# Node packages
-node_modules/
-
-# Dynamically generated frame coordinates
-Database/lib/frameCoordinates.json 

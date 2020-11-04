@@ -48,11 +48,11 @@ app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 
-const updateGameStateInterval = 1000;
-setInterval(() => {
-  const gameState = getGameState();
+// const updateGameStateInterval = 1000;
+// setInterval(() => {
+//   const gameState = getGameState();
 
-  app.service('state').create(gameState);
-}, updateGameStateInterval);
+//   app.service('state').create(gameState);
+// }, updateGameStateInterval);
 
 module.exports = app;

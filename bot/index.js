@@ -40,13 +40,13 @@ function determineGoal(state, goals) {
   return goal;
 }
 
-async function main({ state, rotation }) {
+async function run({ state, rotation }) {
   const classRotation = require(`./profiles/${rotation}`);
   const { actions, goals } = classRotation;
 
   const goal = determineGoal(state, goals);
 
-  console.log(JSON.stringify(goal));
+  console.log(goal);
 
   const { title } = await activeWin().catch((e) => 'cant get window');
 
@@ -61,25 +61,4 @@ async function main({ state, rotation }) {
   console.log('Pausing bot');
 }
 
-const state = {
-  target: true,
-  targetDead: false,
-  playerInCombat: true,
-  spells: {
-    fireblast: {
-      onCooldown: false,
-    },
-    fireball: {},
-  },
-};
-
-const updateFrequency = 1000;
-const config = { state, rotation: 'mage' };
-// setInterval(() => main(config), updateFrequency);
-// main();
-
-const service = client.service('state');
-
-service.on('patched', async (gameState) =>
-  main({ state: gameState, rotation: 'mage' })
-);
+module.exports = run;
