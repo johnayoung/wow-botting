@@ -469,6 +469,34 @@ function DataToColor:getManaCurrent(unit)
     return mana
 end
 
+-- Finds maximum amount of energy a character can store
+function DataToColor:getEnergyMax(unit)
+    local SPELL_POWER_ENERGY = SPELL_POWER_ENERGY
+    local energyMax = UnitPowerMax(unit, SPELL_POWER_ENERGY)
+    return energyMax
+end
+
+-- Finds exact amount of energy player is storing
+function DataToColor:getEnergyCurrent(unit)
+    local SPELL_POWER_ENERGY = SPELL_POWER_ENERGY
+    local energy = UnitPower(unit, SPELL_POWER_ENERGY)
+    return energy
+end
+
+-- Finds maximum amount of rage a character can store
+function DataToColor:getRageMax(unit)
+    local SPELL_POWER_RAGE = SPELL_POWER_RAGE
+    local rageMax = UnitPowerMax(unit, SPELL_POWER_RAGE)
+    return rageMax
+end
+
+-- Finds exact amount of rage player is storing
+function DataToColor:getRageCurrent(unit)
+    local SPELL_POWER_RAGE = SPELL_POWER_RAGE
+    local rage = UnitPower(unit, SPELL_POWER_RAGE)
+    return rage
+end
+
 -- Finds player current level
 function DataToColor:getPlayerLevel()
     return UnitLevel("player")
