@@ -78,6 +78,10 @@ function getGameState() {
   const manaMax = reader.getIntAtCell(config[13]);
   const manaCurrent = reader.getIntAtCell(config[14]);
 
+  const energyMax = reader.getIntAtCell(config[15]);
+  const energyCurrent = reader.getIntAtCell(config[16]);
+  const comboPoints = reader.getIntAtCell(config[17]);
+
   const gameState = {
     name: 'track-game-state',
     xcoord: reader.getFixedPointAtCell(xcoord) * 10,
@@ -95,7 +99,11 @@ function getGameState() {
     manaMax,
     manaCurrent,
     mana: (manaCurrent / manaMax) * 100,
-    level: reader.getIntAtCell(config[15]),
+    energyMax,
+    energyCurrent,
+    energy: (energyCurrent / energyMax) * 100,
+    comboPoints,
+    level: reader.getIntAtCell(config[18]),
     // range detects if a target range. Bases information off of action slot 2, 3, and 4. Outputs: 50, 35, 30, or 20
     range: reader.getIntAtCell(config[16]),
     // Grabs the target ID, whether we are in combat, how much food and potions we have left, and if our target is kill

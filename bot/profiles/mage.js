@@ -3,17 +3,23 @@ const actions = require('../actions');
 module.exports = {
   actions: {
     sinisterStrike: {
-      condition: (s) => s.playerInCombat,
+      condition: (s) =>
+        s.spells.sinisterStrike.castable &&
+        s.spells.sinisterStrike.equipped &&
+        s.spells.sinisterStrike.notEnoughMana,
       effect: (s) => {
         s.targetDead = true;
         return s;
       },
-      cost: (s) => 1,
+      cost: (s) => 2,
     },
     fireball: {
-      condition: (s) => !s.playerInCombat,
+      condition: (s) =>
+        s.spells.fireball.castable &&
+        s.spells.fireball.equipped &&
+        s.spells.fireball.notEnoughMana,
       effect: (s) => {
-        s.playerInCombat = true;
+        s.targetDead = true;
         return s;
       },
       cost: (s) => 2,

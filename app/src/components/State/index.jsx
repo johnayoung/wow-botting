@@ -69,6 +69,9 @@ class State extends Component {
       healthCurrent,
       mana,
       manaCurrent,
+      energy,
+      energyCurrent,
+      comboPoints,
       spells,
     } = gameState;
 
@@ -78,6 +81,9 @@ class State extends Component {
       healthCurrent,
       mana,
       manaCurrent,
+      energy,
+      energyCurrent,
+      comboPoints,
       playerInCombat,
     };
 
@@ -109,7 +115,9 @@ class State extends Component {
             // targetInRange
           },
           children: Object.keys(spells).map((spellName) => {
-            const { castable, equipped, notEnoughMana } = spells[spellName];
+            const { castable, equipped, notEnoughMana, spellInRange } = spells[
+              spellName
+            ];
 
             return {
               key: spellName,
@@ -118,6 +126,7 @@ class State extends Component {
                 castable,
                 equipped,
                 notEnoughMana,
+                spellInRange,
               },
             };
           }),

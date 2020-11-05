@@ -1,7 +1,7 @@
 function getSpellState(config, reader) {
   const spell = {
     bloodrage: {},
-    arcaneMissiles: {}, // Slot 2
+    moonfire: {}, // Slot 2
     fireball: {}, // Slot 3
     sinisterStrike: {}, // Slot 4
     frostNova: {}, // Slot 5
@@ -31,6 +31,14 @@ function getSpellState(config, reader) {
   let castableBinary = reader.getIntAtCell(config[35]);
   let equippedBinary = reader.getIntAtCell(config[36]);
   let notEnoughManaBinary = reader.getIntAtCell(config[37]);
+  let spellInRangeBinary = reader.getIntAtCell(config[38]);
+
+  console.log({
+    castableBinary,
+    equippedBinary,
+    notEnoughManaBinary,
+    spellInRangeBinary,
+  });
   // Loops through binaries of three pixels. Currently does 24 slots. 1-12 and 61-72.
   for (let i = 23; i >= 0; i--) {
     // Checks if the spell is currently castable, is it not on cooldown, are we not stunned, are we out of mana, etc.
@@ -54,7 +62,16 @@ function getSpellState(config, reader) {
     } else {
       spell[spellObj[i]].notEnoughMana = false;
     }
+    // Checks if we are in range of casting the spell
+    if (spellInRangeBinary - Math.pow(2, i) >= 0) {
+      spell[spellObj[i]].spellInRange = true;
+      spellInRangeBinary -= Math.pow(2, i);
+    } else {
+      spell[spellObj[i]].spellInRange = false;
+    }
   }
+
+  console.log(spell.fireball);
 
   return spell;
 }

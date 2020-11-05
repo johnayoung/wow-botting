@@ -238,13 +238,13 @@ function DataToColor:CreateFrames(n)
             -- The final data square, reserved for additional metadata.
             MakePixelSquareArr(integerToColor(2000001), NUMBER_OF_FRAMES - 1)
             -- Position related variables --
-            MakePixelSquareArr(fixedDecimalToColor(xCoordi), 1) --1 The x-coordinate
-            MakePixelSquareArr(fixedDecimalToColor(yCoordi), 2) --2 The y-coordinate
-            MakePixelSquareArr(fixedDecimalToColor(DataToColor:GetPlayerFacing()), 3) --3 The direction the player is facing in radians
-            MakePixelSquareArr(integerToColor(self:GetZoneName(0)), 4) -- Get name of first 3 characters of zone
-            MakePixelSquareArr(integerToColor(self:GetZoneName(3)), 5) -- Get name of last 3 characters of zone
-            MakePixelSquareArr(fixedDecimalToColor(self:CorpsePosition("x") * 10), 6) -- Returns the x coordinates of corpse
-            MakePixelSquareArr(fixedDecimalToColor(self:CorpsePosition("y") * 10), 7) -- Return y coordinates of corpse
+            -- MakePixelSquareArr(fixedDecimalToColor(xCoordi), 1) --1 The x-coordinate
+            -- MakePixelSquareArr(fixedDecimalToColor(yCoordi), 2) --2 The y-coordinate
+            -- MakePixelSquareArr(fixedDecimalToColor(DataToColor:GetPlayerFacing()), 3) --3 The direction the player is facing in radians
+            -- MakePixelSquareArr(integerToColor(self:GetZoneName(0)), 4) -- Get name of first 3 characters of zone
+            -- MakePixelSquareArr(integerToColor(self:GetZoneName(3)), 5) -- Get name of last 3 characters of zone
+            -- MakePixelSquareArr(fixedDecimalToColor(self:CorpsePosition("x") * 10), 6) -- Returns the x coordinates of corpse
+            -- MakePixelSquareArr(fixedDecimalToColor(self:CorpsePosition("y") * 10), 7) -- Return y coordinates of corpse
             -- Boolean variables --
             MakePixelSquareArr(integerToColor(self:Base2Converter()), 8)
             -- Start combat/NPC related variables --
@@ -252,10 +252,13 @@ function DataToColor:CreateFrames(n)
             MakePixelSquareArr(integerToColor(self:getHealthCurrent("player")), 11) --9 Represents current amount of health
             MakePixelSquareArr(integerToColor(self:getManaMax("player")), 12) --10 Represents maximum amount of mana
             MakePixelSquareArr(integerToColor(self:getManaCurrent("player")), 13) --11 Represents current amount of mana
-            MakePixelSquareArr(integerToColor(self:getPlayerLevel()), 14) --12 Represents character level
-            MakePixelSquareArr(integerToColor(self:isInRange()), 15) -- 15 Represents if target is within 20, 30, 35, or greater than 35 yards
-            MakePixelSquareArr(integerToColor(self:GetTargetName(0)), 16) -- Characters 1-3 of target's name
-            MakePixelSquareArr(integerToColor(self:GetTargetName(3)), 17) -- Characters 4-6 of target's name
+            MakePixelSquareArr(integerToColor(self:getEnergyMax("player")), 14) --10 Represents maximum amount of energy
+            MakePixelSquareArr(integerToColor(self:getEnergyCurrent("player")), 15) --11 Represents current amount of energy
+            MakePixelSquareArr(integerToColor(self:getComboPoints("player")), 16) --11 Represents current combo points
+            MakePixelSquareArr(integerToColor(self:getPlayerLevel()), 17) --12 Represents character level
+            -- MakePixelSquareArr(integerToColor(self:isInRange()), 15) -- 15 Represents if target is within 20, 30, 35, or greater than 35 yards
+            -- MakePixelSquareArr(integerToColor(self:GetTargetName(0)), 16) -- Characters 1-3 of target's name
+            -- MakePixelSquareArr(integerToColor(self:GetTargetName(3)), 17) -- Characters 4-6 of target's name
             MakePixelSquareArr(integerToColor(self:getHealthMax("target")), 18) -- Return the maximum amount of health a target can have
             MakePixelSquareArr(integerToColor(self:getHealthCurrent("target")), 19) -- Returns the current amount of health the target currently has
             -- Begin Items section --
@@ -305,8 +308,9 @@ function DataToColor:CreateFrames(n)
             MakePixelSquareArr(integerToColor(self:spellStatus()), 34) -- Has global cooldown active
             MakePixelSquareArr(integerToColor(self:spellAvailable()), 35) -- Is the spell available to be cast?
             MakePixelSquareArr(integerToColor(self:notEnoughMana()), 36) -- Do we have enough mana to cast that spell
+            MakePixelSquareArr(integerToColor(self:spellInRange()), 37) -- Are we in range?
             -- Number of slots each bag contains, not including our default backpack
-            MakePixelSquareArr(integerToColor(self:bagSlots(1)), 37) -- Bag slot 1
+            -- MakePixelSquareArr(integerToColor(self:bagSlots(1)), 37) -- Bag slot 1
             MakePixelSquareArr(integerToColor(self:bagSlots(2)), 38) -- Bag slot 2
             MakePixelSquareArr(integerToColor(self:bagSlots(3)), 39) -- Bag slot 3
             MakePixelSquareArr(integerToColor(self:bagSlots(4)), 40) -- Bag slot 4
@@ -483,6 +487,12 @@ function DataToColor:getEnergyCurrent(unit)
     return energy
 end
 
+-- Finds exact amount of combo points
+function DataToColor:getComboPoints(unit)
+    local comboPoints = GetComboPoints(unit)
+    return comboPoints
+end
+
 -- Finds maximum amount of rage a character can store
 function DataToColor:getRageMax(unit)
     local SPELL_POWER_RAGE = SPELL_POWER_RAGE
@@ -618,6 +628,26 @@ function DataToColor:notEnoughMana()
         end
     end
     return notEnoughMana
+end
+
+-- Returns base two representation of if we are in range to cast a specified spells. Slots 1-11 and slots 61-71
+function DataToColor:spellInRange()
+    local spellInRange = 0
+    -- Loops through main action bar slots 1-12
+    for i = MAIN_MIN, MAIN_MAX do
+        local inRange = IsActionInRange(i)
+        if inRange == 1 then
+            spellInRange = spellInRange + (2 ^ (i - 1))
+        end
+    end
+    -- Loops through bottom left action bar slots 61-72
+    for i = BOTTOM_LEFT_MIN, BOTTOM_LEFT_MAX do
+        local inRange = IsActionInRange(i)
+        if inRange == 1 then
+            spellInRange = spellInRange + (2 ^ (i - 49))
+        end
+    end
+    return spellInRange
 end
 
 -- Function to tell how many bag slots we have in each bag

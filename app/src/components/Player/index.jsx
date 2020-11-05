@@ -43,14 +43,20 @@ function Player({
   healthCurrent,
   mana,
   manaCurrent,
+  energy,
+  energyCurrent,
+  comboPoints,
   playerInCombat,
 }) {
   const dataSource = [
     {
       key: '1',
       level,
-      health: `${healthCurrent} (${health.toFixed(2)}%)`,
-      mana: `${manaCurrent} (${mana.toFixed(2)}%)`,
+      health: `${healthCurrent} (${_.toNumber(health).toFixed(2)}%)`,
+      mana: `${manaCurrent} (${_.toNumber(mana).toFixed(2)}%)`,
+      energy: `${energyCurrent} (${_.toNumber(energy).toFixed(
+        2
+      )}%) (${comboPoints})`,
     },
   ];
 
@@ -72,6 +78,9 @@ Player.propTypes = {
   healthCurrent: PropTypes.string,
   mana: PropTypes.string,
   manaCurrent: PropTypes.string,
+  energy: PropTypes.string,
+  energyCurrent: PropTypes.string,
+  comboPoints: PropTypes.string,
   playerInCombat: PropTypes.bool,
 };
 
@@ -81,6 +90,7 @@ Player.defaultProps = {
   healthCurrent: 0,
   mana: 0,
   manaCurrent: 0,
+  comboPoints: 0,
   playerInCombat: false,
 };
 

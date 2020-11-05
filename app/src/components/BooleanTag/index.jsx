@@ -18,15 +18,19 @@ const booleanConfig = {
   },
   castable: {
     text: (a) => (a ? 'CASTABLE' : 'NOT CASTABLE'),
-    color: (a) => (a ? 'volcano' : 'green'),
+    color: (a) => (a ? 'green' : 'volcano'),
   },
   equipped: {
     text: (a) => (a ? 'AVAILABLE' : 'NOT AVAILABLE'),
-    color: (a) => (a ? 'volcano' : 'green'),
+    color: (a) => (a ? 'green' : 'volcano'),
   },
   notEnoughMana: {
     text: (a) => (a ? 'OUT OF MANA' : 'HAVE MANA'),
     color: (a) => (a ? 'volcano' : 'green'),
+  },
+  spellInRange: {
+    text: (a) => (a ? 'IN' : 'OUT'),
+    color: (a) => (a ? 'green' : 'volcano'),
   },
 };
 
