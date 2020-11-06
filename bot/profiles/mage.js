@@ -6,7 +6,7 @@ module.exports = {
       condition: (s) =>
         s.spells.sinisterStrike.castable &&
         s.spells.sinisterStrike.equipped &&
-        s.spells.sinisterStrike.notEnoughMana,
+        !s.spells.sinisterStrike.notEnoughMana,
       effect: (s) => {
         s.targetDead = true;
         return s;
@@ -17,9 +17,21 @@ module.exports = {
       condition: (s) =>
         s.spells.fireball.castable &&
         s.spells.fireball.equipped &&
-        s.spells.fireball.notEnoughMana,
+        !s.spells.fireball.notEnoughMana,
       effect: (s) => {
         s.targetDead = true;
+        return s;
+      },
+      cost: (s) => 2,
+    },
+    pull: {
+      condition: (s) =>
+        // s.spells.fireball.castable &&
+        // s.spells.fireball.equipped &&
+        // !s.spells.fireball.notEnoughMana &&
+        s.playerInCombat === false,
+      effect: (s) => {
+        s.playerInCombat = true;
         return s;
       },
       cost: (s) => 2,
@@ -34,7 +46,7 @@ module.exports = {
     pull: {
       label: 'Pull',
       validate: (prevState, nextState) =>
-        nextState.playerInCombat === false && nextState.target === true,
+        prevState.playerInCombat === false && prevState.target,
       condition: (s) => !s.playerInCombat,
     },
   },

@@ -9,4 +9,8 @@ module.exports = {
     key: '4',
     log: 'Casting sinister strike',
   },
+  pull: {
+    key: '3',
+    log: 'Casting fireball',
+  },
 };

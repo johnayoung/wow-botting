@@ -3,7 +3,7 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
+    "eslint": "^7.12.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-wesbos": "^1.0.1",
@@ -17,10 +17,15 @@
     "prettier": "^2.1.1"
   },
   "dependencies": {
-    "robotjs": "^0.6.0"
+    "pino": "^6.7.0",
+    "pino-pretty": "^4.3.0",
+    "robotjs": "^0.6.0",
+    "syncpack": "^5.6.10"
   },
   "scripts": {
     "app:dev": "cd app && npm run start",
-    "backend:dev": "cd backend && npm run dev"
+    "backend:dev": "cd backend && npm run dev",
+    "format": "syncpack format",
+    "sync": "syncpack fix-mismatches"
   }
 }
