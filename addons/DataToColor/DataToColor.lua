@@ -20,6 +20,8 @@ DATA_CONFIG = {
     SELL_WHITE_ITEMS = true
 }
 
+local rc = LibStub("LibRangeCheck-2.0")
+
 -- List of talents that will be trained
 local talentList = {
     "Improved Frostbolt",
@@ -311,7 +313,7 @@ function DataToColor:CreateFrames(n)
             MakePixelSquareArr(integerToColor(self:spellInRange()), 37) -- Are we in range?
             -- Number of slots each bag contains, not including our default backpack
             -- MakePixelSquareArr(integerToColor(self:bagSlots(1)), 37) -- Bag slot 1
-            MakePixelSquareArr(integerToColor(self:bagSlots(2)), 38) -- Bag slot 2
+            MakePixelSquareArr(integerToColor(self:rangeChecker()), 38) -- In Melee Range
             MakePixelSquareArr(integerToColor(self:bagSlots(3)), 39) -- Bag slot 3
             MakePixelSquareArr(integerToColor(self:bagSlots(4)), 40) -- Bag slot 4
             -- Profession levels:
@@ -416,7 +418,7 @@ end
 function DataToColor:Base2Converter()
     -- 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384
     return self:MakeIndexBase2(self:targetCombatStatus(), 0) + self:MakeIndexBase2(self:GetEnemyStatus(), 1) + self:MakeIndexBase2(self:deadOrAlive(), 2) +
-    self:MakeIndexBase2(self:checkTalentPoints(), 3) + self:MakeIndexBase2(self:needWater(), 4) + self:MakeIndexBase2(self:GetBuffs("Food"), 5) +
+    self:MakeIndexBase2(self:rangeChecker(), 3) + self:MakeIndexBase2(self:needWater(), 4) + self:MakeIndexBase2(self:GetBuffs("Food"), 5) +
     self:MakeIndexBase2(self:GetBuffs("Frost Armor"), 6) + self:MakeIndexBase2(self:GetBuffs("Arcane Intellect"), 7) + self:MakeIndexBase2(self:GetBuffs("Ice Barrier"), 8) +
     self:MakeIndexBase2(self:GetInventoryBroken(), 9) + self:MakeIndexBase2(self:IsPlayerFlying(), 10) + self:MakeIndexBase2(self:needFood(), 11) +
     self:MakeIndexBase2(self:GetBuffs("Evocation"), 12) + self:MakeIndexBase2(self:GetBuffs("Drink"), 13) + self:MakeIndexBase2(self:playerCombatStatus(), 14) +
@@ -527,6 +529,17 @@ function DataToColor:isInRange()
     if IsActionInRange(10) then range = 30 end -- Checks Counterspell Range, slot 11. Useful for when after arctic reach is applied
     if IsActionInRange(4) then range = 20 end -- Checks Fire Blast Range, slot 4
     return range
+end
+
+function DataToColor:rangeChecker()
+    local meleeChecker = rc:GetHarmChecker(rc.MeleeRange) -- 5 yds
+    if meleeChecker("target") then
+        print("Target is in Melee range")
+        return 1
+    else
+        print("Not in melee range")
+        return 0
+    end
 end
 
 -- A function used to check which items we have.

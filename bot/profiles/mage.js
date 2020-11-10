@@ -4,6 +4,7 @@ module.exports = {
   actions: {
     sinisterStrike: {
       condition: (s) =>
+        s.inMeleeRange &&
         s.spells.sinisterStrike.castable &&
         s.spells.sinisterStrike.equipped &&
         !s.spells.sinisterStrike.notEnoughMana,
@@ -15,6 +16,7 @@ module.exports = {
     },
     fireball: {
       condition: (s) =>
+        !s.inMeleeRange &&
         s.spells.fireball.castable &&
         s.spells.fireball.equipped &&
         !s.spells.fireball.notEnoughMana,
@@ -38,11 +40,16 @@ module.exports = {
     },
   },
   goals: {
-    combat: {
-      label: 'Combat',
+    targetDead: {
+      label: 'Target is dead',
       validate: (prevState, nextState) => nextState.targetDead === true,
       condition: (s) => s.playerInCombat && !s.targetDead,
     },
+    // combat: {
+    //   label: 'Combat',
+    //   validate: (prevState, nextState) => nextState.targetDead === true,
+    //   condition: (s) => s.playerInCombat && !s.targetDead,
+    // },
     pull: {
       label: 'Pull',
       validate: (prevState, nextState) =>

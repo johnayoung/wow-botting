@@ -28,7 +28,7 @@ const booleanConfig = {
     text: (a) => (a ? 'OUT OF MANA' : 'HAVE MANA'),
     color: (a) => (a ? 'volcano' : 'green'),
   },
-  spellInRange: {
+  inMeleeRange: {
     text: (a) => (a ? 'IN' : 'OUT'),
     color: (a) => (a ? 'green' : 'volcano'),
   },

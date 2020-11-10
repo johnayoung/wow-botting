@@ -33,7 +33,7 @@ function assignBinaryVariables(base2Operation) {
     needWater: false,
     flying: false,
     itemsAreBroken: false,
-    talentPoints: false,
+    inMeleeRange: false,
     deadStatus: false,
     targetIsDead: false,
     targetInCombat: false,
@@ -85,7 +85,7 @@ function assignBinaryVariables(base2Operation) {
         values.needWater = active;
         break;
       case 3:
-        values.talentPoints = active;
+        values.inMeleeRange = active;
         break;
       case 2:
         values.deadStatus = active;
@@ -101,6 +101,8 @@ function assignBinaryVariables(base2Operation) {
       base2Operation -= Math.pow(2, i);
     }
   }
+
+  console.log(values.inMeleeRange);
 
   return values;
 }

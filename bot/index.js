@@ -58,16 +58,16 @@ async function run({ state, rotation }) {
 
   const { title } = await activeWin().catch((e) => 'cant get window');
 
-  return setPlan(state, actions, goal);
-  // if (title === 'World of Warcraft') {
-  //   try {
-  //     return setPlan(state, actions, goal);
-  //   } catch (e) {
-  //     console.log('error in set plan', e);
-  //   }
-  // }
+  // return setPlan(state, actions, goal);
+  if (title === 'World of Warcraft') {
+    try {
+      return setPlan(state, actions, goal);
+    } catch (e) {
+      console.log('error in set plan', e);
+    }
+  }
 
-  // console.log('Pausing bot');
+  console.log('Pausing bost');
 }
 
 module.exports = run;

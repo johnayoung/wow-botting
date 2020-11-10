@@ -73,6 +73,7 @@ class State extends Component {
       energyCurrent,
       comboPoints,
       spells,
+      inMeleeRange,
     } = gameState;
 
     const playerProps = {
@@ -115,9 +116,7 @@ class State extends Component {
             // targetInRange
           },
           children: Object.keys(spells).map((spellName) => {
-            const { castable, equipped, notEnoughMana, spellInRange } = spells[
-              spellName
-            ];
+            const { castable, equipped, notEnoughMana } = spells[spellName];
 
             return {
               key: spellName,
@@ -126,7 +125,6 @@ class State extends Component {
                 castable,
                 equipped,
                 notEnoughMana,
-                spellInRange,
               },
             };
           }),
