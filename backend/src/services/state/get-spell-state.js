@@ -1,16 +1,16 @@
 function getSpellState(config, reader) {
   const spell = {
-    bloodrage: {},
-    moonfire: {}, // Slot 2
-    fireball: {}, // Slot 3
-    sinisterStrike: {}, // Slot 4
-    frostNova: {}, // Slot 5
-    eatFood: {}, // Slot 6
-    drinkWater: {}, // Slot 7
-    slot8: {},
-    evocation: {}, // Slot 9
-    manaShield: {}, // Slot 10
-    counterspell: {}, // Slot 11
+    slot1: {},
+    slot2: {}, // Slot 2
+    hammerOfJustice: {}, // Slot 3
+    charge: {}, // Slot 4
+    execute: {}, // Slot 5
+    heroicStrike: {}, // Slot 6
+    sinisterStrike: {}, // Slot 7
+    eviscerate: {},
+    lightningShield: {}, // Slot 9
+    rejuvenation: {}, // Slot 10
+    slot11: {}, // Slot 11
     slot12: {},
     conjureFood: {}, // Slot 61
     conjureWater: {}, // Slot 62

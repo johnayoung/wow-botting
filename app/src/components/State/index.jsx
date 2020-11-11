@@ -72,6 +72,8 @@ class State extends Component {
       energy,
       energyCurrent,
       comboPoints,
+      rage,
+      rageCurrent,
       spells,
       inMeleeRange,
     } = gameState;
@@ -85,6 +87,8 @@ class State extends Component {
       energy,
       energyCurrent,
       comboPoints,
+      rage,
+      rageCurrent,
       playerInCombat,
     };
 

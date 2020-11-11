@@ -19,10 +19,10 @@ function assignBinaryVariables(base2Operation) {
       iceBarrier: {
         active: false,
       },
-      arcaneIntellect: {
+      rejuvenation: {
         active: false,
       },
-      frostArmor: {
+      lightningShield: {
         active: false,
       },
       eatFood: {
@@ -73,10 +73,10 @@ function assignBinaryVariables(base2Operation) {
         values.spell.iceBarrier.active = active;
         break;
       case 7:
-        values.spell.arcaneIntellect.active = active;
+        values.spell.rejuvenation.active = active;
         break;
       case 6:
-        values.spell.frostArmor.active = active;
+        values.spell.lightningShield.active = active;
         break;
       case 5:
         values.spell.eatFood.active = active;
@@ -101,8 +101,6 @@ function assignBinaryVariables(base2Operation) {
       base2Operation -= Math.pow(2, i);
     }
   }
-
-  console.log(values.inMeleeRange);
 
   return values;
 }

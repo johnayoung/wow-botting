@@ -46,6 +46,8 @@ function Player({
   energy,
   energyCurrent,
   comboPoints,
+  rage,
+  rageCurrent,
   playerInCombat,
 }) {
   const dataSource = [
@@ -54,6 +56,7 @@ function Player({
       level,
       health: `${healthCurrent} (${_.toNumber(health).toFixed(2)}%)`,
       mana: `${manaCurrent} (${_.toNumber(mana).toFixed(2)}%)`,
+      rage: `${rageCurrent} (${_.toNumber(rage).toFixed(2)}%)`,
       energy: `${energyCurrent} (${_.toNumber(energy).toFixed(
         2
       )}%) (${comboPoints})`,
@@ -81,6 +84,8 @@ Player.propTypes = {
   energy: PropTypes.string,
   energyCurrent: PropTypes.string,
   comboPoints: PropTypes.string,
+  rage: PropTypes.string,
+  rageCurrent: PropTypes.string,
   playerInCombat: PropTypes.bool,
 };
 

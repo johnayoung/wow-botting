@@ -8,44 +8,6 @@ const SquareReader = require('./square-reader');
 
 const raw = readFileSync(resolve(__dirname, 'coordinates.json'), 'utf-8');
 const config = JSON.parse(raw);
-// const config = [
-//   { x: 1, y: 1 },
-//   { x: 5, y: 32 },
-//   { x: 7, y: 32 },
-//   { x: 10, y: 32 },
-//   { x: 13, y: 32 },
-//   { x: 16, y: 32 },
-//   { x: 19, y: 32 },
-//   { x: 22, y: 32 },
-//   { x: 25, y: 32 },
-//   { x: 28, y: 32 },
-//   { x: 31, y: 32 },
-//   { x: 34, y: 32 },
-//   { x: 37, y: 32 },
-//   { x: 40, y: 32 },
-//   { x: 43, y: 32 },
-//   { x: 46, y: 32 },
-//   { x: 49, y: 32 },
-//   { x: 52, y: 32 },
-// ];
-
-// const bottomY = 107;
-// const config = [
-//   { x: 1, y: 1 },
-//   { x: 4, y: bottomY },
-//   { x: 6, y: bottomY },
-//   { x: 8, y: bottomY },
-//   { x: 10, y: bottomY },
-//   { x: 13, y: bottomY },
-//   { x: 15, y: bottomY },
-//   { x: 17, y: bottomY },
-//   { x: 20, y: bottomY },
-//   { x: 22, y: bottomY },
-//   { x: 24, y: bottomY },
-//   { x: 26, y: bottomY },
-//   { x: 29, y: bottomY },
-//   { x: 31, y: bottomY },
-// ];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -82,6 +44,9 @@ function getGameState() {
   const energyCurrent = reader.getIntAtCell(config[16]);
   const comboPoints = reader.getIntAtCell(config[17]);
 
+  const rageMax = reader.getIntAtCell(config[19]);
+  const rageCurrent = reader.getIntAtCell(config[20]);
+
   const gameState = {
     name: 'track-game-state',
     xcoord: reader.getFixedPointAtCell(xcoord) * 10,
@@ -103,6 +68,9 @@ function getGameState() {
     energyCurrent,
     energy: (energyCurrent / energyMax) * 100,
     comboPoints,
+    rageMax,
+    rageCurrent,
+    rage: (rageCurrent / rageMax) * 100,
     level: reader.getIntAtCell(config[18]),
     // range detects if a target range. Bases information off of action slot 2, 3, and 4. Outputs: 50, 35, 30, or 20
     range: reader.getIntAtCell(config[16]),
