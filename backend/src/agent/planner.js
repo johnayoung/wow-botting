@@ -23,9 +23,7 @@ const buildGraph = (parent, leaves, actions, goal) => {
       const nextState = action.effect(merge({}, parent.state));
       const cost = parent.cost + action.cost(nextState);
       const node = new Node(parent, cost, nextState, action);
-      console.log(goal);
       if (goal.validate(parent.state, nextState)) {
-        console.log('validated');
         leaves.add(node);
       } else {
         const subset = actions.filter((a) => a.key !== action.key);

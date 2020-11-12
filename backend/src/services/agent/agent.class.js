@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // const runAgent = require('bot');
-const runAgent = require('../../../../bot');
+const runAgent = require('../../agent');
 const getGameState = require('../state/get-game-state');
 
 function start(app) {

@@ -534,10 +534,8 @@ end
 function DataToColor:rangeChecker()
     local meleeChecker = rc:GetHarmChecker(rc.MeleeRange) -- 5 yds
     if meleeChecker("target") then
-        print("Target is in Melee range")
         return 1
     else
-        print("Not in melee range")
         return 0
     end
 end

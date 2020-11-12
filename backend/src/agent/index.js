@@ -1,6 +1,5 @@
 /* eslint-disable global-require */
 const _ = require('lodash');
-const robot = require('robotjs');
 const activeWin = require('active-win');
 const logger = require('pino')({
   name: 'log-action',
@@ -12,36 +11,33 @@ const logger = require('pino')({
 const actionConfig = require('./actions');
 const { createPlan } = require('./planner');
 
-function performAction(actionName) {
-  const { key, log } = actionConfig[actionName];
-  logger.info(log);
-
-  return robot.keyTap(key);
-}
-
-function performPlan(plan) {
-  console.log(plan);
+function performPlan(plan, mapping) {
   const { actions } = plan;
 
-  actions.forEach((actionName) => performAction(actionName));
+  actions.forEach((actionName) => {
+    const { act, log } = actionConfig[actionName];
+    const key = mapping[actionName];
+
+    log(logger);
+
+    return act(key);
+  });
 }
 
 function setPlan(state, actions, goal) {
-  console.log(goal);
   const plan = createPlan(state, actions, goal);
 
-  console.log('PLAN ===> ', plan);
-
   if (!plan) {
-    return;
+    return null;
   }
 
-  return performPlan(plan);
+  return plan;
+  // return performPlan(plan);
 }
 
 function determineGoal(state, goals) {
   const goal = _.find(goals, (o) => {
-    const { condition, label } = o;
+    const { condition } = o;
 
     const outcome = condition(state);
     return outcome;
@@ -52,7 +48,7 @@ function determineGoal(state, goals) {
 
 async function run({ state, rotation }) {
   const classRotation = require(`./profiles/${rotation}`);
-  const { actions, goals } = classRotation;
+  const { mapping, actions, goals } = classRotation;
 
   const goal = determineGoal(state, goals);
 
@@ -61,13 +57,16 @@ async function run({ state, rotation }) {
   // return setPlan(state, actions, goal);
   if (title === 'World of Warcraft') {
     try {
-      return setPlan(state, actions, goal);
+      const plan = setPlan(state, actions, goal);
+
+      return performPlan(plan, mapping);
     } catch (e) {
-      console.log('error in set plan', e);
+      logger.error(e);
+      return e;
     }
   }
 
-  console.log('Pausing bost');
+  logger.info('Pausing');
 }
 
 module.exports = run;

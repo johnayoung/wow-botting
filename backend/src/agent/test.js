@@ -86,6 +86,4 @@ const goals = {
   },
 };
 
-const plan2 = createPlan(initialState, actions, goals.killEnemy);
-
-console.log(plan2);
+// const plan2 = createPlan(initialState, actions, goals.killEnemy);

@@ -1,18 +1,17 @@
 const robot = require('robotjs');
 
-function effect() {
-  return robot.keyTap('4');
-}
-
 module.exports = {
   condition: (s) =>
+    s.inMeleeRange &&
     s.spells.sinisterStrike.castable &&
     s.spells.sinisterStrike.equipped &&
-    !s.spells.sinisterStrike.notEnoughMana,
+    s.energyCurrent > 40 &&
+    s.comboPoints < 4,
   effect: (s) => {
     s.targetDead = true;
     return s;
   },
-  cost: (s) => 2,
-  activate: () => robot.keyTap('4'),
+  cost: (s) => 10,
+  act: (k) => robot.keyTap(k),
+  log: (l) => l.info('Casting Sinister Strike'),
 };

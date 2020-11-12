@@ -29,9 +29,3 @@ const goals = new StateMachine({
     },
   },
 });
-
-goals.pull();
-goals.acquireTarget();
-goals.kill();
-
-console.log(goals);
