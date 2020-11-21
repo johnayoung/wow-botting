@@ -46,9 +46,9 @@ function determineGoal(state, goals) {
   return goal;
 }
 
-async function run({ state, rotation }) {
-  const classRotation = require(`./profiles/${rotation}`);
-  const { mapping, actions, goals } = classRotation;
+const defaultRotation = require(`./profiles/mage`);
+async function run({ state, rotation = defaultRotation }) {
+  const { mapping, actions, goals } = rotation;
 
   const goal = determineGoal(state, goals);
 
@@ -58,6 +58,11 @@ async function run({ state, rotation }) {
   if (title === 'World of Warcraft') {
     try {
       const plan = setPlan(state, actions, goal);
+
+      if (!plan) {
+        logger.info('No plan. Idling.');
+        return null;
+      }
 
       return performPlan(plan, mapping);
     } catch (e) {

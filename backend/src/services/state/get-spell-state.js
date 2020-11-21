@@ -1,32 +1,64 @@
-function getSpellState(config, reader) {
-  const spell = {
-    slot1: {},
-    slot2: {}, // Slot 2
-    hammerOfJustice: {}, // Slot 3
-    charge: {}, // Slot 4
-    execute: {}, // Slot 5
-    heroicStrike: {}, // Slot 6
-    sinisterStrike: {}, // Slot 7
-    eviscerate: {},
-    lightningShield: {}, // Slot 9
-    rejuvenation: {}, // Slot 10
-    slot11: {}, // Slot 11
-    slot12: {},
-    conjureFood: {}, // Slot 61
-    conjureWater: {}, // Slot 62
-    frostArmor: {}, // Slot 63
-    arcaneIntellect: {}, // Slot 64
-    blink: {}, // Slot 65
-    conjureGem: {}, // Slot 66
-    consumeGem: {}, // Slot 67
-    iceBarrier: {}, // Slot 68
-    slot69: {},
-    hearthstone: {},
-    slot71: {},
-    slot72: {},
-  };
+const defaultMapping = {
+  // Main Bar
+  slot1: {},
+  slot2: {}, // Slot 2
+  slot3: {}, // Slot 3
+  slot4: {}, // Slot 4
+  slot5: {}, // Slot 5
+  slot6: {}, // Slot 6
+  slot7: {}, // Slot 7
+  slot8: {}, // Slot 8
+  slot9: {}, // Slot 9
+  slot10: {}, // Slot 10
+  slot11: {}, // Slot 11
+  slot12: {}, // Slot 12
+
+  // Bottom Left
+  slot61: {}, // Slot 61
+  slot62: {}, // Slot 62
+  slot63: {}, // Slot 63
+  slot64: {}, // Slot 64
+  slot65: {}, // Slot 65
+  slot66: {}, // Slot 66
+  slot67: {}, // Slot 67
+  slot68: {}, // Slot 68
+  slot69: {},
+  slot70: {},
+  slot71: {},
+  slot72: {},
+};
+
+function getSpellState(config, reader, currentSpells) {
+  const spell = currentSpells;
+  // const spell = {
+  //   desperatePrayer: {},
+  //   silence: {}, // Slot 2
+  //   kidneyShot: {}, // Slot 3
+  //   charge: {}, // Slot 4
+  //   execute: {}, // Slot 5
+  //   heroicStrike: {}, // Slot 6
+  //   sinisterStrike: {}, // Slot 7
+  //   eviscerate: {},
+  //   lightningShield: {}, // Slot 9
+  //   rejuvenation: {}, // Slot 10
+  //   slot11: {}, // Slot 11
+  //   slot12: {},
+  //   fortitude: {}, // Slot 61
+  //   hammerOfJustice: {}, // Slot 62
+  //   bloodthirst: {}, // Slot 63
+  //   innerFire: {}, // Slot 64
+  //   aspectOfTheViper: {}, // Slot 65
+  //   arcaneTorrent: {}, // Slot 66
+  //   insigniaOfTheHorde: {}, // Slot 67
+  //   bloodrage: {}, // Slot 68
+  //   waterShield: {},
+  //   slow: {},
+  //   riptide: {},
+  //   slot72: {},
+  // };
 
   const spellObj = Object.keys(spell);
+  console.log({ spell, spellObj });
   // Assigns each spell slot up to three statuses: Is there a spell equipped, is it on cooldown (can we cast it or not), and do we have enough mana to cast it
   let castableBinary = reader.getIntAtCell(config[35]);
   let equippedBinary = reader.getIntAtCell(config[36]);

@@ -15,9 +15,10 @@ const services = require('./services');
 const appHooks = require('./app.hooks');
 const channels = require('./channels');
 
-const app = express(feathers());
+// Service connections
+const http = require('./http');
 
-const getGameState = require('./services/state/get-game-state');
+const app = express(feathers());
 
 // Load app configuration
 app.configure(configuration());
@@ -35,6 +36,8 @@ app.use('/', express.static(app.get('public')));
 app.configure(express.rest());
 app.configure(socketio());
 
+app.configure(http);
+
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
 // Set up our services (see `services/index.js`)
@@ -47,12 +50,5 @@ app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
-
-// const updateGameStateInterval = 1000;
-// setInterval(() => {
-//   const gameState = getGameState();
-
-//   app.service('state').create(gameState);
-// }, updateGameStateInterval);
 
 module.exports = app;

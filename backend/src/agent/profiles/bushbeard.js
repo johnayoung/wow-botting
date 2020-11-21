@@ -11,7 +11,7 @@ const {
   heroicStrike,
   kidneyShot,
   execute,
-  powerWordFortitude,
+  fortitude,
   pull,
 } = require('../actions');
 const goals = require('../goals');
@@ -28,7 +28,7 @@ module.exports = {
     eviscerate: '6',
     heroicStrike: '4',
     execute: 'w',
-    powerWordFortitude: 'y',
+    fortitude: 'y',
     kidneyShot: 't',
     innerFire: 'q',
     pull: '0',
@@ -46,7 +46,7 @@ module.exports = {
     innerFire,
     heroicStrike,
     execute,
-    powerWordFortitude,
+    fortitude,
     pull,
   },
   overrides: {},

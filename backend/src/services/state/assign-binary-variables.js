@@ -9,14 +9,19 @@ function assignBinaryVariables(base2Operation) {
     needManaGem: false,
     targetOfTargetIsPlayer: false,
     playerInCombat: false,
+    debuffs: {
+      slow: {
+        active: false,
+      },
+    },
     spell: {
-      drinkWater: {
+      suddenDeath: {
         active: false,
       },
-      evocation: {
+      innerFire: {
         active: false,
       },
-      iceBarrier: {
+      powerWordFortitude: {
         active: false,
       },
       rejuvenation: {
@@ -25,7 +30,7 @@ function assignBinaryVariables(base2Operation) {
       lightningShield: {
         active: false,
       },
-      eatFood: {
+      waterShield: {
         active: false,
       },
     },
@@ -55,13 +60,13 @@ function assignBinaryVariables(base2Operation) {
         values.playerInCombat = active;
         break;
       case 13:
-        values.spell.drinkWater.active = active;
+        values.spell.suddenDeath.active = active;
         break;
       case 12:
-        values.spell.evocation.active = active;
+        values.spell.innerFire.active = active;
         break;
       case 11:
-        values.needFood = active;
+        values.debuffs.slow.active = active;
         break;
       case 10:
         values.flying = active;
@@ -70,7 +75,7 @@ function assignBinaryVariables(base2Operation) {
         values.itemsAreBroken = active;
         break;
       case 8:
-        values.spell.iceBarrier.active = active;
+        values.spell.powerWordFortitude.active = active;
         break;
       case 7:
         values.spell.rejuvenation.active = active;
@@ -79,7 +84,7 @@ function assignBinaryVariables(base2Operation) {
         values.spell.lightningShield.active = active;
         break;
       case 5:
-        values.spell.eatFood.active = active;
+        values.spell.waterShield.active = active;
         break;
       case 4:
         values.needWater = active;

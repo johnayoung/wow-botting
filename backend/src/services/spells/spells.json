@@ -1,0 +1,1216 @@
+{
+  "408": {
+    "id": 408,
+    "name": "Kidney Shot",
+    "imageUrl": "/files/images/icons/Ability_Rogue_KidneyShot.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        408,
+        8643
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 25,
+      "text": "25 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Finishing move that stuns the target.  Lasts longer per combo point:\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> point  : <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> second\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">4 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">5 seconds</span>",
+      "tooltipUrl": "/spells/408/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "classId": 5,
+      "specializationId": 15
+    },
+    "_id": "ZHI9mN4wKzRxc7Tp",
+    "camelName": "kidneyShot"
+  },
+  "4197": {
+    "id": 4197,
+    "name": "Great Stamina",
+    "imageUrl": "/files/images/icons/Spell_Nature_UnyeildingStamina.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        4195,
+        4196,
+        4197,
+        4198,
+        4199,
+        4200,
+        4201,
+        4202,
+        5048,
+        5049,
+        27364
+      ],
+      "text": "Rank 3"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Stamina increased by .",
+      "tooltipUrl": "/spells/4197/tooltip.html"
+    },
+    "_id": "tQH7g3LvRmSMaMVi",
+    "camelName": "greatStamina"
+  },
+  "10308": {
+    "id": 10308,
+    "name": "Hammer of Justice",
+    "imageUrl": "/files/images/icons/Spell_Holy_SealOfMight.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        853,
+        5588,
+        5589,
+        10308
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 3,
+      "text": "3% of base mana"
+    },
+    "range": {
+      "yards": 10,
+      "type": "Ten yards",
+      "text": "10 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 60,
+      "type": "Regular",
+      "text": "1 minute"
+    },
+    "duration": {
+      "seconds": 4,
+      "type": "Regular",
+      "text": "4 seconds"
+    },
+    "tooltip": {
+      "text": "Stuns the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3.5 seconds</span> and interrupts non-player spellcasting for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.",
+      "tooltipUrl": "/spells/10308/tooltip.html"
+    },
+    "_id": "WkBJc0etsbTNc3KJ",
+    "camelName": "hammerOfJustice"
+  },
+  "10414": {
+    "id": 10414,
+    "name": "Earth Shock",
+    "imageUrl": "/files/images/icons/Spell_Nature_EarthShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        8042,
+        8044,
+        8045,
+        8046,
+        10412,
+        10413,
+        10414,
+        25454,
+        49230,
+        49231
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 25,
+      "type": "Twenty-Five yards",
+      "text": "25 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly shocks the target with concussive force, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">594</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">626</span> Nature damage and reducing melee attack speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>.This ability shares a cooldown with Holy Shock.",
+      "tooltipUrl": "/spells/10414/tooltip.html"
+    },
+    "_id": "yy0eCrr0VCJ7c4Zi",
+    "camelName": "earthShock"
+  },
+  "10431": {
+    "id": 10431,
+    "name": "Lightning Shield",
+    "imageUrl": "/files/images/icons/Spell_Nature_LightningShield.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        324,
+        325,
+        905,
+        945,
+        8134,
+        10431,
+        10432,
+        25469,
+        25472,
+        49280,
+        49281
+      ],
+      "text": "Rank 6"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 600,
+      "type": "Regular",
+      "text": "600 seconds"
+    },
+    "tooltip": {
+      "text": "The caster is surrounded by <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> balls of lightning.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for <span class=\"ascension-tooltip-spell-tooltip-text-number\">194</span> Nature damage.  This expends one lightning ball.  Only one ball will fire every <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 minutes</span>.  Only one Elemental Shield can be active on the Shaman at any one time.",
+      "tooltipUrl": "/spells/10431/tooltip.html"
+    },
+    "_id": "1kv3mVgWLTxehns9",
+    "camelName": "lightningShield"
+  },
+  "11578": {
+    "id": 11578,
+    "name": "Charge",
+    "imageUrl": "/files/images/icons/Ability_Warrior_Charge.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        100,
+        6178,
+        11578
+      ],
+      "text": "Rank 3"
+    },
+    "range": {
+      "yards": 25,
+      "type": "Charge",
+      "text": "25 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 18,
+      "type": "Regular",
+      "text": "18 seconds"
+    },
+    "tooltip": {
+      "text": "Charge an enemy, generate <span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span> rage, and root it for <span class=\"ascension-tooltip-spell-tooltip-text-number\">1.5 seconds</span>.\r\n\r\nThis ability is usable while shapeshifted. Shares a cooldown with Feral Charge.",
+      "tooltipUrl": "/spells/11578/tooltip.html"
+    },
+    "_id": "NpBhmbB2jEoTmJ5R",
+    "camelName": "charge"
+  },
+  "14284": {
+    "id": 14284,
+    "name": "Arcane Shot",
+    "imageUrl": "/files/images/icons/Ability_ImpalingBolt.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        3044,
+        14281,
+        14282,
+        14283,
+        14284,
+        14285,
+        14286,
+        14287,
+        27019,
+        49044,
+        49045
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 5,
+      "text": "5% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Hunter Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": -1000,
+      "type": "Regular",
+      "text": "-1000 second"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "An instant shot that causes <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{[$R]AAPP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.30</span>+91}</span> Arcane damage.",
+      "tooltipUrl": "/spells/14284/tooltip.html"
+    },
+    "_id": "z976lzMMbvnEmYEB",
+    "camelName": "arcaneShot"
+  },
+  "15487": {
+    "id": 15487,
+    "name": "Silence",
+    "imageUrl": "/files/images/icons/Spell_Shadow_ImpPhaseShift.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        15487
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Mana",
+      "value": 225,
+      "text": "225 mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 45,
+      "type": "Regular",
+      "text": "45 seconds"
+    },
+    "duration": {
+      "seconds": 4,
+      "type": "Regular",
+      "text": "4 seconds"
+    },
+    "tooltip": {
+      "text": "Silences the target, preventing them from casting spells for <span class=\"ascension-tooltip-spell-tooltip-text-number\">4 seconds</span>.  Non-player victim spellcasting is also interrupted for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.",
+      "tooltipUrl": "/spells/15487/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 541,
+      "classId": 4,
+      "specializationId": 14,
+      "visualColumn": 1
+    },
+    "_id": "mCGSaWNIlFpdQKEE",
+    "camelName": "silence"
+  },
+  "19051": {
+    "id": 19051,
+    "name": "Heavy Scorpid Vest",
+    "imageUrl": "/files/images/icons/Trade_Engineering.png",
+    "type": "Talent",
+    "tooltip": {
+      "tooltipUrl": "/spells/19051/tooltip.html"
+    },
+    "_id": "0eAfJQ3UrTfTZgfG",
+    "camelName": "heavyScorpidVest"
+  },
+  "23881": {
+    "id": 23881,
+    "name": "Bloodthirst",
+    "imageUrl": "/files/images/icons/Spell_Nature_BloodLust.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        23881
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 20,
+      "text": "20 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 4,
+      "type": "Regular",
+      "text": "4 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly attack the target causing <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">55</span>/100}</span> damage. Your Rend, Garrote and Rupture increases the damage by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% each. In addition, the next <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> successful melee attacks will restore <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>% of max health. This effect lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>. Damage is based on your attack power.",
+      "tooltipUrl": "/spells/23881/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 167,
+      "classId": 8,
+      "specializationId": 25,
+      "visualColumn": 2
+    },
+    "_id": "V3TY25i5viE3YcpA",
+    "camelName": "bloodthirst"
+  },
+  "24018": {
+    "id": 24018,
+    "name": "Axe Flurry",
+    "imageUrl": "/files/images/icons/INV_Axe_06.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        24018
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 5,
+      "type": "Regular",
+      "text": "5 seconds"
+    },
+    "tooltip": {
+      "text": "You attack all nearby enemies for <span class=\"ascension-tooltip-spell-tooltip-text-number\">5 seconds</span> causing weapon damage plus an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> every <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> sec.",
+      "tooltipUrl": "/spells/24018/tooltip.html"
+    },
+    "_id": "AyPiZTvjlg5qUF6O",
+    "camelName": "axeFlurry"
+  },
+  "25236": {
+    "id": 25236,
+    "name": "Execute",
+    "imageUrl": "/files/images/icons/INV_Sword_48.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        5308,
+        20658,
+        20660,
+        20661,
+        20662,
+        25234,
+        25236,
+        47470,
+        47471
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Attempt to finish off a wounded foe, causing <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{748+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0</span>.27}</span> damage and converting each extra point of rage into NaN additional damage (up to a maximum cost of <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span> rage).  Only usable on enemies that have less than <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>% health.",
+      "tooltipUrl": "/spells/25236/tooltip.html"
+    },
+    "_id": "NkQy2qumgfzbva3q",
+    "camelName": "execute"
+  },
+  "25389": {
+    "id": 25389,
+    "name": "Power Word: Fortitude",
+    "imageUrl": "/files/images/icons/Spell_Holy_WordFortitude.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 9,
+      "other": [
+        1243,
+        1244,
+        1245,
+        2791,
+        10937,
+        10938,
+        21562,
+        21564,
+        25389,
+        25392,
+        48161,
+        48162
+      ],
+      "text": "Rank 9"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 27,
+      "text": "27% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 1800,
+      "type": "Regular",
+      "text": "1800 seconds"
+    },
+    "tooltip": {
+      "text": "Power infuses the target increasing their Stamina by <span class=\"ascension-tooltip-spell-tooltip-text-number\">55</span> for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 minutes</span>.",
+      "tooltipUrl": "/spells/25389/tooltip.html"
+    },
+    "_id": "wmQjOrv0lggGig8j",
+    "camelName": "powerWordFortitude"
+  },
+  "25431": {
+    "id": 25431,
+    "name": "Inner Fire",
+    "imageUrl": "/files/images/icons/Spell_Holy_InnerFire.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        588,
+        7128,
+        602,
+        1006,
+        10951,
+        10952,
+        25431,
+        48040,
+        48168
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 14,
+      "text": "14% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "A burst of holy energy fills the caster, increasing armor by <span class=\"ascension-tooltip-spell-tooltip-text-number\">875</span> and spell power by <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>.  Each melee or ranged damage hit against the caster will remove one charge.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span> or until <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span> charges are used.",
+      "tooltipUrl": "/spells/25431/tooltip.html"
+    },
+    "_id": "NqImksUTzKLrZKB2",
+    "camelName": "innerFire"
+  },
+  "25437": {
+    "id": 25437,
+    "name": "Desperate Prayer",
+    "imageUrl": "/files/images/icons/Spell_Holy_Restoration.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        19236,
+        19238,
+        19240,
+        19241,
+        19242,
+        19243,
+        25437,
+        48172,
+        48173
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 21,
+      "text": "21% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 90,
+      "type": "Regular",
+      "text": "90 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly heals the caster for <span class=\"ascension-tooltip-spell-tooltip-text-number\">1281</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">1510</span>.",
+      "tooltipUrl": "/spells/25437/tooltip.html"
+    },
+    "_id": "UQeoaDSoIqrvFoa7",
+    "camelName": "desperatePrayer"
+  },
+  "25472": {
+    "id": 25472,
+    "name": "Lightning Shield",
+    "imageUrl": "/files/images/icons/Spell_Nature_LightningShield.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 9,
+      "other": [
+        324,
+        325,
+        905,
+        945,
+        8134,
+        10431,
+        10432,
+        25469,
+        25472,
+        49280,
+        49281
+      ],
+      "text": "Rank 9"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 600,
+      "type": "Regular",
+      "text": "600 seconds"
+    },
+    "tooltip": {
+      "text": "The caster is surrounded by <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> balls of lightning.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for <span class=\"ascension-tooltip-spell-tooltip-text-number\">316</span> Nature damage.  This expends one lightning ball.  Only one ball will fire every <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 minutes</span>.  Only one Elemental Shield can be active on the Shaman at any one time.",
+      "tooltipUrl": "/spells/25472/tooltip.html"
+    },
+    "_id": "0k3BbKt2oQsgKjjw",
+    "camelName": "lightningShield"
+  },
+  "26862": {
+    "id": 26862,
+    "name": "Sinister Strike",
+    "imageUrl": "/files/images/icons/Spell_Shadow_RitualOfSacrifice.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 10,
+      "other": [
+        1752,
+        1757,
+        1758,
+        1759,
+        1760,
+        8621,
+        11293,
+        11294,
+        26861,
+        26862,
+        48637,
+        48638
+      ],
+      "text": "Rank 10"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "An instant strike that causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">98</span> damage in addition to <span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>% of your normal weapon damage (<span class=\"ascension-tooltip-spell-tooltip-text-number\">80</span>% if a Two-Handed weapon is equipped).  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/26862/tooltip.html"
+    },
+    "_id": "wPSVfIZ0gyVXB3zd",
+    "camelName": "sinisterStrike"
+  },
+  "26865": {
+    "id": 26865,
+    "name": "Eviscerate",
+    "imageUrl": "/files/images/icons/Ability_Rogue_Eviscerate.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 10,
+      "other": [
+        2098,
+        6760,
+        6761,
+        6762,
+        8623,
+        8624,
+        11299,
+        11300,
+        31016,
+        26865,
+        48667,
+        48668
+      ],
+      "text": "Rank 10"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 35,
+      "text": "35 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Finishing move that causes damage per combo point:\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> point  : <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.03</span>)*1}-{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.07</span>)*1}</span> damage\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.06</span>)*1}-{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.14</span>)*1}</span> damage\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.09</span>)*1}-{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.21</span>)*1}</span> damage\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.12</span>)*1}-{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.28</span>)*1}</span> damage\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>)*1}-{60+(([$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>)+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.35</span>)*1}</span> damage",
+      "tooltipUrl": "/spells/26865/tooltip.html"
+    },
+    "_id": "iDCVecI4os19skyQ",
+    "camelName": "eviscerate"
+  },
+  "26982": {
+    "id": 26982,
+    "name": "Rejuvenation",
+    "imageUrl": "/files/images/icons/Spell_Nature_Rejuvenation.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 13,
+      "other": [
+        774,
+        1058,
+        1430,
+        2090,
+        2091,
+        3627,
+        8910,
+        9839,
+        9840,
+        9841,
+        25299,
+        26981,
+        26982,
+        48440,
+        48441
+      ],
+      "text": "Rank 13"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Heals the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">955</span> over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.",
+      "tooltipUrl": "/spells/26982/tooltip.html"
+    },
+    "_id": "c8kedQxJC6TCgpeN",
+    "camelName": "rejuvenation"
+  },
+  "28730": {
+    "id": 28730,
+    "name": "Arcane Torrent",
+    "imageUrl": "/files/images/icons/Spell_Shadow_Teleport.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        28730
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 120,
+      "type": "Regular",
+      "text": "2 minutes"
+    },
+    "duration": {
+      "seconds": 2,
+      "type": "Regular",
+      "text": "2 seconds"
+    },
+    "tooltip": {
+      "text": "Silence all enemies within <span class=\"ascension-tooltip-spell-tooltip-text-number\">8</span> yards for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 seconds</span> and restores <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>% of your Mana, <span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span> Rage and <span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span> Energy. Non-player victim spellcasting is also interrupted for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.",
+      "tooltipUrl": "/spells/28730/tooltip.html"
+    },
+    "_id": "QxQ1BokIZeuKj1Zs",
+    "camelName": "arcaneTorrent"
+  },
+  "30324": {
+    "id": 30324,
+    "name": "Heroic Strike",
+    "imageUrl": "/files/images/icons/Ability_Rogue_Ambush.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 11,
+      "other": [
+        78,
+        284,
+        285,
+        1608,
+        11564,
+        11565,
+        11566,
+        11567,
+        25286,
+        29707,
+        30324,
+        47449,
+        47450
+      ],
+      "text": "Rank 11"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "A strong attack that increases melee damage by <span class=\"ascension-tooltip-spell-tooltip-text-number\">210</span> and causes a high amount of threat.  Causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">74</span> additional damage against Dazed targets.",
+      "tooltipUrl": "/spells/30324/tooltip.html"
+    },
+    "_id": "TZ0gua36xtRkHbjA",
+    "camelName": "heroicStrike"
+  },
+  "30413": {
+    "id": 30413,
+    "name": "Shadowfury",
+    "imageUrl": "/files/images/icons/Spell_Shadow_Shadowfury.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        30283,
+        30413,
+        30414,
+        47846,
+        47847
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 27,
+      "text": "27% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 45,
+      "type": "Regular",
+      "text": "45 seconds"
+    },
+    "duration": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Shadowfury is unleashed, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">369</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">437</span> Shadow damage and stunning all enemies within <span class=\"ascension-tooltip-spell-tooltip-text-number\">8</span> yds for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2.5 seconds</span>.",
+      "tooltipUrl": "/spells/30413/tooltip.html"
+    },
+    "_id": "Ho8lsUyWKnrvDMqm",
+    "camelName": "shadowfury"
+  },
+  "31589": {
+    "id": 31589,
+    "name": "Slow",
+    "imageUrl": "/files/images/icons/Spell_Nature_Slow.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        31589
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 12,
+      "text": "12% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 4,
+      "type": "Regular",
+      "text": "4 seconds"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Reduces target's movement speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>%, increases the time between ranged attacks by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">60</span>% and increases casting time by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>%.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  Slow can only affect one target at a time.",
+      "tooltipUrl": "/spells/31589/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 50,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 1729,
+      "classId": 2,
+      "specializationId": 6,
+      "visualColumn": 2
+    },
+    "_id": "9yzKonmVi3bA79X9",
+    "camelName": "slow"
+  },
+  "33736": {
+    "id": 33736,
+    "name": "Water Shield",
+    "imageUrl": "/files/images/icons/Ability_Shaman_WaterShield.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 8,
+      "other": [
+        52127,
+        52129,
+        52131,
+        52134,
+        52136,
+        52138,
+        24398,
+        33736,
+        57960
+      ],
+      "text": "Rank 8"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 600,
+      "type": "Regular",
+      "text": "600 seconds"
+    },
+    "tooltip": {
+      "text": "The caster is surrounded by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> globes of water, granting <span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span> mana per <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> sec.  When a spell, melee or ranged attack hits the caster, <span class=\"ascension-tooltip-spell-tooltip-text-number\">200</span> mana is restored to the caster. This expends one water globe.  Only one globe will activate every few seconds.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 minutes</span>.  Only one Elemental Shield can be active on the Shaman at any one time.",
+      "tooltipUrl": "/spells/33736/tooltip.html"
+    },
+    "_id": "baoencQVdZT8QmeU",
+    "camelName": "waterShield"
+  },
+  "34074": {
+    "id": 34074,
+    "name": "Aspect of the Viper",
+    "imageUrl": "/files/images/icons/Ability_Hunter_AspectoftheViper.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        34074
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "The hunter takes on the aspect of the viper, causing ranged and melee attacks to regenerate mana but reducing your total damage and healing done by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span>%.  In addition, you gain <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span>% of maximum mana every NaN sec. Only one Aspect can be active at a time.",
+      "tooltipUrl": "/spells/34074/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 2,
+      "classId": 1,
+      "specializationId": 3
+    },
+    "_id": "I7yXhSPGdV3Tk12s",
+    "camelName": "aspectOfTheViper"
+  },
+  "51086": {
+    "id": 51086,
+    "name": "Have Raptor Claw",
+    "imageUrl": "/files/images/icons/Spell_Nature_NaturesWrath.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        51086
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "tooltipUrl": "/spells/51086/tooltip.html"
+    },
+    "_id": "LLBpkCKCqB9mkYn0",
+    "camelName": "haveRaptorClaw"
+  },
+  "53394": {
+    "id": 53394,
+    "name": "Pummel",
+    "imageUrl": "/files/images/icons/INV_Gauntlets_04.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        53394
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 5,
+      "type": "Regular",
+      "text": "5 seconds"
+    },
+    "tooltip": {
+      "text": "Pummels an enemy for <span class=\"ascension-tooltip-spell-tooltip-text-number\">943</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">1057</span> damage and interrupts the spell being cast for <span class=\"ascension-tooltip-spell-tooltip-text-number\">5 seconds</span>.",
+      "tooltipUrl": "/spells/53394/tooltip.html"
+    },
+    "_id": "j59PA5kW4jnr1WxR",
+    "camelName": "pummel"
+  },
+  "61295": {
+    "id": 61295,
+    "name": "Riptide",
+    "imageUrl": "/files/images/icons/spell_nature_riptide.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        61295
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Heals a friendly target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">359</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">388</span> and another <span class=\"ascension-tooltip-spell-tooltip-text-number\">540</span> over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  Your next Chain Heal cast on that primary target within <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span> will consume the healing over time effect and increase the amount of the Chain Heal by <span class=\"ascension-tooltip-spell-tooltip-text-number\">25</span>%.",
+      "tooltipUrl": "/spells/61295/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 60,
+      "abilityEssenceCost": 4,
+      "talentEssenceCost": 1,
+      "talentId": 2064,
+      "classId": 6,
+      "specializationId": 20,
+      "visualColumn": 2
+    },
+    "_id": "2RVkK2ZYdknaoA5y",
+    "camelName": "riptide"
+  },
+  "61299": {
+    "id": 61299,
+    "name": "Riptide",
+    "imageUrl": "/files/images/icons/spell_nature_riptide.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        61295,
+        61299,
+        61300,
+        61301
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Heals a friendly target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">476</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">515</span> and another <span class=\"ascension-tooltip-spell-tooltip-text-number\">715</span> over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  Your next Chain Heal cast on that primary target within <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span> will consume the healing over time effect and increase the amount of the Chain Heal by <span class=\"ascension-tooltip-spell-tooltip-text-number\">25</span>%.",
+      "tooltipUrl": "/spells/61299/tooltip.html"
+    },
+    "_id": "qxbELNbCsrhbysbR",
+    "camelName": "riptide"
+  },
+  "919297": {
+    "id": 919297,
+    "name": "Deflection",
+    "imageUrl": "/files/images/icons/Ability_Parry.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Increases your chance to parry by <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>%, and reduces the duration of all Disarm effects used against you by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">25</span>%.  This does not stack with other Disarm duration reducing effects. This enchant does not stack.",
+      "tooltipUrl": "/spells/919297/tooltip.html"
+    },
+    "_id": "fW3WztQiTZNxyRN0",
+    "camelName": "deflection"
+  },
+  "999116": {
+    "id": 999116,
+    "name": "Chaotic Runesaber",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Summons and dismisses the horse called Chaotic Runesaber.  This mount changes depending on your Riding skill and location.",
+      "tooltipUrl": "/spells/999116/tooltip.html"
+    },
+    "_id": "Yn1sgnjnXUAvW52M",
+    "camelName": "chaoticRunesaber"
+  }
+}

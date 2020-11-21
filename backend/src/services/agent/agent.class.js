@@ -1,12 +1,21 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 /* eslint-disable no-unused-vars */
-// const runAgent = require('bot');
+const _ = require('lodash');
 const runAgent = require('../../agent');
 const getGameState = require('../state/get-game-state');
 
-function start(app) {
-  const gameState = getGameState();
+function start(app, agentState) {
+  const { profile } = agentState;
+  const gameState = getGameState(app);
 
-  runAgent({ state: gameState, rotation: 'mage' });
+  const rotation = require(`../../agent/profiles/${profile}`);
+
+  const { mapping, actions, goals, overrides } = rotation;
+
+  const rotationWithOverrides = _.merge({}, rotation, { actions: overrides });
+
+  runAgent({ state: gameState, rotation: rotationWithOverrides });
 
   app.service('state').create(gameState);
 }
@@ -17,7 +26,8 @@ exports.Agent = class Agent {
 
     this.agentState = {
       status: 'stopped',
-      updateInterval: 1000,
+      updateInterval: 5000,
+      profile: 'mage',
     };
 
     this.timer = null;
@@ -25,7 +35,10 @@ exports.Agent = class Agent {
 
   async setup(app) {
     this.app = app;
-    this.timer = setInterval(() => start(app), this.agentState.updateInterval);
+    this.timer = setInterval(
+      () => start(app, this.agentState),
+      this.agentState.updateInterval
+    );
 
     this.agentState = {
       ...this.agentState,
@@ -35,13 +48,6 @@ exports.Agent = class Agent {
 
   async find(params) {
     return this.agentState;
-  }
-
-  async get(id, params) {
-    return {
-      id,
-      text: `A new message with ID: ${id}!`,
-    };
   }
 
   async create(data, params) {
@@ -56,7 +62,7 @@ exports.Agent = class Agent {
     }
 
     this.timer = setInterval(
-      () => start(this.app),
+      () => start(this.app, this.agentState),
       this.agentState.updateInterval
     );
 
@@ -66,14 +72,6 @@ exports.Agent = class Agent {
     };
 
     return this.agentState;
-  }
-
-  async update(id, data, params) {
-    return data;
-  }
-
-  async patch(id, data, params) {
-    return data;
   }
 
   async remove(id, params) {
