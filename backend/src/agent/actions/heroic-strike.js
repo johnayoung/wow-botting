@@ -2,12 +2,12 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.inMeleeRange &&
+    s.targetInMeleeRange &&
     s.spells.heroicStrike.castable &&
     s.spells.heroicStrike.equipped &&
     s.rageCurrent > 50,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 10,

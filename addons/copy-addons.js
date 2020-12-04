@@ -2,7 +2,7 @@ const { copy, pathExists } = require('fs-extra');
 const { resolve } = require('path');
 
 (async () => {
-  const addons = ['DataToColor'];
+  const addons = ['Ascended', 'DataToColor', 'LoadedReroll'];
 
   const pathToAddons = resolve(
     'C:/Program Files/Ascension Launcher/resources/client/Interface/AddOns/'

@@ -10,7 +10,7 @@ function defaultCondition(s, spell) {
 module.exports = {
   condition: (s) => defaultCondition(s, spellName) && s.mana <= 55,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 1,

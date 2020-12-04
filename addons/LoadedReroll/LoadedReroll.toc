@@ -1,0 +1,13 @@
+## Interface: 30300
+## Title: LoadedReroll
+## Author: DaemienDarkstrider
+## Notes: An addon that auto rolls wildcard abilities in Project Ascension
+## Version: 1.0
+## RequiredDeps:
+## OptionalDeps: Ace3, LibDataBroker-1.1, LibCompress
+## SavedVariables:
+
+embeds.xml
+
+LoadedReroll.lua
+

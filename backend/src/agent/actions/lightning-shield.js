@@ -6,7 +6,7 @@ module.exports = {
     s.spells.lightningShield.castable &&
     s.spells.lightningShield.equipped,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 9,

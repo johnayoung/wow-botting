@@ -13,12 +13,18 @@ function assignBinaryVariables(base2Operation) {
       slow: {
         active: false,
       },
-    },
-    spell: {
-      suddenDeath: {
+      corruption: {
         active: false,
       },
-      innerFire: {
+    },
+    spell: {
+      earthShield: {
+        active: false,
+      },
+      lifebloom: {
+        active: false,
+      },
+      fingersOfFrost: {
         active: false,
       },
       powerWordFortitude: {
@@ -27,13 +33,23 @@ function assignBinaryVariables(base2Operation) {
       rejuvenation: {
         active: false,
       },
-      lightningShield: {
+      maelstromWeapon: {
         active: false,
       },
       waterShield: {
         active: false,
       },
+      markOfTheWild: {
+        active: false,
+      },
+      iceArmor: {
+        active: false,
+      },
+      metamorphosis: {
+        active: false,
+      },
     },
+    isFrozen: false,
     needFood: false,
     needWater: false,
     flying: false,
@@ -60,19 +76,20 @@ function assignBinaryVariables(base2Operation) {
         values.playerInCombat = active;
         break;
       case 13:
-        values.spell.suddenDeath.active = active;
+        values.spell.earthShield.active = active;
         break;
       case 12:
-        values.spell.innerFire.active = active;
+        values.spell.fingersOfFrost.active = active;
         break;
       case 11:
-        values.debuffs.slow.active = active;
+        // values.debuffs.slow.active = active;
+        values.spell.lifebloom.active = active;
         break;
       case 10:
-        values.flying = active;
+        values.spell.markOfTheWild.active = active;
         break;
       case 9:
-        values.itemsAreBroken = active;
+        values.spell.iceArmor.active = active;
         break;
       case 8:
         values.spell.powerWordFortitude.active = active;
@@ -81,19 +98,20 @@ function assignBinaryVariables(base2Operation) {
         values.spell.rejuvenation.active = active;
         break;
       case 6:
-        values.spell.lightningShield.active = active;
+        values.spell.maelstromWeapon.active = active;
         break;
       case 5:
         values.spell.waterShield.active = active;
         break;
       case 4:
-        values.needWater = active;
+        values.spell.metamorphosis.active = active;
+        // values.isFrozen = active;
         break;
       case 3:
         values.inMeleeRange = active;
         break;
       case 2:
-        values.deadStatus = active;
+        values.debuffs.corruption.active = active;
         break;
       case 1:
         values.targetIsDead = active;

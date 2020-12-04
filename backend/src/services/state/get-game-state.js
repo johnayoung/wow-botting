@@ -1,8 +1,13 @@
 const { readFileSync } = require('fs');
 const { resolve } = require('path');
 const robot = require('robotjs');
-const getAbilities = require('./get-abilities');
+const _ = require('lodash');
+const getBinaryList = require('./get-binary-list');
+const getBlock = require('./get-block');
 const getSpellState = require('./get-spell-state');
+const getMemberStatus = require('./get-member-status');
+const getMemberCombatStatus = require('./get-member-combat-status');
+const getMemberMeleeRange = require('./get-member-melee-range');
 const bufferToPng = require('./buffer-to-png');
 const assignBinaryVariables = require('./assign-binary-variables');
 const SquareReader = require('./square-reader');
@@ -10,15 +15,17 @@ const SquareReader = require('./square-reader');
 const raw = readFileSync(resolve(__dirname, 'coordinates.json'), 'utf-8');
 const config = JSON.parse(raw);
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+const rawSpells = readFileSync(
+  resolve(__dirname, '../spells/spells.json'),
+  'utf-8'
+);
+const listOfAbilities = JSON.parse(rawSpells);
 
 function getGameState(app) {
   const pixel = {
     xMin: 0,
     yMin: 0,
-    xMax: 185,
+    xMax: 375,
     yMax: 35,
   };
 
@@ -38,6 +45,8 @@ function getGameState(app) {
   // Mana stats
   const manaMax = reader.getIntAtCell(config[4]);
   const manaCurrent = reader.getIntAtCell(config[5]);
+  const mana = (manaCurrent / manaMax) * 100;
+  const lowMana = mana < 30;
 
   const energyMax = reader.getIntAtCell(config[6]);
   const energyCurrent = reader.getIntAtCell(config[7]);
@@ -46,7 +55,54 @@ function getGameState(app) {
   const rageMax = reader.getIntAtCell(config[9]);
   const rageCurrent = reader.getIntAtCell(config[10]);
 
-  const currentAbilities = getAbilities(config, reader, app);
+  // const currentAbilities = getAbilities(config, reader, app);
+  const numberOfBuffs = 20;
+  const numberOfDebuffs = 20;
+  const numberOfAbilities = 36;
+  let startFrame = 11;
+
+  const buffs = getBlock(
+    app,
+    config,
+    reader,
+    listOfAbilities,
+    startFrame,
+    startFrame + numberOfBuffs,
+    'buff'
+  );
+  startFrame += numberOfBuffs;
+
+  const debuffs = getBlock(
+    app,
+    config,
+    reader,
+    listOfAbilities,
+    startFrame,
+    startFrame + numberOfDebuffs,
+    'debuff'
+  );
+  startFrame += numberOfDebuffs;
+
+  const spells = getSpellState(
+    app,
+    config,
+    reader,
+    listOfAbilities,
+    startFrame,
+    startFrame + numberOfAbilities
+  );
+  startFrame += numberOfAbilities;
+
+  const memberStatus = reader.getIntAtCell(config[startFrame]);
+  startFrame += 1;
+  const memberCombatStatus = reader.getIntAtCell(config[startFrame]);
+  startFrame += 1;
+  const memberMeleeRange = reader.getIntAtCell(config[startFrame]);
+  startFrame += 1;
+
+  const miscValue = ['hasWeaponEnchant'];
+  const miscBinary = reader.getIntAtCell(config[startFrame]);
+  const miscList = getBinaryList(miscBinary, miscValue);
 
   const gameState = {
     name: 'track-game-state',
@@ -55,7 +111,8 @@ function getGameState(app) {
     health: (healthCurrent / healthMax) * 100,
     manaMax,
     manaCurrent,
-    mana: (manaCurrent / manaMax) * 100,
+    mana,
+    lowMana,
     energyMax,
     energyCurrent,
     energy: (energyCurrent / energyMax) * 100,
@@ -63,16 +120,21 @@ function getGameState(app) {
     rageMax,
     rageCurrent,
     rage: (rageCurrent / rageMax) * 100,
-    ...assignBinaryVariables(reader.getIntAtCell(config[11])),
-    // Grabs the target ID, whether we are in combat, how much food and potions we have left, and if our target is kill
-    abilities: getAbilities(config, reader, app),
-    target:
-      reader.getStringAtCell(config[17]) + reader.getStringAtCell(config[18]),
-    // Targets current percentage of health
-    targetHealth: reader.getIntAtCell(config[19]),
-    // Debuffs
-    dbSlow: reader.getIntAtCell(config[44]),
-    spells: getSpellState(config, reader, currentAbilities),
+    buffs,
+    debuffs,
+    spells,
+    ...getMemberStatus(memberStatus),
+    ...getMemberCombatStatus(memberCombatStatus),
+    ...getMemberMeleeRange(memberMeleeRange),
+    ...miscList,
+    // ...assignBinaryVariables(reader.getIntAtCell(config[11])),
+    // // Grabs the target ID, whether we are in combat, how much food and potions we have left, and if our target is kill
+    // target:
+    //   reader.getStringAtCell(config[17]) + reader.getStringAtCell(config[18]),
+    // // Targets current percentage of health
+    // targetHealth: reader.getIntAtCell(config[19]),
+    // spells: getSpellState(config, reader, currentAbilities),
+    // direction: reader.getFixedPointAtCell(config[39]),
   };
 
   return gameState;

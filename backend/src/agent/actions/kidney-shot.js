@@ -2,14 +2,14 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.inMeleeRange &&
+    s.targetInMeleeRange &&
     s.spells.kidneyShot.castable &&
     s.spells.kidneyShot.equipped &&
     s.energyCurrent > 25 &&
     // s.notUnderCC &&,
     s.comboPoints >= 4,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 9,

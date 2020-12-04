@@ -1,0 +1,15 @@
+## Interface: 30300
+## Title: Ascended
+## Author: DaemienDarkstrider
+## Notes: An addon for Project Ascension Game State
+## Version: 1.0
+## RequiredDeps:
+## OptionalDeps: Ace3, LibDataBroker-1.1, LibCompress
+## SavedVariables:
+
+embeds.xml
+
+Libs\LibRangeCheck-2.0\LibRangeCheck-2.0.lua
+
+Ascended.lua
+

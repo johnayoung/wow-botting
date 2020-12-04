@@ -6,7 +6,7 @@ module.exports = {
     s.spells.innerFire.castable &&
     s.spells.innerFire.equipped,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 9,

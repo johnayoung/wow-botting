@@ -5,7 +5,7 @@ module.exports = {
     // Sudden Death
     if (s.spell.suddenDeath.active === true) {
       return (
-        s.inMeleeRange &&
+        s.targetInMeleeRange &&
         s.spells.execute.castable &&
         s.spells.execute.equipped &&
         s.rageCurrent > 10
@@ -15,14 +15,14 @@ module.exports = {
     // Normal
     return (
       s.targetHealth <= 20 &&
-      s.inMeleeRange &&
+      s.targetInMeleeRange &&
       s.spells.execute.castable &&
       s.spells.execute.equipped &&
       s.rageCurrent > 15
     );
   },
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => {

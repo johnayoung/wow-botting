@@ -8,7 +8,7 @@ module.exports = {
     s.spells.slow.equipped &&
     s.mana > 30,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 7,

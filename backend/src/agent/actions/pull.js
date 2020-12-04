@@ -11,6 +11,6 @@ module.exports = {
     return s;
   },
   cost: (s) => 10,
-  act: (k) => robot.keyTap(k),
+  act: (k) => {},
   log: (l) => l.info('Pulling'),
 };

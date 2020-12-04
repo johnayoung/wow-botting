@@ -23,6 +23,19 @@ DATA_CONFIG = {
 
 local rc = LibStub("LibRangeCheck-2.0")
 
+function dump(o)
+    if type(o) == 'table' then
+        local s = '{ '
+        for k, v in pairs(o) do
+            if type(k) ~= 'number' then k = '"' .. k .. '"' end
+            s = s .. '[' .. k .. '] = ' .. dump(v) .. ','
+        end
+        return s .. '} '
+    else
+        return tostring(o)
+    end
+end
+
 -- List of talents that will be trained
 local talentList = {
     "Improved Frostbolt", "Ice Shards", "Frostbite", "Piercing Ice",
@@ -31,6 +44,862 @@ local talentList = {
     "Elemental Precision", "Permafrost", "Improved Fireball",
     "Improved Fire Blast"
 }
+
+if not cTar then
+    cTar = {
+        "target", "focus", "mouseover", "arena1", "arena2", "arena3", "arena4",
+        "arena5", "arenapet1", "arenapet2", "arenapet3", "arenapet4",
+        "arenapet5", "pettarget", "arena1pet", "arena2pet", "arena3pet",
+        "arena4pet", "arena5pet", "party1target", "party2target",
+        "party3target", "party4target", "raid1target", "raid2target",
+        "raid3target", "raid4target", "raid5target", "raid6target",
+        "raid7target", "raid8target", "raid9target", "raid10target",
+        "raid11target", "raid12target", "raid13target", "raid14target",
+        "raid15target", "raid16target", "raid17target", "raid18target",
+        "raid19target", "raid20target", "raid21target", "raid22target",
+        "raid23target", "raid24target", "raid25target", "raid26target",
+        "raid27target", "raid28target", "raid29target", "raid30target",
+        "raid31target", "raid32target", "raid33target", "raid34target",
+        "raid35target", "raid36target", "raid37target", "raid38target",
+        "raid39target", "raid40target"
+    }
+end
+
+if not members then
+    members = {
+        "target", "focus", "mouseover", "player", "pet", "party1", "party2",
+        "party3", "party4", "party5", "raid1", "raid2", "raid3", "raid4",
+        "raid5", "raid6", "raid7", "raid8", "raid9", "raid10", "raid11",
+        "raid12", "raid13", "raid14", "raid15", "raid16", "raid17", "raid18",
+        "raid19", "raid20", "raid21", "raid22", "raid23", "raid24", "raid25",
+        "raid26", "raid27", "raid28", "raid29", "raid30", "raid31", "raid32",
+        "raid33", "raid34", "raid35", "raid36", "raid37", "raid38", "raid39",
+        "raid40", "party1pet", "party2pet", "party3pet", "party4pet",
+        "party5pet", "raid1pet", "raid2pet", "raid3pet", "raid4pet", "raid5pet",
+        "raid6pet", "raid7pet", "raid8pet", "raid9pet", "raid10pet",
+        "raid11pet", "raid12pet", "raid13pet", "raid14pet", "raid15pet",
+        "raid16pet", "raid17pet", "raid18pet", "raid19pet", "raid20pet",
+        "raid21pet", "raid22pet", "raid23pet", "raid24pet", "raid25pet",
+        "raid26pet", "raid27pet", "raid28pet", "raid29pet", "raid30pet",
+        "raid31pet", "raid32pet", "raid33pet", "raid34pet", "raid35pet",
+        "raid36pet", "raid37pet", "raid38pet", "raid39pet", "raid40pet"
+    }
+end
+
+if SetFunctions == nil then
+    function getcTar()
+        cTar = {
+            "target", "focus", "mouseover", "arena1", "arena2", "arena3",
+            "arena4", "arena5", "arenapet1", "arenapet2", "arenapet3",
+            "arenapet4", "arenapet5", "pettarget", "arena1pet", "arena2pet",
+            "arena3pet", "arena4pet", "arena5pet", "party1target",
+            "party2target", "party3target", "party4target", "raid1target",
+            "raid2target", "raid3target", "raid4target", "raid5target",
+            "raid6target", "raid7target", "raid8target", "raid9target",
+            "raid10target", "raid11target", "raid12target", "raid13target",
+            "raid14target", "raid15target", "raid16target", "raid17target",
+            "raid18target", "raid19target", "raid20target", "raid21target",
+            "raid22target", "raid23target", "raid24target", "raid25target",
+            "raid26target", "raid27target", "raid28target", "raid29target",
+            "raid30target", "raid31target", "raid32target", "raid33target",
+            "raid34target", "raid35target", "raid36target", "raid37target",
+            "raid38target", "raid39target", "raid40target"
+        }
+
+        for j = 1, #cTar do
+            for i = 1, #cTar do
+                if not UnitExists(cTar[i]) or UnitIsDeadOrGhost(cTar[i]) or
+                    not UnitCanAttack("player", cTar[i]) or
+                    (UnitIsCharmed(cTar[i]) and
+                        (select(2, GetInstanceInfo()) ~= "raid" or
+                            select(2, GetInstanceInfo()) ~= "party" or
+                            select(2, GetInstanceInfo()) ~= "scenario")) or
+                    (not UnitAffectingCombat(cTar[i]) and
+                        (select(2, GetInstanceInfo()) == "raid" or
+                            select(2, GetInstanceInfo()) == "party" or
+                            select(2, GetInstanceInfo()) == "scenario")) then
+                    table.remove(cTar, i)
+                    break
+                end
+            end
+        end
+
+        delcTar = {}
+        for j = 1, #cTar do
+            for i = 1, #cTar do
+                if (UnitGUID(cTar[i]) == UnitGUID(cTar[j]) and j ~= i) then
+                    table.remove(cTar, i)
+                    table.insert(cTar, i, "z")
+                end
+            end
+        end
+
+        for j = 1, #cTar do
+            for i = 1, #cTar do
+                if cTar[i] == "z" then
+                    table.remove(cTar, i)
+                    break
+                end
+            end
+        end
+
+    end
+
+    function getmembers()
+        members = {
+            "target", "focus", "mouseover", "player", "pet", "party1", "party2",
+            "party3", "party4", "party5", "raid1", "raid2", "raid3", "raid4",
+            "raid5", "raid6", "raid7", "raid8", "raid9", "raid10", "raid11",
+            "raid12", "raid13", "raid14", "raid15", "raid16", "raid17",
+            "raid18", "raid19", "raid20", "raid21", "raid22", "raid23",
+            "raid24", "raid25", "raid26", "raid27", "raid28", "raid29",
+            "raid30", "raid31", "raid32", "raid33", "raid34", "raid35",
+            "raid36", "raid37", "raid38", "raid39", "raid40", "party1pet",
+            "party2pet", "party3pet", "party4pet", "party5pet", "raid1pet",
+            "raid2pet", "raid3pet", "raid4pet", "raid5pet", "raid6pet",
+            "raid7pet", "raid8pet", "raid9pet", "raid10pet", "raid11pet",
+            "raid12pet", "raid13pet", "raid14pet", "raid15pet", "raid16pet",
+            "raid17pet", "raid18pet", "raid19pet", "raid20pet", "raid21pet",
+            "raid22pet", "raid23pet", "raid24pet", "raid25pet", "raid26pet",
+            "raid27pet", "raid28pet", "raid29pet", "raid30pet", "raid31pet",
+            "raid32pet", "raid33pet", "raid34pet", "raid35pet", "raid36pet",
+            "raid37pet", "raid38pet", "raid39pet", "raid40pet"
+        }
+
+        for j = 1, #members do
+            for i = 1, #members do
+                if not UnitExists(members[i]) or UnitIsDeadOrGhost(members[i]) or
+                    UnitCanAttack("player", members[i]) or
+                    UnitIsCharmed(members[i]) then
+                    table.remove(members, i)
+                    break
+                end
+            end
+        end
+
+    end
+
+    function HaveBuff(UnitID, SpellID, TimeLeft, Filter)
+        if not TimeLeft then TimeLeft = 0 end
+
+        if type(SpellID) == "number" then SpellID = {SpellID} end
+        for i = 1, #SpellID do
+            local spell, rank = GetSpellInfo(SpellID[i])
+            if spell then
+                local buff = select(7, UnitBuff(UnitID, spell, rank, Filter))
+                if buff and (buff == 0 or buff - GetTime() > TimeLeft) then
+                    return true
+                end
+            end
+        end
+    end
+
+    --------------------------------------------------
+
+    function HaveDebuff(UnitID, SpellID, TimeLeft, Filter)
+        if not TimeLeft then TimeLeft = 0 end
+
+        if type(SpellID) == "number" then SpellID = {SpellID} end
+        for i = 1, #SpellID do
+            local spell, rank = GetSpellInfo(SpellID[i])
+            if spell then
+                local debuff =
+                    select(7, UnitDebuff(UnitID, spell, rank, Filter))
+                if debuff and (debuff == 0 or debuff - GetTime() > TimeLeft) then
+                    return true
+                end
+            end
+        end
+    end
+
+    --------------------------------------------------
+
+    function CalculateHP(t)
+        if UnitExists(t) then
+            return (100 * (UnitHealth(t)) / UnitHealthMax(t))
+        else
+            return 100
+        end
+
+    end
+
+    function interrupt()
+        maxMSinterrupt = math.random(10, 90) -- start interrupt @ random number between (10-90)%
+
+        minMSinterrupt = 95 -- dont interrupt above 95 %
+
+        channelInterruptmin = math.random(15, 40) -- start interrupt @ random number between (10-36)%
+
+        channelInterruptmax = math.random(50, 80) -- dont interrupt above random number between (50,80) %
+
+        maxMSsrb = math.random(50, 70) -- start spellreflect/ground @ random number between (50-70)%
+
+        minMSsrb = 95 -- dont spellreflect/ground above 95 %
+
+    end
+
+    SetFunctions = true
+end
+
+if SetLocals == nil then
+
+    local aBuffs = {
+        107574, -- Avatar
+        51713, -- Shadow Dance
+        1719, -- Recklessness
+        51271, -- Pillar of Frost
+        49016, -- Unholy Frenzy
+        114049, -- Ascendance
+        31884, -- Avenging Wrath
+        12472, -- Icy Veins
+        12042, -- Arcane Power
+        113860, -- Dark Soul: Misery
+        113861, -- Dark Soul: Knowledge
+        113858, -- Dark Soul: Instability
+        102560, -- Incarnation: Chosen of Elune
+        102543, -- Incarnation: King of the Jungle
+        34692 -- The Beast Within
+    }
+
+    function attentionBuffs() return aBuffs end
+
+    local ccthatcanbreak = {
+        28272, -- Pig Poly  (cast)
+        118, -- Sheep Poly  (cast)
+        61305, -- Cat Poly  (cast)
+        61721, -- Rabbit Poly  (cast)
+        61780, -- Turkey Poly  (cast)
+        28271, -- Turtle Poly  (cast)
+        20066, -- Repentance  (cast)
+        115078, -- Paralysis
+        104045, -- Sleep (Metamorphosis)
+        115268, -- Mesmerize (Shivarra)
+        82691, -- Ring of Frost
+        6358, -- Seduction (Succubus)
+        2094, -- Blind
+        10326, -- Turn Evil
+        115750, -- Blinding Light
+        6770, -- Sap
+        33786, -- Cyclone
+        113506, --
+        99, -- Disorienting Roar
+        2637, -- Hibernate
+        113056, -- Intimidating Roar
+        3355, -- Freezing Trap
+        19503, -- Scatter Shot
+        19386, -- Wyvern Sting
+        126246, -- Lullaby
+        90337, -- Bad Manner
+        24394, -- Intimidation
+        126355, -- Paralyzing Quill
+        126423, -- Petrifying Gaze
+        50519, -- Sonic Blast
+        56626, -- Sting
+        96201, -- Web Wrap
+        82691, -- Ring of Frost
+        9484, -- Shackle Undead
+        88625, -- Holy Word: Chastise
+        115268, -- Mesmerize
+        6358, -- Seduction
+        20511 -- Intimidating Shout
+
+    }
+    function ccCanBreak() return ccthatcanbreak end
+
+    local InterruptChannel = {
+        1120, -- Drain Soul		(channeling cast)
+        12051, -- Evocation		(channeling cast)
+        115294, -- Mana Tea		(channeling cast)
+        115175, -- Soothing Mist	(channeling cast)
+        64843, -- Divine Hymn		(channeling cast)
+        64901, -- Hymn of Hope		(channeling cast)
+        115176, -- Zen Meditaion
+        103103, -- Malefic Grasp
+        605, -- Dominate Mind
+        15407, -- Mind Flay
+        129197, -- Insanity
+        47540 -- Penance
+    }
+    function channelInt() return InterruptChannel end
+
+    local EphysRAs = {
+        781, -- Disengage
+        1833, -- Cheap Shot
+        408, -- Kidney Shot
+        5211, -- Mighty Bash
+        107570 -- Storm Bolt
+
+    }
+    function EphysRA() return EphysRAs end
+
+    local EspellRAs = {
+        12043, -- Presence of Mind
+        16188, -- Ancestral Swiftness
+        132158 -- Nature Swiftness
+    }
+    function EspellRA() return EspellRAs end
+
+    local defBuffs = {
+        55233, -- Vampiric Blod
+        48792, -- Icebound Fortitude
+        102342, -- Ironbark
+        106922, -- Might of Ursoc
+        61336, -- Survival Instincts
+        19263, -- Deterrence
+        45438, -- Ice Block
+        108978, -- Alter Time
+        116849, -- Life Cocoon
+        1022, -- Hand of Protection
+        498, -- Divine protection
+        642, -- Divine Shield
+        33206, -- Pain Suppression
+        47788, -- Guardian Spirit
+        5277, -- Evasion
+        31224, -- Cloak of Shadows
+        30823, -- Shamanistic Rage
+        104773, -- Unending Resolve
+        110913, -- Dark Bargain
+        871, -- Shield Wall
+        118038 -- Die by the Sword
+    }
+    function defBuff() return defBuffs end
+
+    local spellRAs = {
+        33786, -- Cyclone
+        44572, -- Deep Freeze
+        2139, -- Counterspell
+        12598, -- Improved Counterspell
+        11129, -- Combustion
+        118, -- Polymorph
+        105593, -- Fist of Justice
+        853, -- Hammer of Justice
+        15487, -- Silence
+        51514, -- Hex
+        5782, -- Fear
+        17877, -- Shadowburn
+        19647, -- Spell Lock
+        103135, -- Spell Lock zwo
+        6789 -- Mortal Coil
+    }
+    function spellRA() return spellRAs end
+
+    local HealerphysRAs = {
+        19503, -- Scatter Shot
+        2094, -- Blind
+        408, -- Kidney Shot
+        107570, -- Storm Bolt
+        5211 -- Mighty Bash
+    }
+    function HealerphysRA() return HealerphysRAs end
+
+    local InterruptSpells = {
+        118, 116, 61305, 28271, 28272, 61780, 61721, 2637, 33786, 5185, 8936,
+        50464, 19750, 82326, 2061, 9484, 605, 8129, 331, 8004, 51505, 403,
+        77472, 51514, 5782, 1120, 48181, 30108, 33786, -- Cyclone		(cast)
+        28272, -- Pig Poly		(cast)
+        118, -- Sheep Poly		(cast)
+        61305, -- Cat Poly		(cast)
+        82691, 31687, 10326, 113792, -- Psyfiend Fear
+        61721, -- Rabbit Poly		(cast)
+        61780, -- Turkey Poly		(cast)
+        28271, -- Turtle Poly		(cast)
+        51514, -- Hex			(cast)
+        51505, -- Lava Burst		(cast)
+        339, -- Entangling Roots	(cast)
+        30451, -- Arcane Blast		(cast)
+        605, -- Dominate Mind		(cast)
+        20066, -- Repentance		(cast)
+        116858, -- Chaos Bolt		(cast)
+        113092, -- Frost Bomb		(cast)
+        8092, -- Mind Blast		(cast)
+        11366, -- Pyroblast		(cast)
+        48181, -- Haunt			(cast)
+        102051, -- Frost Jaw		(cast)
+        1064, -- Chain Heal		(cast)
+        77472, -- Greater Healing Wave	(cast)
+        8004, -- Healing Surge		(cast)
+        73920, -- Healing Rain		(cast)
+        51505, -- Lava Burst		(cast)
+        8936, -- Regrowth		(cast)
+        2061, -- Flash Heal		(cast)
+        2060, -- Greater Heal		(cast)
+        -- 32375, -- Mass Dispel		(cast)
+        2006, -- Resurrection		(cast)
+        5185, -- Healing Touch		(cast)
+        596, -- Prayer of Healing	(cast)
+        19750, -- Flash of Light	(cast)
+        635, -- Holy Light		(cast)
+        7328, -- Redemption		(cast)
+        2008, -- Ancestral Spirit	(cast)
+        50769, -- Revive		(cast)
+        2812, -- Denounce		(cast)
+        82327, -- Holy Radiance		(cast)
+        10326, -- Turn Evil		(cast)
+        82326, -- Divine Light		(cast)
+        82012, -- Repentance		(cast)
+        116694, -- Surging Mist		(cast)
+        124682, -- Enveloping Mist	(cast)
+        115151, -- Renewing Mist	(cast)
+        115310, -- Revival		(cast)
+        126201, -- Frost Bolt		(cast)
+        44614, -- Frostfire Bolt	(cast)
+        133, -- Fireball		(cast)
+        1513, -- Scare Beast		(cast)
+        982, -- Revive Pet		(cast)
+        111771, -- Demonic Gateway			(cast)
+        118297, -- Immolate				(cast)
+        3110, -- Imp Firebolt (cast)
+        124465 -- Vampiric Touch			(cast)
+        -- 32375 -- Mass Dispel				(cast) 
+    }
+    function castInt() return InterruptSpells end
+
+    local disarmDamage = {
+        51271, -- Pillar of Frost
+        49016, -- Unholy Frenzy
+        13750, -- Adrenaline Rush
+        79140, -- Vendetta
+        51713, -- Shadow Dance
+        34692, -- Beast Within
+        121471, -- Shadow Blades
+        31884, --  Avenging Wrath
+        107574, --  Avatar
+        12292, -- Bloodbath
+        1719, -- Recklessness
+        114049 -- Ascendance
+    }
+    function disarmdmg() return disarmDamage end
+    local fears = {
+        5782, -- fear
+        8122, -- psychic scream
+        10326, -- Turn Evil
+        5484, -- Howl of terror
+        5246, -- Intimidating shout
+        64044, -- Psychic horror
+        111397, -- Blood fear
+        113792, -- Pcychic terror
+        16508 -- Intimidating roar
+    }
+    function fear() return fears end
+    local immunDMG = {
+        33786, -- Cyclone
+        113506, -- Cyclone
+        45438, -- Ice Block
+        110700, -- Divine Shield (Paladin)
+        110696, -- Ice Block (Mage)
+        19263, -- Deterrence
+        45438, -- Ice Block
+        122464, -- Dematerialize
+        -- 122470,		-- touch of karma
+        642 -- Divine Shield
+    }
+    function iDMG() return immunDMG end
+    local dispelPoisonCC = {
+        19386, -- Wyvern Sting
+        113953 -- Paralysis (Paralytic Poison)
+    }
+    function dPoisonCC() return dispelPoisonCC end
+
+    local ccStun = {
+        108194, 115001, 91800, 22570, 5211, 9005, 102546, 110698, 118271, 44572,
+        120086, 119381, 119392, 46968, 105593, 853, 1833, 408, 113953, 30283,
+        89766, 7922, 105771
+    }
+    function ccStuns() return ccStun end
+
+    local dispelCurseCC = {
+        51514 -- Hex
+    }
+    function dCurseCC() return dispelCurseCC end
+    local dispelMagicCC = {
+        115001, -- Remorseless Winter
+        2637, -- Hibernate
+        110698, -- Hammer of Justice (Paladin)
+        117526, -- Binding Shot
+        3355, -- Freezing Trap
+        145206, -- Aqua Bomb
+        1513, -- Scare Beast
+        118271, -- Combustion Impact
+        44572, -- Deep Freeze
+        31661, -- Dragon's Breath
+        118, -- Polymorph
+        10326, -- Turn Evil
+        61305, -- Polymorph: Black Cat
+        28272, -- Polymorph: Pig
+        61721, -- Polymorph: Rabbit
+        61780, -- Polymorph: Turkey
+        28271, -- Polymorph: Turtle
+        82691, -- Ring of Frost
+        11129, -- Combustion
+        123393, -- Breath of Fire (Glyph of Breath of Fire)
+        115078, -- Paralysis
+        105421, -- Blinding Light
+        115752, -- Blinding Light (Glyph of Blinding Light)
+        105593, -- Fist of Justice
+        853, -- Hammer of Justice
+        119072, -- Holy Wrath
+        20066, -- Repentance
+        64044, -- Psychic Horror
+        8122, -- Psychic Scream
+        113792, -- Psychic Terror (Psyfiend)
+        9484, -- Shackle Undead
+        118905, -- Static Charge (Capacitor Totem)
+        5782, -- Fear
+        118699, -- Fear
+        5484, -- Howl of Terror
+        6789, -- Mortal Coil
+        30283, -- Shadowfury
+        104045, -- Sleep (Metamorphosis)
+        115268, -- Mesmerize (Shivarra)
+        113092, -- Frost Bomb
+        6358 -- Seduction (Succubus)
+    }
+    function dMagicCC() return dispelMagicCC end
+    local immunSpell = {
+        48707, -- Anti-Magic Shell
+        110570, -- Anti-Magic Shell (Death Knight)
+        110788, -- Cloak of Shadows (Rogue)
+        113002, -- Spell Reflection (Warrior)
+        115760, -- Glyph of Ice Block
+        131523, -- Zen Meditation
+        114239, -- Phantasm
+        31224, -- Cloak of Shadows
+        8178, -- Grounding Totem Effect (Grounding Totem)
+        23920, -- Spell Reflection
+        114028 -- Mass Spell Reflection
+    }
+    function iSpell() return immunSpell end
+    local immunSpells = {
+        -- 48707,	-- Anti-Magic Shell
+        -- 110570,	-- Anti-Magic Shell (Death Knight)
+        110788, -- Cloak of Shadows (Rogue)
+        113002, -- Spell Reflection (Warrior)
+        115760, -- Glyph of Ice Block
+        131523, -- Zen Meditation
+        114239, -- Phantasm
+        31224, -- Cloak of Shadows
+        8178, -- Grounding Totem Effect (Grounding Totem)
+        23920, -- Spell Reflection
+        114028 -- Mass Spell Reflection
+    }
+    function iSpells() return immunSpells end
+    local dispelSilence = {
+        47476, -- Strangulate
+        114238, -- Fae Silence (Glyph of Fae Silence)
+        34490, -- Silencing Shot
+        102051, -- Frostjaw (also a root)
+        55021, -- Silenced - Improved Counterspell
+        31935, -- Avenger's Shield
+        15487, -- Silence
+        24259, -- Spell Lock (Felhunter/Observer)
+        25046, -- Arcane Torrent (Energy)
+        28730, -- Arcane Torrent (Mana)
+        50613, -- Arcane Torrent (Runic Power)
+        69179, -- Arcane Torrent (Rage)
+        80483, -- Arcane Torrent (Focus)
+        129597 -- Arcane Torrent (Chi)
+    }
+    function dSilence() return dispelSilence end
+    local immunDispel = {
+        45438, -- Ice Block
+        110700, -- Divine Shield (Paladin)
+        110696, -- Ice Block (Mage)
+        45438, -- Ice Block
+        1022, -- Hand of Protection
+        642 -- Divine Shield
+    }
+    function iDispel() return immunDispel end
+    local dmgSilenceCC = {
+        47476, -- Strangulate
+        114238, -- Fae Silence (Glyph of Fae Silence)
+        81261, -- Solar Beam
+        102051, -- Frostjaw (also a root)
+        55021, -- Silenced - Improved Counterspell
+        12598, -- Improved Counterspell
+        31935, -- Avenger's Shield
+        15487, -- Silence
+        1330, -- Garrote - Silence
+        18498 -- Silenced - Gag Order
+    }
+    function dSilenceCC() return dmgSilenceCC end
+    local dmgCC = {
+        108194, -- Asphyxiate
+        115001, -- Remorseless Winter
+        91800, -- Gnaw
+        91797, -- Monstrous Blow (Dark Transformation)
+        102795, -- Bear Hug
+        22570, -- Maim
+        5211, -- Mighty Bash
+        9005, -- Pounce
+        102546, -- Pounce (Incarnation)
+        110698, -- Hammer of Justice (Paladin)
+        113004, -- Intimidating Roar [Fleeing in fear] (Warrior)
+        118271, -- Combustion Impact
+        44572, -- Deep Freeze
+        126451, -- Clash
+        122242, -- Clash (not sure which one is right)
+        119392, -- Charging Ox Wave
+        119381, -- Leg Sweep
+        105593, -- Fist of Justice
+        853, -- Hammer of Justice
+        88625, -- Holy Word: Chastise
+        64044, -- Psychic Horror
+        8122, -- Psychic Scream
+        113792, -- Psychic Terror (Psyfiend)
+        1833, -- Cheap Shot
+        408, -- Kidney Shot
+        113953, -- Paralysis (Paralytic Poison)
+        51514, -- Hex
+        118905, -- Static Charge (Capacitor Totem)
+        54786, -- Demonic Leap (Metamorphosis)
+        5782, -- Fear
+        118699, -- Fear
+        5484, -- Howl of Terror
+        6789, -- Mortal Coil
+        30283, -- Shadowfury
+        89766, -- Axe Toss (Felguard/Wrathguard)
+        7922, -- Charge Stun
+        118895, -- Dragon Roar
+        5246, -- Intimidating Shout (aoe)
+        132168, -- Shockwave
+        105771 -- Warbringer
+    }
+    function dCC() return dmgCC end
+    local dispelRoot = {
+        96294, -- Chains of Ice (Chilblains)
+        339, -- Entangling Roots
+        19975, -- Entangling Roots (Nature's Grasp)
+        102359, -- Mass Entanglement
+        110693, -- Frost Nova (Mage)
+        19185, -- Entrapment
+        50245, -- Pin (Crab)
+        54706, -- Venom Web Spray (Silithid)
+        4167, -- Web (Spider)
+        122, -- Frost Nova
+        109298, -- Narrow Escape
+        111340, -- Ice Ward
+        33395, -- Freeze
+        113275, -- Entangling Roots (Symbiosis)
+        123407, -- Spinning Fire Blossom
+        113275, -- Entangling Roots (Symbiosis)
+        87194, -- Glyph of Mind Blast
+        114404, -- Void Tendril's Grasp
+        115197, -- Partial Paralysis
+        64695, -- Earthgrab (Earthgrab Totem)
+        63685 -- Freeze (Frozen Power)
+    }
+    function dRoot() return dispelRoot end
+    local allRoots = {
+        91807, -- Shambling Rush (Dark Transformation)
+        45334, -- Immobilized (Wild Charge - Bear)
+        128405, -- Narrow Escape
+        116706, -- Disable
+        107566, -- Staggering Shout
+        96294, -- Chains of Ice (Chilblains)
+        339, -- Entangling Roots
+        19975, -- Entangling Roots (Nature's Grasp)
+        102359, -- Mass Entanglement
+        110693, -- Frost Nova (Mage)
+        19185, -- Entrapment
+        50245, -- Pin (Crab)
+        54706, -- Venom Web Spray (Silithid)
+        4167, -- Web (Spider)
+        122, -- Frost Nova
+        111340, -- Ice Ward
+        33395, -- Freeze
+        113275, -- Entangling Roots (Symbiosis)
+        123407, -- Spinning Fire Blossom
+        113275, -- Entangling Roots (Symbiosis)
+        87194, -- Glyph of Mind Blast
+        114404, -- Void Tendril's Grasp
+        115197, -- Partial Paralysis
+        64695, -- Earthgrab (Earthgrab Totem)
+        63685 -- Freeze (Frozen Power)
+    }
+    function aRoots() return allRoots end
+    local allSRS = {
+        96294, -- Chains of Ice (Chilblains)
+        45524, -- Chains of Ice
+        50435, -- Chilblains
+        115001, -- Remorseless Winter
+        115000, -- Remorseless Winter
+        91800, -- Gnaw
+        91797, -- Monstrous Blow (Dark Transformation)
+        91807, -- Shambling Rush (Dark Transformation)
+        102795, -- Bear Hug
+        22570, -- Maim
+        5211, -- Mighty Bash
+        9005, -- Pounce
+        102546, -- Pounce (Incarnation)
+        339, -- Entangling Roots
+        19975, -- Entangling Roots (Nature's Grasp)
+        45334, -- Immobilized (Wild Charge - Bear)
+        102359, -- Mass Entanglement
+        50259, -- Dazed (Wild Charge - Cat)
+        58180, -- Infected Wounds
+        61391, -- Typhoon
+        127797, -- Ursol's Vortex
+        110698, -- Hammer of Justice (Paladin)
+        110693, -- Frost Nova (Mage)
+        117526, -- Binding Shot
+        19185, -- Entrapment
+        109298, -- Narrow Escape
+        35101, -- Concussive Barrage
+        5116, -- Concussive Shot
+        61394, -- Frozen Wake (Glyph of Freezing Trap)
+        13810, -- Ice Trap
+        50245, -- Pin (Crab)
+        54706, -- Venom Web Spray (Silithid)
+        4167, -- Web (Spider)
+        50433, -- Ankle Crack (Crocolisk)
+        54644, -- Frost Breath (Chimaera)
+        118271, -- Combustion Impact
+        44572, -- Deep Freeze
+        122, -- Frost Nova
+        111340, -- Ice Ward
+        11113, -- Blast Wave - gone?
+        121288, -- Chilled (Frost Armor)
+        120, -- Cone of Cold
+        116, -- Frostbolt
+        44614, -- Frostfire Bolt
+        113092, -- Frost Bomb
+        31589, -- Slow
+        33395, -- Freeze
+        126451, -- Clash
+        122242, -- Clash (not sure which one is right)
+        119392, -- Charging Ox Wave
+        119381, -- Leg Sweep
+        116706, -- Disable
+        113275, -- Entangling Roots (Symbiosis)
+        123407, -- Spinning Fire Blossom
+        116095, -- Disable
+        118585, -- Leer of the Ox
+        123727, -- Dizzying Haze
+        123586, -- Flying Serpent Kick
+        105593, -- Fist of Justice
+        853, -- Hammer of Justice
+        110300, -- Burden of Guilt
+        63529, -- Dazed - Avenger's Shield
+        20170, -- Seal of Justice
+        113275, -- Entangling Roots (Symbiosis)
+        87194, -- Glyph of Mind Blast
+        114404, -- Void Tendril's Grasp
+        15407, -- Mind Flay
+        1833, -- Cheap Shot
+        408, -- Kidney Shot
+        115197, -- Partial Paralysis
+        3409, -- Crippling Poison
+        26679, -- Deadly Throw
+        119696, -- Debilitation
+        77505, -- Earthquake
+        118905, -- Static Charge (Capacitor Totem)
+        64695, -- Earthgrab (Earthgrab Totem)
+        63685, -- Freeze (Frozen Power)
+        3600, -- Earthbind (Earthbind Totem)
+        77478, -- Earthquake (Glyph of Unstable Earth)
+        8034, -- Frostbrand Attack
+        8056, -- Frost Shock
+        51490, -- Thunderstorm
+        30283, -- Shadowfury
+        18223, -- Curse of Exhaustion
+        47960, -- Shadowflame
+        89766, -- Axe Toss (Felguard/Wrathguard)
+        7922, -- Charge Stun
+        118895, -- Dragon Roar
+        132168, -- Shockwave
+        105771, -- Warbringer
+        107566, -- Staggering Shout
+        1715, -- Hamstring
+        129923, -- Hindering Strikes
+        12323 -- Piercing Howl
+    }
+
+    function aSRS() return allSRS end
+    local immuneSlow = {
+        1044, -- Hand of Freedom
+        47585, -- Dispersion
+        46924, -- Bladestorm
+        34692, -- Beast Within
+        108273, -- WindWalk
+        53271 -- masters call
+    }
+
+    function iSlow() return immuneSlow end
+
+    local reflectSpellsIDs = {
+        5782, -- Fear
+        118699, -- Fear
+        118, -- Polymorph
+        10326, --
+        61305, -- Polymorph: Black Cat
+        28272, -- Polymorph: Pig
+        61721, -- Polymorph: Rabbit
+        61780, -- Polymorph: Turkey
+        28271, -- Polymorph: Turtle
+        33786, -- Cyclone
+        113506, -- Cyclone
+        20066, -- Repentance
+        51514, -- Hex
+        605, -- Dominate Mind
+        14515
+
+    }
+    function reflectSpells() return reflectSpellsIDs end
+
+    local reflectSpellsDMGIDs = {
+        51505, -- Lava Burst
+        116858, -- Chaos Bolt
+        113092, -- Frost Bomb
+        48181, -- Haunt
+        78674, -- starsurge
+        102051 -- Frost Jaw
+    }
+    function reflectSpellsDMG() return reflectSpellsDMGIDs end
+
+    local groundSpellsIDs = {
+        51505, -- Lava Burst
+        116858, -- Chaos Bolt
+        113092, -- Frost Bomb
+        48181, -- Haunt
+        78674, -- starsurge
+        10326, 102051, -- Frost Jaw
+        117014, -- Elemental Blast
+        5782, -- Fear
+        118699, -- Fear
+        118, -- Polymorph
+        61305, -- Polymorph: Black Cat
+        28272, -- Polymorph: Pig
+        61721, -- Polymorph: Rabbit
+        61780, -- Polymorph: Turkey
+        28271, -- Polymorph: Turtle
+        33786, -- Cyclone
+        113506, -- Cyclone
+        20066, -- Repentance
+        51514, -- Hex
+        605, -- Dominate Mind
+        14515
+    }
+    function groundSpells() return groundSpellsIDs end
+
+    local reflectInstantSpellsMageIDs = {
+        122, -- Frost Nova
+        110693, -- Frost Nova (Mage)
+        33395, -- Freeze
+        63685, -- Freeze (Frozen Power)
+        111340 -- Ice Ward
+    }
+    function reflectSpellsMage() return reflectInstantSpellsMageIDs end
+
+    local reflectInstantSpellIDs = {
+        132158, -- Natures Swiftness
+        111397, 19975 -- Entangling Roots (Nature's Grasp)
+
+    }
+    function reflectInstantSpells() return reflectInstantSpellIDs end
+
+    SetLocals = true
+
+end
 
 local CORPSE_RETRIEVAL_DISTANCE = 40
 local ASSIGN_MACROS = true
@@ -42,7 +911,7 @@ EXIT_PROCESS_STATUS = 0
 -- Assigns various macros if user changes variable to true
 ASSIGN_MACROS_INITIALIZE = false
 -- Total number of data frames generated
-local NUMBER_OF_FRAMES = 50
+local NUMBER_OF_FRAMES = 80
 -- Set number of pixel rows
 local FRAME_ROWS = 1
 -- Size of data squares in px. Varies based on rounding errors as well as dimension size. Use as a guideline, but not 100% accurate.
@@ -64,6 +933,12 @@ local ITEM_ITERATION_FRAME_CHANGE_RATE = 6
 -- Action bar configuration for which spells are tracked
 local MAIN_MIN = 1
 local MAIN_MAX = 12
+local RIGHT_ONE_MIN = 25
+local RIGHT_ONE_MAX = 36
+local RIGHT_TWO_MIN = 37
+local RIGHT_TWO_MAX = 48
+local BOTTOM_RIGHT_MIN = 49
+local BOTTOM_RIGHT_MAX = 60
 local BOTTOM_LEFT_MIN = 61
 local BOTTOM_LEFT_MAX = 72
 
@@ -218,6 +1093,7 @@ function DataToColor:CreateFrames(n)
         -- Makes a 5px by 5px square. Might be 6x5 or 6x5.
         -- This is APPROXIMATE MATH. startingFrame is the x start, startingFramey is the "y" start (both starts are in regard to pixel position on the main frame)
         function MakePixelSquareArr(col, slot)
+            print(slot)
             if type(slot) ~= "number" or slot < 0 or slot >= NUMBER_OF_FRAMES then
                 self:error("Invalid slot value")
             end
@@ -230,7 +1106,7 @@ function DataToColor:CreateFrames(n)
         end
         -- Number of loops is based on the number of generated frames declared at beginning of script
 
-        for i = 1, 46 do MakePixelSquareArr({63 / 255, 0, 63 / 255}, i) end
+        for i = 1, 70 do MakePixelSquareArr({63 / 255, 0, 63 / 255}, i) end
         if not SETUP_SEQUENCE then
             MakePixelSquareArr(integerToColor(0), 0)
             -- The final data square, reserved for additional metadata.
@@ -269,6 +1145,12 @@ function DataToColor:CreateFrames(n)
             -- MakePixelSquareArr(integerToColor(self:bagSlots(3)), 39) -- Bag slot 3
             -- MakePixelSquareArr(integerToColor(self:bagSlots(4)), 40) -- Bag slot 4
 
+            getcTar()
+            getmembers()
+            interrupt()
+
+            self:friendToHeal()
+
             -- Start player health/energy/rage
             MakePixelSquareArr(integerToColor(self:getHealthMax("player")), 1)
             MakePixelSquareArr(integerToColor(self:getHealthCurrent("player")),
@@ -286,37 +1168,76 @@ function DataToColor:CreateFrames(n)
             MakePixelSquareArr(integerToColor(self:Base2Converter()), 10)
 
             -- Begin Spells section --
-            -- local spellDetails, makeSureItIsGood = GetActionInfo(1)
-            -- print(makeSureItIsGood)
-
+            local mainSlot = 10
             for i = MAIN_MIN, MAIN_MAX do
                 local actionType, globalID, subType, spellID = GetActionInfo(i)
                 if spellID ~= nil and spellID > 0 then
-                    MakePixelSquareArr(integerToColor(spellID), 10 + i)
+                    MakePixelSquareArr(integerToColor(spellID), mainSlot + i)
                 else
-                    MakePixelSquareArr(integerToColor(0), 10 + i)
+                    MakePixelSquareArr(integerToColor(0), mainSlot + i)
                 end
             end
 
-            local slot = 23
+            local bottomLeftSlot = 23
             for i = BOTTOM_LEFT_MIN, BOTTOM_LEFT_MAX do
                 local actionType, globalID, subType, spellID = GetActionInfo(i)
                 if spellID ~= nil and spellID > 0 then
-                    MakePixelSquareArr(integerToColor(spellID), slot)
-                    slot = slot + 1
+                    MakePixelSquareArr(integerToColor(spellID), bottomLeftSlot)
+                    bottomLeftSlot = bottomLeftSlot + 1
                 else
-                    MakePixelSquareArr(integerToColor(0), slot)
-                    slot = slot + 1
+                    MakePixelSquareArr(integerToColor(0), bottomLeftSlot)
+                    bottomLeftSlot = bottomLeftSlot + 1
                 end
             end
 
-            -- Start main action page (page 1)
-            MakePixelSquareArr(integerToColor(self:spellStatus()), 34) -- Has global cooldown active
-            MakePixelSquareArr(integerToColor(self:spellAvailable()), 35) -- Is the spell available to be cast?
-            MakePixelSquareArr(integerToColor(self:notEnoughMana()), 36) -- Do we have enough mana to cast that spell
-            MakePixelSquareArr(integerToColor(self:spellInRange()), 37) -- Are we in range?
+            local bottomRightSlot = 34
+            for i = BOTTOM_RIGHT_MIN, BOTTOM_RIGHT_MAX do
+                local actionType, globalID, subType, spellID = GetActionInfo(i)
+                if spellID ~= nil and spellID > 0 then
+                    MakePixelSquareArr(integerToColor(spellID), bottomRightSlot)
+                    bottomRightSlot = bottomRightSlot + 1
+                else
+                    MakePixelSquareArr(integerToColor(0), bottomRightSlot)
+                    bottomRightSlot = bottomRightSlot + 1
+                end
+            end
 
-            MakePixelSquareArr(integerToColor(self:GetDebuffs("Slow")), 43) -- Checks if target has slow
+            local rightOneSlot = 45
+            for i = RIGHT_ONE_MIN, RIGHT_ONE_MAX do
+                local actionType, globalID, subType, spellID = GetActionInfo(i)
+                if spellID ~= nil and spellID > 0 then
+                    MakePixelSquareArr(integerToColor(spellID), rightOneSlot)
+                    rightOneSlot = rightOneSlot + 1
+                else
+                    MakePixelSquareArr(integerToColor(0), rightOneSlot)
+                    rightOneSlot = rightOneSlot + 1
+                end
+            end
+
+            local rightTwoSlot = 56
+            for i = RIGHT_TWO_MIN, RIGHT_TWO_MAX do
+                local actionType, globalID, subType, spellID = GetActionInfo(i)
+                if spellID ~= nil and spellID > 0 then
+                    MakePixelSquareArr(integerToColor(spellID), rightTwoSlot)
+                    rightTwoSlot = rightTwoSlot + 1
+                else
+                    MakePixelSquareArr(integerToColor(0), rightTwoSlot)
+                    rightTwoSlot = rightTwoSlot + 1
+                end
+            end
+
+            local spellBinarySlot = 67
+            MakePixelSquareArr(integerToColor(self:spellStatus()),
+                               spellBinarySlot) -- Has global cooldown active
+            MakePixelSquareArr(integerToColor(self:spellAvailable()),
+                               spellBinarySlot + 1) -- Is the spell available to be cast?
+            -- MakePixelSquareArr(integerToColor(self:notEnoughMana()),
+            --                    spellBinarySlot + 2) -- Do we have enough mana to cast that spell
+            -- MakePixelSquareArr(integerToColor(self:spellInRange()),
+            --                    spellBinarySlot + 3) -- Are we in range?
+
+            MakePixelSquareArr(
+                fixedDecimalToColor(DataToColor:GetPlayerFacing()), 38) -- 3 The direction the player is facing in radians
             self:HandleEvents()
         end
         if SETUP_SEQUENCE then
@@ -398,37 +1319,6 @@ function DataToColor:CreateFrames(n)
     self.frames[1]:SetScript("OnUpdate", function() UpdateFrameColor(f) end)
 end
 
-local ActionBars = {
-    'Action', 'MultiBarBottomLeft', 'MultiBarBottomRight', 'MultiBarRight',
-    'MultiBarLeft'
-}
-function PrintActions()
-    for _, barName in pairs(ActionBars) do
-        for i = 1, 12 do
-            local button = _G[barName .. 'Button' .. i]
-            local slot = ActionButton_GetPagedID(button) or
-                             ActionButton_CalculateAction(button) or
-                             button:GetAttribute('action') or 0
-            if HasAction(slot) then
-                local actionName, _
-                local actionType, id, _, actionName = GetActionInfo(slot)
-                if actionType == 'macro' then
-                    _, _, id = GetMacroSpell(id)
-                end
-                if actionType == 'item' then
-                    actionName = GetItemInfo(id)
-                elseif actionType == 'spell' or (actionType == 'macro' and id) then
-                    actionName = GetSpellInfo(id)
-                end
-                if actionName then
-                    print(button:GetName(), actionType, (GetSpellLink(id)),
-                          actionName)
-                end
-            end
-        end
-    end
-end
-
 -- Use Astrolabe function to get current player position
 function DataToColor:GetCurrentPlayerPosition()
     -- local map = C_Map.GetBestMapForUnit("player")
@@ -444,21 +1334,22 @@ function DataToColor:Base2Converter()
     -- 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384
     return self:MakeIndexBase2(self:targetCombatStatus(), 0) +
                self:MakeIndexBase2(self:GetEnemyStatus(), 1) +
-               self:MakeIndexBase2(self:deadOrAlive(), 2) +
+               self:MakeIndexBase2(self:GetDebuffs("Corruption"), 2) +
                self:MakeIndexBase2(self:rangeChecker(), 3) +
-               self:MakeIndexBase2(self:needWater(), 4) +
+        --    self:MakeIndexBase2(self:IsFrozen(), 4) +
+               self:MakeIndexBase2(self:GetBuffs("Metamorphosis"), 4) +
                self:MakeIndexBase2(self:GetBuffs("Water Shield"), 5) +
-               self:MakeIndexBase2(self:GetBuffs("Lightning Shield"), 6) +
+               self:MakeIndexBase2(self:GetBuffs("Maelstrom Weapon", 5), 6) +
                self:MakeIndexBase2(self:GetBuffs("Rejuvenation"), 7) +
                self:MakeIndexBase2(self:GetBuffs("Power Word: Fortitude"), 8) +
-               self:MakeIndexBase2(self:GetInventoryBroken(), 9) +
-               self:MakeIndexBase2(self:IsPlayerFlying(), 10) +
-               self:MakeIndexBase2(self:GetDebuffs("Slow"), 11) +
-               self:MakeIndexBase2(self:GetBuffs("Inner Fire"), 12) +
-               self:MakeIndexBase2(self:GetBuffs("Sudden Death"), 13) +
+               self:MakeIndexBase2(self:GetBuffs("Ice Armor"), 9) +
+               self:MakeIndexBase2(self:GetBuffs("Mark of the Wild"), 10) +
+               self:MakeIndexBase2(self:GetBuffs("Lifebloom", 3), 11) +
+               self:MakeIndexBase2(self:GetBuffs("Fingers of Frost"), 12) +
+               self:MakeIndexBase2(self:GetBuffs("Earth Shield"), 13) +
                self:MakeIndexBase2(self:playerCombatStatus(), 14) +
                self:MakeIndexBase2(self:IsTargetOfTargetPlayer(), 15) +
-               self:MakeIndexBase2(self:needManaGem(), 16) +
+               self:MakeIndexBase2(self:playerIsMoving(), 16) +
                self:MakeIndexBase2(self:ProcessExitStatus(), 17)
 end
 
@@ -554,6 +1445,49 @@ function DataToColor:getPlayerLevel() return UnitLevel("player") end
 -- Finds the total amount of money.
 function DataToColor:getMoneyTotal() return GetMoney() end
 
+function DataToColor:targetToInterrupt()
+    for i = 1, #cTar do
+        -- if UnitExists(cTar[i]) and UnitCanAttack("player", cTar[i]) then
+        if UnitExists(cTar[i]) then
+            print("Unit Exists: ", cTar[i])
+            local castName, _, _, _, castStartTime, castEndTime, _, _,
+                  castInterruptable = UnitCastingInfo(cTar[i])
+            print(castName)
+            for _, v in ipairs(castInt()) do
+                if GetSpellInfo(v) == castName and castInterruptable == false then
+                    local timeSinceStart =
+                        (GetTime() * 1000 - castStartTime) / 1000 +
+                            (tonumber((select(3, GetNetStats()) +
+                                          select(4, GetNetStats())) / 2000))
+                    local timeLeft = ((GetTime() * 1000 - castEndTime) * -1) /
+                                         1000
+                    local castTime = castEndTime - castStartTime
+                    local currentPercent = timeSinceStart / castTime * 100000
+                    if currentPercent > maxMSinterrupt and currentPercent <
+                        minMSinterrupt then
+                        local targetToInterrupt = cTar[i]
+                        print(targetToInterrupt)
+                        return targetToInterrupt
+                    end
+                end
+            end
+        end
+    end
+    -- print("no target to interrupt")
+    return 0
+end
+
+function DataToColor:friendToHeal()
+    for i = 1, #members do
+        if CalculateHP(members[i]) < 85 then
+            print(members[i])
+            return i
+        end
+    end
+
+    return 0
+end
+
 -- Finds if target is attackable with the fireball which is the longest distance spell.
 -- Fireball or a spell with equivalent range must be in slot 2 for this to work
 function DataToColor:isInRange()
@@ -567,12 +1501,12 @@ function DataToColor:isInRange()
 end
 
 function DataToColor:rangeChecker()
-    -- local meleeChecker = rc:GetHarmChecker(rc.MeleeRange) -- 5 yds
-    -- if meleeChecker("target") then
-    --     return 1
-    -- else
-    --     return 0
-    -- end
+    local meleeChecker = rc:GetHarmChecker(rc.MeleeRange) -- 5 yds
+    if meleeChecker("target") then
+        return 1
+    else
+        return 0
+    end
     return 0
 end
 
@@ -636,6 +1570,24 @@ function DataToColor:spellStatus()
             statusCount = statusCount + (2 ^ (i - 49))
         end
     end
+    for i = BOTTOM_RIGHT_MIN, BOTTOM_RIGHT_MAX do
+        local status, b, available = GetActionCooldown(i)
+        if status == 0 and available == 1 then
+            statusCount = statusCount + (2 ^ (i - 49))
+        end
+    end
+    for i = RIGHT_ONE_MIN, RIGHT_ONE_MAX do
+        local status, b, available = GetActionCooldown(i)
+        if status == 0 and available == 1 then
+            statusCount = statusCount + (2 ^ (i - 49))
+        end
+    end
+    for i = RIGHT_TWO_MIN, RIGHT_TWO_MAX do
+        local status, b, available = GetActionCooldown(i)
+        if status == 0 and available == 1 then
+            statusCount = statusCount + (2 ^ (i - 49))
+        end
+    end
     return statusCount
 end
 -- Finds if spell is equipped
@@ -653,44 +1605,62 @@ function DataToColor:spellAvailable()
             availability = availability + (2 ^ (i - 49))
         end
     end
+    for i = BOTTOM_RIGHT_MIN, BOTTOM_RIGHT_MAX do
+        local _, _, available = GetActionCooldown(i)
+        if available == 1 then
+            availability = availability + (2 ^ (i - 49))
+        end
+    end
+    for i = RIGHT_ONE_MIN, RIGHT_ONE_MAX do
+        local _, _, available = GetActionCooldown(i)
+        if available == 1 then
+            availability = availability + (2 ^ (i - 49))
+        end
+    end
+    for i = RIGHT_TWO_MIN, RIGHT_TWO_MAX do
+        local _, _, available = GetActionCooldown(i)
+        if available == 1 then
+            availability = availability + (2 ^ (i - 49))
+        end
+    end
     return availability
 end
 
--- Returns base two representation of if we have enough mana to cast a specified spells. Slots 1-11 and slots 61-71
-function DataToColor:notEnoughMana()
-    local notEnoughMana = 0
-    -- Loops through main action bar slots 1-12
-    for i = MAIN_MIN, MAIN_MAX do
-        local _, notEnough = IsUsableAction(i)
-        if notEnough == 1 then
-            notEnoughMana = notEnoughMana + (2 ^ (i - 1))
-        end
-    end
-    -- Loops through bottom left action bar slots 61-72
-    for i = BOTTOM_LEFT_MIN, BOTTOM_LEFT_MAX do
-        local _, notEnough = IsUsableAction(i)
-        if notEnough == 1 then
-            notEnoughMana = notEnoughMana + (2 ^ (i - 49))
-        end
-    end
-    return notEnoughMana
-end
+-- -- Returns base two representation of if we have enough mana to cast a specified spells. Slots 1-11 and slots 61-71
+-- function DataToColor:notEnoughMana()
+--     local notEnoughMana = 0
+--     -- Loops through main action bar slots 1-12
+--     for i = MAIN_MIN, MAIN_MAX do
+--         local _, notEnough = IsUsableAction(i)
+--         if notEnough == 1 then
+--             notEnoughMana = notEnoughMana + (2 ^ (i - 1))
+--         end
+--     end
+--     -- Loops through bottom left action bar slots 61-72
+--     for i = BOTTOM_LEFT_MIN, BOTTOM_LEFT_MAX do
+--         local _, notEnough = IsUsableAction(i)
+--         if notEnough == 1 then
+--             notEnoughMana = notEnoughMana + (2 ^ (i - 49))
+--         end
+--     end
+--     return notEnoughMana
+-- end
 
--- Returns base two representation of if we are in range to cast a specified spells. Slots 1-11 and slots 61-71
-function DataToColor:spellInRange()
-    local spellInRange = 0
-    -- Loops through main action bar slots 1-12
-    for i = MAIN_MIN, MAIN_MAX do
-        local inRange = IsActionInRange(i)
-        if inRange == 1 then spellInRange = spellInRange + (2 ^ (i - 1)) end
-    end
-    -- Loops through bottom left action bar slots 61-72
-    for i = BOTTOM_LEFT_MIN, BOTTOM_LEFT_MAX do
-        local inRange = IsActionInRange(i)
-        if inRange == 1 then spellInRange = spellInRange + (2 ^ (i - 49)) end
-    end
-    return spellInRange
-end
+-- -- Returns base two representation of if we are in range to cast a specified spells. Slots 1-11 and slots 61-71
+-- function DataToColor:spellInRange()
+--     local spellInRange = 0
+--     -- Loops through main action bar slots 1-12
+--     for i = MAIN_MIN, MAIN_MAX do
+--         local inRange = IsActionInRange(i)
+--         if inRange == 1 then spellInRange = spellInRange + (2 ^ (i - 1)) end
+--     end
+--     -- Loops through bottom left action bar slots 61-72
+--     for i = BOTTOM_LEFT_MIN, BOTTOM_LEFT_MAX do
+--         local inRange = IsActionInRange(i)
+--         if inRange == 1 then spellInRange = spellInRange + (2 ^ (i - 49)) end
+--     end
+--     return spellInRange
+-- end
 
 -- Function to tell how many bag slots we have in each bag
 function DataToColor:bagSlots(bag)
@@ -715,6 +1685,47 @@ function DataToColor:GetDebuffs(debuff)
         if db ~= nil then if string.find(db, debuff) then return 1 end end
     end
     return 0
+end
+
+function DataToColor:HaveBuff(UnitID, SpellID, TimeLeft, Filter)
+    if not TimeLeft then TimeLeft = 0 end
+
+    if type(SpellID) == "number" then SpellID = {SpellID} end
+    for i = 1, #SpellID do
+        local spell, rank = GetSpellInfo(SpellID[i])
+        if spell then
+            local buff = select(7, UnitBuff(UnitID, spell, rank, Filter))
+            if buff and (buff == 0 or buff - GetTime() > TimeLeft) then
+                return true
+            end
+        end
+    end
+end
+
+function DataToColor:HaveDebuff(UnitID, SpellID, TimeLeft, Filter)
+    if not TimeLeft then TimeLeft = 0 end
+
+    if type(SpellID) == "number" then SpellID = {SpellID} end
+    for i = 1, #SpellID do
+        local spell, rank = GetSpellInfo(SpellID[i])
+        if spell then
+            local debuff = select(7, UnitDebuff(UnitID, spell, rank, Filter))
+            if debuff and (debuff == 0 or debuff - GetTime() > TimeLeft) then
+                return true
+            end
+        end
+    end
+end
+
+function DataToColor:IsFrozen()
+    local fof = DataToColor:HaveBuff("player", 44544, 0)
+
+    if fof or
+        DataToColor:HaveDebuff("target", {122, 33395, 44572, 113724, 102051}, 0) then
+        return 1
+    else
+        return 0
+    end
 end
 
 -- Returns zone name
@@ -837,6 +1848,17 @@ function DataToColor:GetEnemyStatus()
 end
 
 -- Checks if we are currently alive or are a ghost/dead.
+function DataToColor:playerIsMoving()
+    local moving = GetUnitSpeed("player")
+
+    if moving > 0 then
+        return 1
+    else
+        return 0
+    end
+end
+
+-- Checks if we are currently alive or are a ghost/dead.
 function DataToColor:deadOrAlive()
     local deathStatus = UnitIsDeadOrGhost("player")
     if deathStatus then
@@ -866,10 +1888,27 @@ function DataToColor:playerCombatStatus()
 end
 
 -- Iterates through index of buffs to see if we have the buff is passed in
-function DataToColor:GetBuffs(buff)
+function DataToColor:GetBuffs(buff, stacks)
     for i = 1, 20 do
-        local b = UnitBuff("player", i);
-        if b ~= nil then if string.find(b, buff) then return 1 end end
+        local b, rank, icon, count = UnitBuff("player", i);
+        if b ~= nil then
+            if string.find(b, buff) then
+                if stacks == nil or count >= stacks then return 1 end
+            end
+        end
+    end
+    return 0
+end
+
+-- Iterates through index of buffs to see if we have the buff is passed in
+function DataToColor:GetAllBuffs(buff, stacks)
+    for i = 1, 20 do
+        local b, rank, icon, count = UnitBuff("player", i);
+        if b ~= nil then
+            if string.find(b, buff) then
+                if stacks == nil or count >= stacks then return 1 end
+            end
+        end
     end
     return 0
 end
@@ -916,15 +1955,6 @@ function DataToColor:needManaGem()
         return 0
     end
 end
-
--- function DataToColor:IsTargetInterruptible()
---     for i=1, #cTar do
---         if UnitExists(cTar[i]) then
---             local castName, _, _, _, castStartTime, castEndTime, _, _, castInterruptable = UnitCastingInfo(cTar[i])
---             for _, v in ipairs(castInt()) do
---                 if GetSpellInfo(v) == castName and castInterruptable == false then
-
--- end
 
 -- Returns true if target of our target is us
 function DataToColor:IsTargetOfTargetPlayer()
@@ -1149,4 +2179,3 @@ function DataToColor:ResurrectPlayer()
         end
     end
 end
-

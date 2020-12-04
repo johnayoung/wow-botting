@@ -14,7 +14,8 @@ function configureDataCoords() {
   const metaData = parseInt(metadataColor, 16);
 
   return new Promise((resolve, reject) => {
-    const numberOfFrames = parseInt(metaData.toString().slice(-2));
+    // const numberOfFrames = parseInt(metaData.toString().slice(-2));
+    const numberOfFrames = 100;
     const frameRows = parseInt(metaData.toString().slice(-5, -3));
     // Size of data frames. Only needs a rough estimation for the bitmap. Resolution and rounding alters dimensions, so there is a multiplier of 2 to correct for potentially missed pixels.
     const cellSize = parseInt(metaData.toString().slice(-7, -5)) * 2;
@@ -38,6 +39,7 @@ function configureDataCoords() {
         y: bitMapY1,
       },
     ];
+    console.log({ bitMapX1, bitMapY1, bitMapX2, bitMapY2 });
     // Saving bitmap
     const dataBitmap = robot.screen.capture(
       bitMapX1,

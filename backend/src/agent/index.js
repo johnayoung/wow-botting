@@ -16,7 +16,7 @@ function performPlan(plan, mapping) {
 
   actions.forEach((actionName) => {
     const { act, log } = actionConfig[actionName];
-    const key = mapping[actionName];
+    const key = mapping[actionName].keybind;
 
     log(logger);
 
@@ -48,7 +48,8 @@ function determineGoal(state, goals) {
 
 const defaultRotation = require(`./profiles/mage`);
 async function run({ state, rotation = defaultRotation }) {
-  const { mapping, actions, goals } = rotation;
+  const { spells } = state;
+  const { goals } = rotation;
 
   const goal = determineGoal(state, goals);
 
@@ -57,14 +58,14 @@ async function run({ state, rotation = defaultRotation }) {
   // return setPlan(state, actions, goal);
   if (title === 'World of Warcraft') {
     try {
-      const plan = setPlan(state, actions, goal);
+      const plan = setPlan(state, spells, goal);
 
       if (!plan) {
         logger.info('No plan. Idling.');
         return null;
       }
 
-      return performPlan(plan, mapping);
+      return performPlan(plan, spells);
     } catch (e) {
       logger.error(e);
       return e;

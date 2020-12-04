@@ -11,11 +11,8 @@ class Node {
   }
 }
 
-const mapActions = (actions) => {
-  actions = merge({}, actions);
-
-  return Object.keys(actions).map((key) => ({ ...actions[key], key }));
-};
+const mapActions = (actions) =>
+  Object.keys(actions).map((key) => ({ ...actions[key], key }));
 
 const buildGraph = (parent, leaves, actions, goal) => {
   actions.forEach((action) => {
@@ -23,7 +20,10 @@ const buildGraph = (parent, leaves, actions, goal) => {
       const nextState = action.effect(merge({}, parent.state));
       const cost = parent.cost + action.cost(nextState);
       const node = new Node(parent, cost, nextState, action);
-      if (goal.validate(parent.state, nextState)) {
+
+      const validate = goal.validate(parent.state, nextState);
+
+      if (validate) {
         leaves.add(node);
       } else {
         const subset = actions.filter((a) => a.key !== action.key);

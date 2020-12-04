@@ -7,10 +7,10 @@ module.exports = {
     s.health < 10 &&
     s.mana > 5,
   effect: (s) => {
-    s.targetDead = true;
+    s.targetIsDead = true;
     return s;
   },
   cost: (s) => 1,
   act: (k) => robot.keyTap(k),
-  log: (l) => l.info('Casting Rejuvenation'),
+  log: (l) => l.info('Casting Desperate Prayer'),
 };

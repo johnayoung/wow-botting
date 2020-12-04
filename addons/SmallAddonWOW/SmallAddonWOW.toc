@@ -1,0 +1,12 @@
+## Author: HRbisCOSVVftv
+## Interface: 90002
+## Title: SmallAddonWOW
+#@no-lib-strip@
+Libs\LibStub.lua
+Libs\LibRangeCheck-2.0.lua
+Libs\LibSpellRange-1.0.lua
+Libs\DRData-1.0.lua
+Libs\wRCNPFCOIn.lua
+Libs\ELYabfMprs.lua
+#@end-no-lib-strip@
+SmallAddonWOW.lua
