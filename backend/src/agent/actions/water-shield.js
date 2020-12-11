@@ -2,8 +2,8 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.spell.metamorphosis.active !== true &&
-    s.spell.waterShield.active === false &&
+    !s.buffs.metamorphosis &&
+    !s.buffs.waterShield &&
     s.spells.waterShield.castable &&
     s.spells.waterShield.equipped,
   effect: (s) => {

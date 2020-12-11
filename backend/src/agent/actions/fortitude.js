@@ -4,6 +4,7 @@ const _ = require('lodash');
 module.exports = {
   condition: (s) =>
     !s.lowMana &&
+    !s.playerInCombat &&
     !s.buffs.powerWordFortitude &&
     s.spells.powerWordFortitude.castable &&
     s.spells.powerWordFortitude.equipped,

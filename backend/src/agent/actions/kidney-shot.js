@@ -12,7 +12,7 @@ module.exports = {
     s.targetIsDead = true;
     return s;
   },
-  cost: (s) => 9,
+  cost: (s) => 6,
   act: (k) => robot.keyTap(k),
   log: (l) => l.info('Casting Kidney Shot'),
 };

@@ -9,7 +9,7 @@ Ascended = LibStub("AceAddon-3.0"):NewAddon("AceConsole-3.0", "AceEvent-3.0",
 local rc = LibStub("LibRangeCheck-2.0")
 
 -- Config Variables
-local NUMBER_OF_FRAMES = 100
+local NUMBER_OF_FRAMES = 120
 local SETUP_SEQUENCE = false
 local FRAME_ROWS = 1
 local CELL_SIZE = 3 -- Size of data squares in px.
@@ -29,12 +29,33 @@ local BOTTOM_RIGHT_MIN = 49
 local BOTTOM_RIGHT_MAX = 60
 local BOTTOM_LEFT_MIN = 61
 local BOTTOM_LEFT_MAX = 72
+local BATTLESTANCE_MIN = 73
+local BATTLESTANCE_MAX = 84
 
 state = {}
 healthAndPower = {
     "healthMax", "healthCurrent", "manaMax", "manaCurrent", "energyMax",
     "energyCurrent", "comboPoints", "rageMax", "rageCurrent"
 }
+
+if Settings == nil then
+    function interrupt()
+        maxMSinterrupt = math.random(10, 90) -- start interrupt @ random number between (10-90)%
+
+        minMSinterrupt = 95 -- dont interrupt above 95 %
+
+        channelInterruptmin = math.random(15, 40) -- start interrupt @ random number between (10-36)%
+
+        channelInterruptmax = math.random(50, 80) -- dont interrupt above random number between (50,80) %
+
+        maxMSsrb = math.random(50, 70) -- start spellreflect/ground @ random number between (50-70)%
+
+        minMSsrb = 95 -- dont spellreflect/ground above 95 %
+
+    end
+
+    Settings = true
+end
 
 function StartSetup()
     if not SETUP_SEQUENCE then
@@ -179,6 +200,10 @@ function Ascended:CreateFrames(n)
         -- STATE GENERATION GOES HERE ------------------------------------------
         ----------------------------------------------------------------------
         if not SETUP_SEQUENCE then
+
+            -- Setup functions go here
+            interrupt()
+
             MakePixelSquareArr(integerToColor(0), 0)
             -- The final data square, reserved for additional metadata.
             MakePixelSquareArr(integerToColor(2000001), NUMBER_OF_FRAMES - 1)
@@ -213,7 +238,23 @@ function Ascended:CreateFrames(n)
             end
             startFrame = startFrame + #playerDebuffs
 
+            -- Target debuffs
+            local targetDebuffs = self:getUnitDebuffs("target")
+            for i = 1, #targetDebuffs do
+                local tdebuff = targetDebuffs[i]
+                local frame = startFrame + i - 1
+                MakePixelSquareArr(integerToColor(tdebuff), frame)
+            end
+            startFrame = startFrame + #targetDebuffs
+
             -- Player abilities
+            -- local bar1 = getActionBarSpellIds(BATTLESTANCE_MIN)
+            -- for i = 1, #bar1 do
+            --     local spell = bar1[i]
+            --     local frame = startFrame + i - 1
+            --     MakePixelSquareArr(integerToColor(spell), frame)
+            -- end
+            -- startFrame = startFrame + #bar1
             local bar1 = getActionBarSpellIds(MAIN_MIN)
             for i = 1, #bar1 do
                 local spell = bar1[i]
@@ -257,6 +298,11 @@ function Ascended:CreateFrames(n)
             local misc = miscellaneousBinaries()
             MakePixelSquareArr(integerToColor(misc), startFrame)
             startFrame = startFrame + 1
+
+            -- -- Interruptible Target
+            -- local targetsToInterrupt = getInterruptTargets()
+            -- MakePixelSquareArr(integerToColor(targetsToInterrupt), startFrame)
+            -- startFrame = startFrame + 1
 
         end
 
@@ -418,6 +464,34 @@ if GameBinaries == nil then
         end
     end
 
+    function haveBuff(UnitID, SpellID, TimeLeft, Filter)
+        if not TimeLeft then TimeLeft = 0 end
+
+        if type(SpellID) == "number" then SpellID = {SpellID} end
+        for i = 1, #SpellID do
+            local spell, rank = GetSpellInfo(SpellID[i])
+            if spell then
+                local buff = select(7, UnitBuff(UnitID, spell, rank, Filter))
+                if buff and (buff == 0 or buff - GetTime() > TimeLeft) then
+                    return true
+                end
+            end
+        end
+    end
+
+    function getActiveBuffWithStacks(unitId, buff, stacks)
+        for i = 1, 20 do
+            local b, rank, icon, count = UnitBuff(unitId, i);
+            if b ~= nil then
+                if string.find(b, buff) then
+                    if stacks == nil or count >= stacks then
+                        return 1
+                    end
+                end
+            end
+        end
+    end
+
     -- Returns bitmask values.
     -- MakeIndexBase2(true, 4) --> returns 16
     -- MakeIndexBase2(false, 9) --> returns 0
@@ -433,7 +507,6 @@ if GameBinaries == nil then
     function memberStatus()
         local count = 0
         for i = 1, #members do
-            -- print(dump(members))
             local status = getUnitStatus(members[i])
             local value = makeIndexBase2(status, i)
             count = count + value
@@ -445,7 +518,6 @@ if GameBinaries == nil then
     function memberCombatStatus()
         local count = 0
         for i = 1, #members do
-            -- print(dump(members))
             local combatStatus = getUnitCombatStatus(members[i])
             local value = makeIndexBase2(combatStatus, i)
             count = count + value
@@ -467,11 +539,16 @@ if GameBinaries == nil then
     function miscellaneousBinaries()
         local count = 0
 
-        local misc = {{name = "hasWeaponEnchant", action = hasWeaponEnchant}}
+        local getMaelstromStacks = getActiveBuffWithStacks("player",
+                                                           "Maelstrom Weapon", 5)
+
+        local misc = {
+            {name = "hasWeaponEnchant", action = hasWeaponEnchant()},
+            {name = "maelstromWeapon", action = getMaelstromStacks}
+        }
 
         for i = 1, #misc do
-            local handler = misc[i].action()
-            print(handler)
+            local handler = misc[i].action
             local value = makeIndexBase2(handler, i)
             count = count + value
         end
@@ -516,6 +593,15 @@ if HealthAndPower == nil then
     function getHealthCurrent(unit)
         local health = UnitHealth(unit)
         return health
+    end
+
+    function calculateHP(t)
+        if UnitExists(t) then
+            return (100 * (UnitHealth(t)) / UnitHealthMax(t))
+        else
+            return 100
+        end
+
     end
 
     -- Finds maximum amount of mana a character can store
@@ -566,70 +652,6 @@ if HealthAndPower == nil then
     HealthAndPower = true
 end
 
-if PlayerAbilities == nil then
-    function getCastable(slot)
-        local status, b, available = GetActionCooldown(slot)
-        if status == 0 and available == 1 then
-            return true
-        else
-            return false
-        end
-    end
-
-    function getSpellHasResource(slot)
-        local isUsable, notEnoughMana = IsUsableAction(slot)
-
-        if slot == 8 then
-            -- print("IsUsable: " .. isUsable)
-            -- print("Not Enough: " .. notEnoughMana)
-        end
-
-        if notEnough == 1 then
-            return false
-        else
-            return true
-        end
-    end
-
-    function getActionBarSpellIds(start)
-        local numberOfSlots = 12
-        local numberOfLoops = start + numberOfSlots - 1
-        local barAbilities = {}
-
-        for i = start, numberOfLoops do
-            local actionType, globalID, subType, spellID = GetActionInfo(i)
-            local isKnown = spellID ~= nil and spellID > 0
-            local isCastable = getCastable(i)
-            local hasResource = getSpellHasResource(i)
-
-            -- if i == 8 then print(spellID) end
-            -- if i == 8 then print(hasResource) end
-
-            if isKnown and isCastable and hasResource then
-                table.insert(barAbilities, spellID)
-            else
-                table.insert(barAbilities, 0)
-            end
-        end
-        return barAbilities
-    end
-
-    function getActionBarSpellStatus(start)
-        local numberOfSlots = 12
-        local numberOfLoops = start + numberOfSlots
-        local statusCount = 0
-        for i = start, numberOfLoops do
-            -- Make spellAvailable and spellStatus one function in future
-            local status, b, available = GetActionCooldown(i)
-            if status == 0 and available == 1 then
-                statusCount = statusCount + (2 ^ (i - start))
-            end
-        end
-        return statusCount
-    end
-    PlayerAbilities = true
-end
-
 function Ascended:getHealthAndPower(unitId)
     local healthAndPower = {}
 
@@ -653,19 +675,122 @@ function Ascended:getHealthAndPower(unitId)
     return healthAndPower
 end
 
+if PlayerAbilities == nil then
+    function getCastable(slot)
+        local status, b, available = GetActionCooldown(slot)
+        if status == 0 and available == 1 then
+            return true
+        else
+            return false
+        end
+    end
+
+    function getSpellHasResource(slot)
+        local isUsable, notEnoughMana = IsUsableAction(slot)
+
+        if notEnough == 1 then
+            return false
+        else
+            return true
+        end
+    end
+
+    function getActionBarSpellIds(start)
+        local numberOfSlots = 12
+        local numberOfLoops = start + numberOfSlots - 1
+        local barAbilities = {}
+
+        for i = start, numberOfLoops do
+            local actionType, globalID, subType, spellID = GetActionInfo(i)
+            local isKnown = spellID ~= nil and spellID > 0
+            local isCastable = getCastable(i)
+            local hasResource = getSpellHasResource(i)
+
+            if isKnown and isCastable and hasResource then
+                table.insert(barAbilities, spellID)
+            else
+                table.insert(barAbilities, 0)
+            end
+        end
+        return barAbilities
+    end
+
+    function getActionBarSpellStatus(start)
+        local numberOfSlots = 12
+        local numberOfLoops = start + numberOfSlots
+        local statusCount = 0
+        for i = start, numberOfLoops do
+            -- Make spellAvailable and spellStatus one function in future
+            local status, b, available = GetActionCooldown(i)
+            if status == 0 and available == 1 then
+                statusCount = statusCount + (2 ^ (i - start))
+            end
+        end
+        return statusCount
+    end
+
+    function getInterruptTargets()
+        local count = 0
+        local ddislow = 0
+        local interrupthealer = 0
+        -- Check that dmg is low enough
+        for i = 1, #cTar do
+            if UnitExists(cTar[i]) and
+                (100 * UnitHealth(cTar[i]) / UnitHealthMax(cTar[i])) < 80 then
+                ddislow = 1
+            end
+        end
+
+        for i = 1, #cTar do
+            local isHostile = UnitExists(cTar[i]) and ddislow == 1 and
+                                  UnitCanAttack("player", cTar[i])
+            if isHostile then
+                local castName, _, _, castStartTime, castEndTime, _, _,
+                      castInterruptable = UnitCastingInfo(cTar[i])
+                print(cTar[i])
+                print(castStartTime)
+                for _, v in ipairs(castInt()) do
+                    local timeSinceStart =
+                        (GetTime() * 1000 - castStartTime) / 1000 +
+                            (tonumber((select(3, GetNetStats()) +
+                                          select(4, GetNetStats())) / 2000))
+                    local timeLeft = ((GetTime() * 1000 - castEndTime) * -1) /
+                                         1000
+                    local castTime = castEndTime - castStartTime
+                    local currentPercent = timeSinceStart / castTime * 100000
+                    if currentPercent > maxMSinterrupt and currentPercent <
+                        minMSinterrupt then
+                        local status = 1
+                        local value = makeIndexBase2(status, i)
+                        count = count + value
+                    end
+                end
+            end
+        end
+
+        ddislow = 0
+        interrupthealer = 0
+
+        return count
+    end
+
+    PlayerAbilities = true
+end
+
 function Ascended:getUnitBuffs(unitId)
-    local playerBuffs = {}
+    local unitBuffs = {}
+    local unitStacks = {}
     for i = 1, NUMBER_OF_BUFFS do
         local name, rank, icon, count, debuffType, duration, expirationTime,
               unitCaster, isStealable, shouldConsolidate, spellId =
             UnitBuff(unitId, i);
         if spellId ~= nil then
-            table.insert(playerBuffs, spellId)
+            table.insert(unitBuffs, spellId)
         else
-            table.insert(playerBuffs, 0)
+            table.insert(unitBuffs, 0)
         end
     end
-    return playerBuffs
+    return unitBuffs
 end
 
 function Ascended:getUnitDebuffs(unitId)

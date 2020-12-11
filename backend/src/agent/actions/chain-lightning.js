@@ -4,11 +4,11 @@ const robot = require('robotjs');
 module.exports = {
   condition: (s) =>
     s.maelstromWeapon &&
-    s.spells.frostbolt.castable &&
+    s.spells.chainLightning.castable &&
     s.playerInCombat &&
     s.mana > 30 &&
     // s.spell.maelstromWeapon.active &&
-    s.spells.frostbolt.equipped,
+    s.spells.chainLightning.equipped,
   effect: (s) => {
     s.targetIsDead = true;
     return s;
@@ -20,5 +20,5 @@ module.exports = {
     return 10;
   },
   act: (k) => robot.keyTap(k),
-  log: (l) => l.info('Casting frostbolt'),
+  log: (l) => l.info('Casting chainLightning'),
 };

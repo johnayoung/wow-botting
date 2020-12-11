@@ -4,8 +4,6 @@ module.exports = (options = {}) => async (context) => {
   try {
     const { app, result } = context;
 
-    console.log('trying to add');
-
     if (result) {
       const service = app.service('abilities');
 

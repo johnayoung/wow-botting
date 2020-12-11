@@ -2,11 +2,11 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.spell.iceArmor.active === false &&
+    !s.buffs.iceArmor &&
     s.spells.iceArmor.castable &&
     s.spells.iceArmor.equipped,
   effect: (s) => {
-    s.spell.iceArmor.active = true;
+    s.buffs.iceArmor = {};
     return s;
   },
   cost: (s) => 9,

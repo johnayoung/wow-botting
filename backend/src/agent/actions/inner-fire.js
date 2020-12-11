@@ -2,7 +2,7 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.spell.innerFire.active === false &&
+    !s.buffs.innerFire &&
     s.spells.innerFire.castable &&
     s.spells.innerFire.equipped,
   effect: (s) => {

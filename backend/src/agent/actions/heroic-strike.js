@@ -5,7 +5,7 @@ module.exports = {
     s.targetInMeleeRange &&
     s.spells.heroicStrike.castable &&
     s.spells.heroicStrike.equipped &&
-    s.rageCurrent > 50,
+    s.rageCurrent > 80,
   effect: (s) => {
     s.targetIsDead = true;
     return s;

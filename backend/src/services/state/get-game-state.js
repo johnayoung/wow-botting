@@ -2,6 +2,7 @@ const { readFileSync } = require('fs');
 const { resolve } = require('path');
 const robot = require('robotjs');
 const _ = require('lodash');
+const { cTar } = require('./data');
 const getBinaryList = require('./get-binary-list');
 const getBlock = require('./get-block');
 const getSpellState = require('./get-spell-state');
@@ -9,7 +10,6 @@ const getMemberStatus = require('./get-member-status');
 const getMemberCombatStatus = require('./get-member-combat-status');
 const getMemberMeleeRange = require('./get-member-melee-range');
 const bufferToPng = require('./buffer-to-png');
-const assignBinaryVariables = require('./assign-binary-variables');
 const SquareReader = require('./square-reader');
 
 const raw = readFileSync(resolve(__dirname, 'coordinates.json'), 'utf-8');
@@ -25,7 +25,7 @@ function getGameState(app) {
   const pixel = {
     xMin: 0,
     yMin: 0,
-    xMax: 375,
+    xMax: 450,
     yMax: 35,
   };
 
@@ -83,6 +83,17 @@ function getGameState(app) {
   );
   startFrame += numberOfDebuffs;
 
+  const targetDebuffs = getBlock(
+    app,
+    config,
+    reader,
+    listOfAbilities,
+    startFrame,
+    startFrame + numberOfDebuffs,
+    'tdebuff'
+  );
+  startFrame += numberOfDebuffs;
+
   const spells = getSpellState(
     app,
     config,
@@ -100,9 +111,14 @@ function getGameState(app) {
   const memberMeleeRange = reader.getIntAtCell(config[startFrame]);
   startFrame += 1;
 
-  const miscValue = ['hasWeaponEnchant'];
+  const miscValue = ['hasWeaponEnchant', 'maelstromWeapon'];
   const miscBinary = reader.getIntAtCell(config[startFrame]);
   const miscList = getBinaryList(miscBinary, miscValue);
+  startFrame += 1;
+
+  // const interruptBinaries = reader.getIntAtCell(config[startFrame]);
+  // const targetsToInterrupt = getBinaryList(interruptBinaries, cTar);
+  // startFrame += 1;
 
   const gameState = {
     name: 'track-game-state',
@@ -122,11 +138,13 @@ function getGameState(app) {
     rage: (rageCurrent / rageMax) * 100,
     buffs,
     debuffs,
+    targetDebuffs,
     spells,
     ...getMemberStatus(memberStatus),
     ...getMemberCombatStatus(memberCombatStatus),
     ...getMemberMeleeRange(memberMeleeRange),
     ...miscList,
+    // targetsToInterrupt,
     // ...assignBinaryVariables(reader.getIntAtCell(config[11])),
     // // Grabs the target ID, whether we are in combat, how much food and potions we have left, and if our target is kill
     // target:

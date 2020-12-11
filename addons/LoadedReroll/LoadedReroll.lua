@@ -15,7 +15,8 @@ local CELL_SIZE = 3 -- Size of data squares in px.
 local CELL_SPACING = 0 -- Spacing in px between data squares.
 
 -- Containers
-spellsToTarget = {"Tame Beast", "Healing Touch"}
+spellsToTarget = {"Sinister Strike", "Charge", "Sprint", "Evasion"}
+secondarySpells = {"Charge"}
 sortedSpells = {} -- Spells sorted to know where they fall
 
 -- Orc
@@ -26,8 +27,15 @@ protectedSpells = {
     "Parry", "Rest", "Shoot", "Throw", "Wand", "Cannibalize",
     "Language Gutterspeak", "Shadow Resistance", "Specialization I",
     "Specialization II", "Specialization III", "Specialization IV",
-    "Underwater Breathing", "Will of the Forsaken", "Beast Lore", "Call Pet",
-    "Dismiss Pet", "Feed Pet", "Revive Pet"
+    "Specialization V", "Specialization VI", "Specialization VII",
+    "Specialization VIII", "Underwater Breathing", "Will of the Forsaken",
+    "Beast Lore", "Call Pet", "Dismiss Pet", "Feed Pet", "Revive Pet",
+    "Arcane Affinity", "Arcane Torrent", "Magic Resistance", "Elusiveness",
+    "Language Common", "Nature Resistance", "Quickness", "Shadowmeld",
+    "Wisp Spirit", "Beast Slaying", "Berserking", "Bow Specialization",
+    "Da Voodoo Shuffle", "Regeneration", "Throwing Specialization",
+    "Arcane Resistance", "Engineering Specialization", "Escape Artist",
+    "Expansive Mind"
 }
 
 -- Undead
@@ -175,6 +183,8 @@ function LoadedReroll:CreateFrames(n)
 
         local currentSpellsIndex = {}
         for k, v in pairs(currentSpells) do currentSpellsIndex[v] = k end
+
+        print(dump(currentSpells))
 
         if not SETUP_SEQUENCE then
             MakePixelSquareArr(integerToColor(0), 0)

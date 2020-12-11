@@ -9,13 +9,17 @@ const AUTO_TOGGLE_DATATOCOLOR = false;
 const startX = 2;
 const startY = 32;
 
+// Step 1: Input # of frames
+// Step 2: type "/dc" ingame
+// Step 3: Run function
+// Step 4: Adjust xMax in get-game-state.js
 function configureDataCoords() {
   const metadataColor = robot.getPixelColor(startX, startY);
   const metaData = parseInt(metadataColor, 16);
 
   return new Promise((resolve, reject) => {
     // const numberOfFrames = parseInt(metaData.toString().slice(-2));
-    const numberOfFrames = 100;
+    const numberOfFrames = 120;
     const frameRows = parseInt(metaData.toString().slice(-5, -3));
     // Size of data frames. Only needs a rough estimation for the bitmap. Resolution and rounding alters dimensions, so there is a multiplier of 2 to correct for potentially missed pixels.
     const cellSize = parseInt(metaData.toString().slice(-7, -5)) * 2;

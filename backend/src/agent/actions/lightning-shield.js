@@ -2,7 +2,7 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.spell.lightningShield.active === false &&
+    !s.buffs.lightningShield &&
     s.spells.lightningShield.castable &&
     s.spells.lightningShield.equipped,
   effect: (s) => {

@@ -3,7 +3,7 @@ const robot = require('robotjs');
 module.exports = {
   condition: (s) => {
     // Sudden Death
-    if (s.spell.suddenDeath.active === true) {
+    if (s.buffs.suddenDeath) {
       return (
         s.targetInMeleeRange &&
         s.spells.execute.castable &&
@@ -27,7 +27,7 @@ module.exports = {
   },
   cost: (s) => {
     if (s.spell.suddenDeath.active === true) {
-      return 1;
+      return 6;
     }
     return 8;
   },
