@@ -25,7 +25,7 @@ function getGameState(app) {
   const pixel = {
     xMin: 0,
     yMin: 0,
-    xMax: 450,
+    xMax: 489,
     yMax: 35,
   };
 
@@ -58,7 +58,7 @@ function getGameState(app) {
   // const currentAbilities = getAbilities(config, reader, app);
   const numberOfBuffs = 20;
   const numberOfDebuffs = 20;
-  const numberOfAbilities = 36;
+  const numberOfAbilities = 48;
   let startFrame = 11;
 
   const buffs = getBlock(
@@ -110,15 +110,23 @@ function getGameState(app) {
   startFrame += 1;
   const memberMeleeRange = reader.getIntAtCell(config[startFrame]);
   startFrame += 1;
+  const dispel = reader.getIntAtCell(config[startFrame]);
+  startFrame += 1;
 
-  const miscValue = ['hasWeaponEnchant', 'maelstromWeapon'];
+  const miscValue = [
+    'hasWeaponEnchant',
+    'maelstromWeapon',
+    'wildWrath',
+    'isFrozen',
+  ];
   const miscBinary = reader.getIntAtCell(config[startFrame]);
   const miscList = getBinaryList(miscBinary, miscValue);
   startFrame += 1;
 
-  // const interruptBinaries = reader.getIntAtCell(config[startFrame]);
-  // const targetsToInterrupt = getBinaryList(interruptBinaries, cTar);
-  // startFrame += 1;
+  const interruptBinaries = reader.getIntAtCell(config[startFrame]);
+  const interruptTargets = ['target', 'focus', 'mouseover'];
+  const targetsToInterrupt = getBinaryList(interruptBinaries, interruptTargets);
+  startFrame += 1;
 
   const gameState = {
     name: 'track-game-state',
@@ -143,8 +151,9 @@ function getGameState(app) {
     ...getMemberStatus(memberStatus),
     ...getMemberCombatStatus(memberCombatStatus),
     ...getMemberMeleeRange(memberMeleeRange),
+    dispel,
     ...miscList,
-    // targetsToInterrupt,
+    targetsToInterrupt,
     // ...assignBinaryVariables(reader.getIntAtCell(config[11])),
     // // Grabs the target ID, whether we are in combat, how much food and potions we have left, and if our target is kill
     // target:

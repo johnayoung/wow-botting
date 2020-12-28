@@ -1,4 +1,38 @@
 {
+  "71": {
+    "id": 71,
+    "name": "Defensive Stance",
+    "imageUrl": "/files/images/icons/Ability_Warrior_DefensiveStance.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        71
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "A defensive combat stance.  Decreases damage taken by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>% and damage and healing caused by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>%.  Increases threat generated.",
+      "tooltipUrl": "/spells/71/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 1,
+      "abilityEssenceCost": 2,
+      "classId": 8,
+      "specializationId": 26
+    },
+    "_id": "816I6TyFCQLeimkb",
+    "camelName": "defensiveStance"
+  },
   "78": {
     "id": 78,
     "name": "Heroic Strike",
@@ -761,6 +795,50 @@
     "_id": "zFcaqw9EK2njUA4w",
     "camelName": "innerFire"
   },
+  "604": {
+    "id": 604,
+    "name": "Dampen Magic",
+    "imageUrl": "/files/images/icons/Spell_Nature_AbolishMagic.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        604
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 27,
+      "text": "27% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 600,
+      "type": "Regular",
+      "text": "600 seconds"
+    },
+    "tooltip": {
+      "text": "Dampens magic used against the targeted party member, decreasing damage taken from spells by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>% and healing spells by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>%.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 minutes</span>.",
+      "tooltipUrl": "/spells/604/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 12,
+      "abilityEssenceCost": 2,
+      "classId": 2,
+      "specializationId": 6
+    },
+    "_id": "ANCLArXL7SfbCH24",
+    "camelName": "dampenMagic"
+  },
   "635": {
     "id": 635,
     "name": "Holy Light",
@@ -1048,6 +1126,41 @@
     },
     "_id": "Zz6cgRZ54h5HubmL",
     "camelName": "demonSkin"
+  },
+  "691": {
+    "id": 691,
+    "name": "Summon Felhunter",
+    "imageUrl": "/files/images/icons/Spell_Shadow_SummonFelHunter.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        691
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 80,
+      "text": "80% of base mana"
+    },
+    "castTime": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Summons a Felhunter under the command of the Warlock. Requires Drain Soul or Shadowburn to use.",
+      "tooltipUrl": "/spells/691/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "classId": 7,
+      "specializationId": 22
+    },
+    "_id": "W2tX1R7yha0pok2y",
+    "camelName": "summonFelhunter"
   },
   "695": {
     "id": 695,
@@ -1696,6 +1809,40 @@
     },
     "_id": "Lo06xBGIoLXbz9bm",
     "camelName": "healingWave"
+  },
+  "988": {
+    "id": 988,
+    "name": "Dispel Magic",
+    "imageUrl": "/files/images/icons/Spell_Holy_DispelMagic.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        527,
+        988
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 17,
+      "text": "17% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Dispels magic on a friendly target, removing <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> harmful spells.",
+      "tooltipUrl": "/spells/988/tooltip.html"
+    },
+    "_id": "M5JUwCoPg9Uo2fW9",
+    "camelName": "dispelMagic"
   },
   "1006": {
     "id": 1006,
@@ -2523,6 +2670,50 @@
     "_id": "hK8caxZRTstLsXpl",
     "camelName": "whirlwind"
   },
+  "1715": {
+    "id": 1715,
+    "name": "Hamstring",
+    "imageUrl": "/files/images/icons/Ability_ShockWave.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        1715
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 5,
+      "text": "5 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Attack the enemy for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.2</span>+1}</span> damage and maims the enemy, reducing movement speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.",
+      "tooltipUrl": "/spells/1715/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 1,
+      "abilityEssenceCost": 2,
+      "classId": 8,
+      "specializationId": 24
+    },
+    "_id": "F5HJQIAIknFRk6Uv",
+    "camelName": "hamstring"
+  },
   "1752": {
     "id": 1752,
     "name": "Sinister Strike",
@@ -3179,6 +3370,41 @@
     "_id": "hvWHBI91OaLeCSES",
     "camelName": "earthbindTotem"
   },
+  "2645": {
+    "id": 2645,
+    "name": "Ghost Wolf",
+    "imageUrl": "/files/images/icons/Spell_Nature_SpiritWolf.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        2645
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 12,
+      "text": "12% of base mana"
+    },
+    "castTime": {
+      "seconds": 2,
+      "type": "Regular",
+      "text": "2 seconds"
+    },
+    "tooltip": {
+      "text": "Turns the Shaman into a Ghost Wolf, increasing speed by <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>%. As a Ghost Wolf, the Shaman is less hindered by effects that would reduce movement speed. Only useable outdoors.",
+      "tooltipUrl": "/spells/2645/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 16,
+      "abilityEssenceCost": 3,
+      "classId": 6,
+      "specializationId": 19
+    },
+    "_id": "nRQq0aWQg7fiSW7W",
+    "camelName": "ghostWolf"
+  },
   "2687": {
     "id": 2687,
     "name": "Bloodrage",
@@ -3393,6 +3619,40 @@
     },
     "_id": "9R7Zw3lb7wZ68Qyp",
     "camelName": "sprint"
+  },
+  "3409": {
+    "id": 3409,
+    "name": "Crippling Poison",
+    "imageUrl": "/files/images/icons/Ability_PoisonSting.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        3409
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Coats a weapon with poison that lasts for <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> hour.\r\nEach strike has a <span class=\"ascension-tooltip-spell-tooltip-text-number\">60</span>% chance of poisoning the enemy, slowing their movement speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>.",
+      "tooltipUrl": "/spells/3409/tooltip.html"
+    },
+    "_id": "86wNME1I25sehQ2g",
+    "camelName": "cripplingPoison"
   },
   "3472": {
     "id": 3472,
@@ -5467,6 +5727,39 @@
     "_id": "wTacwcFB4VR8SfX1",
     "camelName": "iceArmor"
   },
+  "7321": {
+    "id": 7321,
+    "name": "Chilled",
+    "imageUrl": "/files/images/icons/Spell_Frost_FrostArmor02.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        7321
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 5,
+      "type": "Regular",
+      "text": "5 seconds"
+    },
+    "tooltip": {
+      "text": "Slows an attacker's movement by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span>% and reduces their attack speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>%.",
+      "tooltipUrl": "/spells/7321/tooltip.html"
+    },
+    "_id": "KdcmN1zgRT6fYq6h",
+    "camelName": "chilled"
+  },
   "7322": {
     "id": 7322,
     "name": "Frostbolt",
@@ -6348,6 +6641,52 @@
     "_id": "SI0GZJwwdjliX6UG",
     "camelName": "groundingTotem"
   },
+  "8198": {
+    "id": 8198,
+    "name": "Thunder Clap",
+    "imageUrl": "/files/images/icons/Spell_Nature_ThunderClap.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        6343,
+        8198,
+        8204,
+        8205,
+        11580,
+        11581,
+        25264,
+        47501,
+        47502
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 20,
+      "text": "20 rage"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 14,
+      "type": "Regular",
+      "text": "14 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts nearby enemies increasing the time between their attacks by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">14 seconds</span> and doing <span class=\"ascension-tooltip-spell-tooltip-text-number\">34</span> damage to them. Damage increased by attack power. This ability causes additional threat, and causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>% more damage with a Two-Handed weapon equipped.",
+      "tooltipUrl": "/spells/8198/tooltip.html"
+    },
+    "_id": "n6P516cuzVdMAdfY",
+    "camelName": "thunderClap"
+  },
   "8227": {
     "id": 8227,
     "name": "Flametongue Totem",
@@ -6509,6 +6848,60 @@
     },
     "_id": "AaXWiFQa2P5U78Cb",
     "camelName": "flametongueTotem"
+  },
+  "8400": {
+    "id": 8400,
+    "name": "Fireball",
+    "imageUrl": "/files/images/icons/Spell_Fire_FlameBolt.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        133,
+        143,
+        145,
+        3140,
+        8400,
+        8401,
+        8402,
+        10148,
+        10149,
+        10150,
+        10151,
+        25306,
+        27070,
+        38692,
+        42832,
+        42833
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 15,
+      "text": "15% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Medium-Long Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": 2.7,
+      "type": "Regular",
+      "text": "2.7 seconds"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Hurls a fiery ball that causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">154</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">212</span> Fire damage and an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">24</span> Fire damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>.",
+      "tooltipUrl": "/spells/8400/tooltip.html"
+    },
+    "_id": "cxruUceVqGG22pOg",
+    "camelName": "fireball"
   },
   "8406": {
     "id": 8406,
@@ -9078,6 +9471,55 @@
     "_id": "mqcXvCybPkDDqamW",
     "camelName": "psychicScream"
   },
+  "10894": {
+    "id": 10894,
+    "name": "Shadow Word: Pain",
+    "imageUrl": "/files/images/icons/Spell_Shadow_ShadowWordPain.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 8,
+      "other": [
+        589,
+        594,
+        970,
+        992,
+        2767,
+        10892,
+        10893,
+        10894,
+        25367,
+        25368,
+        48124,
+        48125
+      ],
+      "text": "Rank 8"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 25,
+      "text": "25% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 18,
+      "type": "Regular",
+      "text": "18 seconds"
+    },
+    "tooltip": {
+      "text": "A word of darkness that causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">888</span> Shadow damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">18 seconds</span>.",
+      "tooltipUrl": "/spells/10894/tooltip.html"
+    },
+    "_id": "uCI2dqdcs43fN6pZ",
+    "camelName": "shadowWordPain"
+  },
   "10937": {
     "id": 10937,
     "name": "Power Word: Fortitude",
@@ -9933,6 +10375,52 @@
     "_id": "NpBhmbB2jEoTmJ5R",
     "camelName": "charge"
   },
+  "11581": {
+    "id": 11581,
+    "name": "Thunder Clap",
+    "imageUrl": "/files/images/icons/Spell_Nature_ThunderClap.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        6343,
+        8198,
+        8204,
+        8205,
+        11580,
+        11581,
+        25264,
+        47501,
+        47502
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 20,
+      "text": "20 rage"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts nearby enemies increasing the time between their attacks by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span> and doing <span class=\"ascension-tooltip-spell-tooltip-text-number\">154</span> damage to them. Damage increased by attack power. This ability causes additional threat, and causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>% more damage with a Two-Handed weapon equipped.",
+      "tooltipUrl": "/spells/11581/tooltip.html"
+    },
+    "_id": "VQM461jss709mQnH",
+    "camelName": "thunderClap"
+  },
   "11659": {
     "id": 11659,
     "name": "Shadow Bolt",
@@ -10352,6 +10840,43 @@
     "_id": "LVTNI0nGcsdkoAgp",
     "camelName": "demonArmor"
   },
+  "11958": {
+    "id": 11958,
+    "name": "Cold Snap",
+    "imageUrl": "/files/images/icons/Spell_Frost_WizardMark.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        11958
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 480,
+      "type": "Regular",
+      "text": "8 minutes"
+    },
+    "tooltip": {
+      "text": "When activated, this spell finishes the cooldown on all Mage Frost spells you recently cast.",
+      "tooltipUrl": "/spells/11958/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 2,
+      "talentEssenceCost": 1,
+      "talentId": 72,
+      "classId": 2,
+      "specializationId": 8,
+      "visualColumn": 2
+    },
+    "_id": "9V4La7hqKlw8lY0E",
+    "camelName": "coldSnap"
+  },
   "12292": {
     "id": 12292,
     "name": "Death Wish",
@@ -10399,6 +10924,53 @@
     "_id": "RIKHmmaEFoS8wGEl",
     "camelName": "deathWish"
   },
+  "12472": {
+    "id": 12472,
+    "name": "Icy Veins",
+    "imageUrl": "/files/images/icons/Spell_Frost_ColdHearted.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        12472
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 3,
+      "text": "3% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 180,
+      "type": "Regular",
+      "text": "3 minutes"
+    },
+    "duration": {
+      "seconds": 20,
+      "type": "Regular",
+      "text": "20 seconds"
+    },
+    "tooltip": {
+      "text": "Hastens your spellcasting, increasing spell casting speed by <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>% and reduces the pushback suffered from damaging attacks while casting spells by <span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>%. Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">20 seconds</span>. Casting this also makes you immune to Interrupt and Silence mechanics for <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>. Does not stack with other similar cast speed increasing effects.",
+      "tooltipUrl": "/spells/12472/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 69,
+      "classId": 2,
+      "specializationId": 8,
+      "visualColumn": 2
+    },
+    "_id": "ZLbJXy6RU81Gx2sh",
+    "camelName": "icyVeins"
+  },
   "12721": {
     "id": 12721,
     "name": "Deep Wounds",
@@ -10431,6 +11003,100 @@
     },
     "_id": "5rziy8zpL8Ps1i9Z",
     "camelName": "deepWounds"
+  },
+  "12809": {
+    "id": 12809,
+    "name": "Concussion Blow",
+    "imageUrl": "/files/images/icons/Ability_ThunderBolt.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        12809
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 4,
+      "type": "Regular",
+      "text": "4 seconds"
+    },
+    "tooltip": {
+      "text": "Stuns the opponent for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3.5 seconds</span> and deals <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{42/<span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>*AP}</span> damage (based on attack power). Also causes a high amount of threat.",
+      "tooltipUrl": "/spells/12809/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 152,
+      "classId": 8,
+      "specializationId": 26,
+      "visualColumn": 2
+    },
+    "_id": "fyaVCvbT4sAgRPde",
+    "camelName": "concussionBlow"
+  },
+  "12826": {
+    "id": 12826,
+    "name": "Polymorph",
+    "imageUrl": "/files/images/icons/Spell_Nature_Polymorph.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        118,
+        12824,
+        12825,
+        12826
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "seconds": 1.8,
+      "type": "Regular",
+      "text": "1.8 seconds"
+    },
+    "duration": {
+      "seconds": 50,
+      "type": "Regular",
+      "text": "50 seconds"
+    },
+    "tooltip": {
+      "text": "Transforms the enemy into a sheep, forcing it to wander around for up to <span class=\"ascension-tooltip-spell-tooltip-text-number\">50 seconds</span>.  While wandering, the sheep cannot attack or cast spells but will regenerate very quickly.  Any damage will transform the target back into its normal form.  Only one target can be polymorphed at a time.  Only works on Beasts, Humanoids and Critters.",
+      "tooltipUrl": "/spells/12826/tooltip.html"
+    },
+    "_id": "ipnYRKAsZr8csuA7",
+    "camelName": "polymorph"
   },
   "12968": {
     "id": 12968,
@@ -11202,6 +11868,48 @@
     "_id": "9GkU3PIiEqcGYScV",
     "camelName": "holyNova"
   },
+  "15473": {
+    "id": 15473,
+    "name": "Shadowform",
+    "imageUrl": "/files/images/icons/Spell_Shadow_Shadowform.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        15473
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 13,
+      "text": "13% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 2,
+      "type": "Regular",
+      "text": "2 seconds"
+    },
+    "tooltip": {
+      "text": "Assume a Shadowform, increasing your Shadow damage by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>%.  However, you may not cast healing, or Priest Holy spells while in this form. Grants the periodic damage from your Shadow Word: Pain, Devouring Plague, and Vampiric Touch spells the ability to critically hit for <span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>% increased damage and grants Shadow Word: Pain, Devouring Plague and Vampiric Touch the ability to benefit from haste.",
+      "tooltipUrl": "/spells/15473/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 521,
+      "classId": 4,
+      "specializationId": 14,
+      "visualColumn": 2
+    },
+    "_id": "5D8okdsHZZ5mt74H",
+    "camelName": "shadowform"
+  },
   "15487": {
     "id": 15487,
     "name": "Silence",
@@ -11572,6 +12280,34 @@
     "_id": "9qYuQhI8BKQ35Cb4",
     "camelName": "stormstrike"
   },
+  "17941": {
+    "id": 17941,
+    "name": "Shadow Trance",
+    "imageUrl": "/files/images/icons/Spell_Shadow_Twilight.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        17941
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Gives your Corruption and Drain Life spells a chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span>%.",
+      "tooltipUrl": "/spells/17941/tooltip.html"
+    },
+    "_id": "F6e1DBM2CmOhkBrd",
+    "camelName": "shadowTrance"
+  },
   "17953": {
     "id": 17953,
     "name": "Create Firestone",
@@ -11697,6 +12433,48 @@
     },
     "_id": "wIKY5grCRF7U4qQa",
     "camelName": "berserkerRage"
+  },
+  "19028": {
+    "id": 19028,
+    "name": "Soul Link",
+    "imageUrl": "/files/images/icons/Spell_Shadow_GatherShadows.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        19028
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 16,
+      "text": "16% of base mana"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "When active, <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>% of all damage taken by the caster is taken by your Voidwalker, Succubus, Felhunter, Felguard, or enslaved demon instead.  That damage cannot be prevented. Lasts as long as the demon is active and controlled.",
+      "tooltipUrl": "/spells/19028/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 2,
+      "talentEssenceCost": 1,
+      "talentId": 1282,
+      "classId": 7,
+      "specializationId": 22,
+      "visualColumn": 2
+    },
+    "_id": "R9D6dO5su6MBJdAG",
+    "camelName": "soulLink"
   },
   "19051": {
     "id": 19051,
@@ -12014,6 +12792,34 @@
     "_id": "dPzsd3DNNJTmgF6V",
     "camelName": "scatterShot"
   },
+  "19506": {
+    "id": 19506,
+    "name": "Trueshot Aura",
+    "imageUrl": "/files/images/icons/Ability_TrueShot.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        19506
+      ],
+      "text": "Rank 1"
+    },
+    "tooltip": {
+      "text": "Increases the attack power of all party and raid members by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/19506/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 1361,
+      "classId": 1,
+      "specializationId": 4,
+      "visualColumn": 2
+    },
+    "_id": "3Yf2ATT82kVm6CO4",
+    "camelName": "trueshotAura"
+  },
   "19746": {
     "id": 19746,
     "name": "Concentration Aura",
@@ -12102,6 +12908,34 @@
     },
     "_id": "G3JEC02fmlP7Ooxq",
     "camelName": "sealOfCommand"
+  },
+  "20589": {
+    "id": 20589,
+    "name": "Escape Artist",
+    "imageUrl": "/files/images/icons/Ability_Rogue_Trip.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        20589
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 90,
+      "type": "Regular",
+      "text": "90 seconds"
+    },
+    "tooltip": {
+      "text": "Escape the effects of any immobilization or movement speed reduction effect and become immune to them for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 seconds</span>.",
+      "tooltipUrl": "/spells/20589/tooltip.html"
+    },
+    "_id": "Y497e3PhkldXwUGk",
+    "camelName": "escapeArtist"
   },
   "20661": {
     "id": 20661,
@@ -12231,6 +13065,94 @@
     },
     "_id": "Ts50iiJy0mvaQrlt",
     "camelName": "blessingOfSanctuary"
+  },
+  "20924": {
+    "id": 20924,
+    "name": "Consecration",
+    "imageUrl": "/files/images/icons/Spell_Holy_InnerFire.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        26573,
+        20116,
+        20922,
+        20923,
+        20924,
+        27173,
+        48818,
+        48819
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 22,
+      "text": "22% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Consecrates the land beneath the Paladin, doing <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{8*(<span class=\"ascension-tooltip-spell-tooltip-text-number\">56</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.04</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.04</span>*P)}</span> Holy damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span> to enemies who enter the area.",
+      "tooltipUrl": "/spells/20924/tooltip.html"
+    },
+    "_id": "C1geOOOZzWOUluAW",
+    "camelName": "consecration"
+  },
+  "20928": {
+    "id": 20928,
+    "name": "Holy Shield",
+    "imageUrl": "/files/images/icons/Spell_Holy_BlessingOfProtection.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        20925,
+        20927,
+        20928,
+        27179,
+        48951,
+        48952
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 10,
+      "text": "10% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Increases chance to block by <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 seconds</span> and deals <span class=\"ascension-tooltip-spell-tooltip-text-number\">126</span> Holy damage for each attack blocked while active.  Each block expends a charge.  <span class=\"ascension-tooltip-spell-tooltip-text-number\">8</span> charges.",
+      "tooltipUrl": "/spells/20928/tooltip.html"
+    },
+    "_id": "lkpTqxGt5ieCQ2bF",
+    "camelName": "holyShield"
   },
   "21084": {
     "id": 21084,
@@ -12795,6 +13717,41 @@
     "_id": "ip4OQIfksEHzIx8Z",
     "camelName": "markOfTheWild"
   },
+  "24858": {
+    "id": 24858,
+    "name": "Moonkin Form",
+    "imageUrl": "/files/images/icons/Spell_Nature_ForceOfNature.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        24858
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 13,
+      "text": "13% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Immune to Polymorph effects. Armor contribution from cloth and leather items is increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">65</span>%. Damage taken while stunned is reduced by <span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span>%.\r\n\r\nAll party and raid members have their spell critical effect chance increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>%.\r\n\r\nSingle target spell criticals have a chance to instantly regenerate <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>% of your total mana. \r\n\r\nThe Moonkin can not cast healing spells while shapeshifted.",
+      "tooltipUrl": "/spells/24858/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "abilityEssenceCost": 4,
+      "talentEssenceCost": 1,
+      "talentId": 793,
+      "visualColumn": 2
+    },
+    "_id": "VLIYBmrnlPy72mMB",
+    "camelName": "moonkinForm"
+  },
   "25208": {
     "id": 25208,
     "name": "Rend",
@@ -13073,6 +14030,52 @@
     "_id": "Lr4Jy9MZNfYFzYWj",
     "camelName": "mortalStrike"
   },
+  "25264": {
+    "id": 25264,
+    "name": "Thunder Clap",
+    "imageUrl": "/files/images/icons/Spell_Nature_ThunderClap.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        6343,
+        8198,
+        8204,
+        8205,
+        11580,
+        11581,
+        25264,
+        47501,
+        47502
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 20,
+      "text": "20 rage"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts nearby enemies increasing the time between their attacks by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span> and doing <span class=\"ascension-tooltip-spell-tooltip-text-number\">184</span> damage to them. Damage increased by attack power. This ability causes additional threat, and causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>% more damage with a Two-Handed weapon equipped.",
+      "tooltipUrl": "/spells/25264/tooltip.html"
+    },
+    "_id": "0TxYp7CK393QUCRu",
+    "camelName": "thunderClap"
+  },
   "25286": {
     "id": 25286,
     "name": "Heroic Strike",
@@ -13158,6 +14161,52 @@
     },
     "_id": "CBoMYmD2tmyeWhnz",
     "camelName": "battleShout"
+  },
+  "25290": {
+    "id": 25290,
+    "name": "Blessing of Wisdom",
+    "imageUrl": "/files/images/icons/Spell_Holy_SealOfWisdom.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        19742,
+        19850,
+        19852,
+        19853,
+        19854,
+        25290,
+        27142,
+        48935,
+        48936
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 5,
+      "text": "5% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 1800,
+      "type": "Regular",
+      "text": "1800 seconds"
+    },
+    "tooltip": {
+      "text": "Places a Blessing on the friendly target, restoring <span class=\"ascension-tooltip-spell-tooltip-text-number\">33</span> mana every <span class=\"ascension-tooltip-spell-tooltip-text-number\">5 seconds</span> for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 minutes</span>.  Players may only have one Blessing on them per Paladin at any one time.",
+      "tooltipUrl": "/spells/25290/tooltip.html"
+    },
+    "_id": "uFIsrZcN6lfR3xou",
+    "camelName": "blessingOfWisdom"
   },
   "25292": {
     "id": 25292,
@@ -13505,6 +14554,57 @@
     },
     "_id": "ykIxnUkha7QF7QjJ",
     "camelName": "corruption"
+  },
+  "25315": {
+    "id": 25315,
+    "name": "Renew",
+    "imageUrl": "/files/images/icons/Spell_Holy_Renew.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 10,
+      "other": [
+        139,
+        6074,
+        6075,
+        6076,
+        6077,
+        6078,
+        10927,
+        10928,
+        10929,
+        25315,
+        25221,
+        25222,
+        48067,
+        48068
+      ],
+      "text": "Rank 10"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 17,
+      "text": "17% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Heals the target for $<total> over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.",
+      "tooltipUrl": "/spells/25315/tooltip.html"
+    },
+    "_id": "FLwtZDhw2CCOC9HZ",
+    "camelName": "renew"
   },
   "25331": {
     "id": 25331,
@@ -14044,6 +15144,55 @@
     },
     "_id": "NlAAzekRpjT2tPLB",
     "camelName": "earthShock"
+  },
+  "25464": {
+    "id": 25464,
+    "name": "Frost Shock",
+    "imageUrl": "/files/images/icons/Spell_Frost_FrostShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        8056,
+        8058,
+        10472,
+        10473,
+        25464,
+        49235,
+        49236
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 25,
+      "type": "Twenty-Five yards",
+      "text": "25 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 2,
+      "type": "Regular",
+      "text": "2 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly shocks the target with frost, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">625</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">661</span> Frost damage and slowing movement speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>%.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 seconds</span>. Causes a high amount of threat. This ability shares a cooldown with Holy Shock.",
+      "tooltipUrl": "/spells/25464/tooltip.html"
+    },
+    "_id": "CdANbYRDWeWC7L1V",
+    "camelName": "frostShock"
   },
   "25469": {
     "id": 25469,
@@ -14675,6 +15824,51 @@
     "_id": "c8kedQxJC6TCgpeN",
     "camelName": "rejuvenation"
   },
+  "26985": {
+    "id": 26985,
+    "name": "Wrath",
+    "imageUrl": "/files/images/icons/Spell_Nature_AbolishMagic.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 10,
+      "other": [
+        5176,
+        5177,
+        5178,
+        5179,
+        5180,
+        6780,
+        8905,
+        9912,
+        26984,
+        26985,
+        48459,
+        48461
+      ],
+      "text": "Rank 10"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 11,
+      "text": "11% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "seconds": 2,
+      "type": "Regular",
+      "text": "2 seconds"
+    },
+    "tooltip": {
+      "text": "Causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">521</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">586</span> Nature damage to the target.",
+      "tooltipUrl": "/spells/26985/tooltip.html"
+    },
+    "_id": "7eYWrYnJBiEH5ay1",
+    "camelName": "wrath"
+  },
   "26990": {
     "id": 26990,
     "name": "Mark of the Wild",
@@ -14775,6 +15969,56 @@
     "_id": "SDDc4DFXxC8etGDA",
     "camelName": "giftOfTheWild"
   },
+  "27016": {
+    "id": 27016,
+    "name": "Serpent Sting",
+    "imageUrl": "/files/images/icons/Ability_Hunter_Quickshot.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 10,
+      "other": [
+        1978,
+        13549,
+        13550,
+        13551,
+        13552,
+        13553,
+        13554,
+        13555,
+        25295,
+        27016,
+        49000,
+        49001
+      ],
+      "text": "Rank 10"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 9,
+      "text": "9% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Hunter Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": -1000,
+      "type": "Regular",
+      "text": "-1000 second"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Stings the target, causing <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{[$R]AAPP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.3</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">132</span>*<span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>/3}</span> Nature damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.",
+      "tooltipUrl": "/spells/27016/tooltip.html"
+    },
+    "_id": "VErckQ7k1ElwZpKh",
+    "camelName": "serpentSting"
+  },
   "27019": {
     "id": 27019,
     "name": "Arcane Shot",
@@ -14823,6 +16067,106 @@
     },
     "_id": "TFKfUPG0a2D9fmMr",
     "camelName": "arcaneShot"
+  },
+  "27021": {
+    "id": 27021,
+    "name": "Multi-Shot",
+    "imageUrl": "/files/images/icons/Ability_UpgradeMoonGlaive.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        2643,
+        14288,
+        14289,
+        14290,
+        25294,
+        27021,
+        49047,
+        49048
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 9,
+      "text": "9% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Hunter Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": -1000,
+      "type": "Regular",
+      "text": "-1000 second"
+    },
+    "cooldown": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Fires several missiles, hitting <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> targets for <span class=\"ascension-tooltip-spell-tooltip-text-number\">130</span>% weapon damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">60</span>. ",
+      "tooltipUrl": "/spells/27021/tooltip.html"
+    },
+    "_id": "3HKQRnZCwmy7qPrX",
+    "camelName": "multiShot"
+  },
+  "27070": {
+    "id": 27070,
+    "name": "Fireball",
+    "imageUrl": "/files/images/icons/Spell_Fire_FlameBolt.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 13,
+      "other": [
+        133,
+        143,
+        145,
+        3140,
+        8400,
+        8401,
+        8402,
+        10148,
+        10149,
+        10150,
+        10151,
+        25306,
+        27070,
+        38692,
+        42832,
+        42833
+      ],
+      "text": "Rank 13"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 19,
+      "text": "19% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Medium-Long Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": 2.7,
+      "type": "Regular",
+      "text": "2.7 seconds"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Hurls a fiery ball that causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">580</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">752</span> Fire damage and an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">88</span> Fire damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>.",
+      "tooltipUrl": "/spells/27070/tooltip.html"
+    },
+    "_id": "fR0HHpIdeUa7DF2P",
+    "camelName": "fireball"
   },
   "27071": {
     "id": 27071,
@@ -14932,6 +16276,54 @@
     "_id": "UQPzKcppqDOVPGgx",
     "camelName": "frostbolt"
   },
+  "27078": {
+    "id": 27078,
+    "name": "Fire Blast",
+    "imageUrl": "/files/images/icons/Spell_Fire_Fireball.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 8,
+      "other": [
+        2136,
+        2137,
+        2138,
+        8412,
+        8413,
+        10197,
+        10199,
+        27078,
+        27079,
+        42872,
+        42873
+      ],
+      "text": "Rank 8"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 21,
+      "text": "21% of base mana"
+    },
+    "range": {
+      "yards": 20,
+      "type": "Twenty yards",
+      "text": "20 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts the enemy for <span class=\"ascension-tooltip-spell-tooltip-text-number\">620</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">733</span> Fire damage. ",
+      "tooltipUrl": "/spells/27078/tooltip.html"
+    },
+    "_id": "naOMWhnpbxvpWeK8",
+    "camelName": "fireBlast"
+  },
   "27087": {
     "id": 27087,
     "name": "Cone of Cold",
@@ -14976,6 +16368,49 @@
     },
     "_id": "HR0OzIK4AZ7RO2kR",
     "camelName": "coneOfCold"
+  },
+  "27088": {
+    "id": 27088,
+    "name": "Frost Nova",
+    "imageUrl": "/files/images/icons/Spell_Frost_FrostNova.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        122,
+        865,
+        6131,
+        10230,
+        27088,
+        42917
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 22,
+      "type": "Regular",
+      "text": "22 seconds"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts enemies near the caster for <span class=\"ascension-tooltip-spell-tooltip-text-number\">264</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">264</span> Frost damage and freezes them in place for up to <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>.  Damage caused may interrupt the effect.",
+      "tooltipUrl": "/spells/27088/tooltip.html"
+    },
+    "_id": "nGI2hJ09HaDzJWcZ",
+    "camelName": "frostNova"
   },
   "27124": {
     "id": 27124,
@@ -15064,6 +16499,98 @@
     },
     "_id": "6dneLSPPH0R2LN8b",
     "camelName": "arcaneIntellect"
+  },
+  "27131": {
+    "id": 27131,
+    "name": "Mana Shield",
+    "imageUrl": "/files/images/icons/Spell_Shadow_DetectLesserInvisibility.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        1463,
+        8494,
+        8495,
+        10191,
+        10192,
+        10193,
+        27131,
+        43019,
+        43020
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 60,
+      "type": "Regular",
+      "text": "60 seconds"
+    },
+    "tooltip": {
+      "text": "Absorbs <span class=\"ascension-tooltip-spell-tooltip-text-number\">715</span> damage, draining mana instead.  Drains [$e] mana per damage absorbed.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">1 minute</span>.",
+      "tooltipUrl": "/spells/27131/tooltip.html"
+    },
+    "_id": "v6pcDtWfISKNw2V4",
+    "camelName": "manaShield"
+  },
+  "27133": {
+    "id": 27133,
+    "name": "Blast Wave",
+    "imageUrl": "/files/images/icons/Spell_Holy_Excorcism_02.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        11113,
+        13018,
+        13019,
+        13020,
+        13021,
+        27133,
+        33933,
+        42944,
+        42945
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for <span class=\"ascension-tooltip-spell-tooltip-text-number\">612</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">720</span> Fire damage, knocking them back and dazing them for <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>. Shares a cooldown with Typhoon.",
+      "tooltipUrl": "/spells/27133/tooltip.html"
+    },
+    "_id": "Br9E8R8VE5nHWtF4",
+    "camelName": "blastWave"
   },
   "27135": {
     "id": 27135,
@@ -15203,6 +16730,92 @@
     },
     "_id": "smmE9HMQBiRRosEX",
     "camelName": "blessingOfMight"
+  },
+  "27179": {
+    "id": 27179,
+    "name": "Holy Shield",
+    "imageUrl": "/files/images/icons/Spell_Holy_BlessingOfProtection.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        20925,
+        20927,
+        20928,
+        27179,
+        48951,
+        48952
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 10,
+      "text": "10% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Increases chance to block by <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 seconds</span> and deals <span class=\"ascension-tooltip-spell-tooltip-text-number\">167</span> Holy damage for each attack blocked while active.  Each block expends a charge.  <span class=\"ascension-tooltip-spell-tooltip-text-number\">8</span> charges.",
+      "tooltipUrl": "/spells/27179/tooltip.html"
+    },
+    "_id": "vak8f6EZuW6GZ3nW",
+    "camelName": "holyShield"
+  },
+  "27180": {
+    "id": 27180,
+    "name": "Hammer of Wrath",
+    "imageUrl": "/files/images/icons/Ability_ThunderClap.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        24275,
+        24274,
+        24239,
+        27180,
+        48805,
+        48806
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 12,
+      "text": "12% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Hurls a hammer that strikes an enemy for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{696+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*P} to {696+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*P}</span> Holy damage. Only usable on enemies that have <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>% or less health.",
+      "tooltipUrl": "/spells/27180/tooltip.html"
+    },
+    "_id": "xHzMnbs7QtwYaD3h",
+    "camelName": "hammerOfWrath"
   },
   "27209": {
     "id": 27209,
@@ -15723,6 +17336,80 @@
     "_id": "kmqG0XXsCt5N8NHf",
     "camelName": "innervate"
   },
+  "30016": {
+    "id": 30016,
+    "name": "Devastate",
+    "imageUrl": "/files/images/icons/INV_Sword_11.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        20243,
+        30016,
+        30022,
+        47497,
+        47498
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Sunder the target's armor causing the Sunder Armor effect.  In addition, causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">120</span>% of weapon damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span> for each application of Sunder Armor on the target.  The Sunder Armor effect can stack up to [$u] times.",
+      "tooltipUrl": "/spells/30016/tooltip.html"
+    },
+    "_id": "PU6Mt5EOUKd3JLWB",
+    "camelName": "devastate"
+  },
+  "30022": {
+    "id": 30022,
+    "name": "Devastate",
+    "imageUrl": "/files/images/icons/INV_Sword_11.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        20243,
+        30016,
+        30022,
+        47497,
+        47498
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Sunder the target's armor causing the Sunder Armor effect.  In addition, causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">120</span>% of weapon damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">27</span> for each application of Sunder Armor on the target.  The Sunder Armor effect can stack up to [$u] times.",
+      "tooltipUrl": "/spells/30022/tooltip.html"
+    },
+    "_id": "gukJDrJAPWwdVRQB",
+    "camelName": "devastate"
+  },
   "30146": {
     "id": 30146,
     "name": "Summon Felguard",
@@ -16038,6 +17725,36 @@
     "_id": "bYq1k4jT9nHSeDkp",
     "camelName": "shadowburn"
   },
+  "30809": {
+    "id": 30809,
+    "name": "Unleashed Rage",
+    "imageUrl": "/files/images/icons/Spell_Nature_UnleashedRage.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 3,
+      "other": [
+        30802,
+        30808,
+        30809
+      ],
+      "text": "Rank 3"
+    },
+    "tooltip": {
+      "text": "Increases your expertise by <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>, increases your Fire, Frost and Nature spell damage by <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>% while under the effects of Shamanistic Rage, and increases all party and raid members' attack power by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%.",
+      "tooltipUrl": "/spells/30809/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 35,
+      "talentEssenceCost": 1,
+      "talentId": 1689,
+      "classId": 6,
+      "specializationId": 19,
+      "visualColumn": 1,
+      "maxRank": 2
+    },
+    "_id": "mtBCSXVKwV1eT273",
+    "camelName": "unleashedRage"
+  },
   "30823": {
     "id": 30823,
     "name": "Shamanistic Rage",
@@ -16348,6 +18065,58 @@
     "_id": "FOvX9mNBlnLht5fZ",
     "camelName": "holyShock"
   },
+  "33206": {
+    "id": 33206,
+    "name": "Pain Suppression",
+    "imageUrl": "/files/images/icons/Spell_Holy_PainSupression.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        33206
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 180,
+      "type": "Regular",
+      "text": "3 minutes"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly reduces a friendly target's threat by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%, reduces all damage taken by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>% and increases resistance to Dispel mechanics by <span class=\"ascension-tooltip-spell-tooltip-text-number\">65</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>.",
+      "tooltipUrl": "/spells/33206/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 50,
+      "abilityEssenceCost": 4,
+      "talentEssenceCost": 1,
+      "talentId": 1774,
+      "classId": 4,
+      "specializationId": 12,
+      "visualColumn": 2
+    },
+    "_id": "X7u1N1Ri0goKL7Ku",
+    "camelName": "painSuppression"
+  },
   "33405": {
     "id": 33405,
     "name": "Ice Barrier",
@@ -16474,6 +18243,52 @@
     "_id": "UPCyLYQDMbPJk0IC",
     "camelName": "lifebloom"
   },
+  "33933": {
+    "id": 33933,
+    "name": "Blast Wave",
+    "imageUrl": "/files/images/icons/Spell_Holy_Excorcism_02.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        11113,
+        13018,
+        13019,
+        13020,
+        13021,
+        27133,
+        33933,
+        42944,
+        42945
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for <span class=\"ascension-tooltip-spell-tooltip-text-number\">708</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">832</span> Fire damage, knocking them back and dazing them for <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>. Shares a cooldown with Typhoon.",
+      "tooltipUrl": "/spells/33933/tooltip.html"
+    },
+    "_id": "Mudwjhw4G3CcUlHg",
+    "camelName": "blastWave"
+  },
   "33938": {
     "id": 33938,
     "name": "Pyroblast",
@@ -16523,6 +18338,44 @@
     },
     "_id": "Nf728RkeYiEhIopq",
     "camelName": "pyroblast"
+  },
+  "33951": {
+    "id": 33951,
+    "name": "Bonechewer Rot",
+    "imageUrl": "/files/images/icons/Spell_Holy_HarmUndeadAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        33951
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Reduces an enemy's Stamina by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> and its Spirit by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>, for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.",
+      "tooltipUrl": "/spells/33951/tooltip.html"
+    },
+    "_id": "y89P4qHhkaQqyT2t",
+    "camelName": "bonechewerRot"
   },
   "33983": {
     "id": 33983,
@@ -16725,6 +18578,62 @@
     "_id": "povQyC7db86zR1jf",
     "camelName": "silencingShot"
   },
+  "34501": {
+    "id": 34501,
+    "name": "Expose Weakness",
+    "imageUrl": "/files/images/icons/Ability_Rogue_FindWeakness.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        34501
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 7,
+      "type": "Regular",
+      "text": "7 seconds"
+    },
+    "tooltip": {
+      "text": "Your ranged criticals have a chance to grant you Expose Weakness. Expose Weakness increases your attack power by <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>% of your Agility for <span class=\"ascension-tooltip-spell-tooltip-text-number\">7 seconds</span>.",
+      "tooltipUrl": "/spells/34501/tooltip.html"
+    },
+    "_id": "don0WXugyE3fceoW",
+    "camelName": "exposeWeakness"
+  },
+  "34936": {
+    "id": 34936,
+    "name": "Backlash",
+    "imageUrl": "/files/images/icons/Spell_Fire_PlayingWithFire.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        34936
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Increases your critical strike chance with spells and gives you a chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spells.",
+      "tooltipUrl": "/spells/34936/tooltip.html"
+    },
+    "_id": "oTcxGCBmZpe4HgR6",
+    "camelName": "backlash"
+  },
   "35395": {
     "id": 35395,
     "name": "Crusader Strike",
@@ -16772,6 +18681,18 @@
     "_id": "lDEWMQuoNyG6WAk8",
     "camelName": "crusaderStrike"
   },
+  "35696": {
+    "id": 35696,
+    "name": "Demonic Knowledge",
+    "imageUrl": "/files/images/icons/Spell_Shadow_ImprovedVampiricEmbrace.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Increases Master's spell power by a percentage of the active demon's Intellect.",
+      "tooltipUrl": "/spells/35696/tooltip.html"
+    },
+    "_id": "w1QkVOOLkw3hj8ty",
+    "camelName": "demonicKnowledge"
+  },
   "36554": {
     "id": 36554,
     "name": "Shadowstep",
@@ -16817,6 +18738,39 @@
       "visualColumn": 2
     },
     "_id": "ouvWTIPXbKDGsbgZ",
+    "camelName": "shadowstep"
+  },
+  "36563": {
+    "id": 36563,
+    "name": "Shadowstep",
+    "imageUrl": "/files/images/icons/Ability_Rogue_Shadowstep.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        36563
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Attempts to step through the shadows and reappear behind your enemy and increases movement speed by <span class=\"ascension-tooltip-spell-tooltip-text-number\">70</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.  The damage of your next Rogue ability is increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% and the threat caused is reduced by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span>%.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 seconds</span>.",
+      "tooltipUrl": "/spells/36563/tooltip.html"
+    },
+    "_id": "jxVHZ5KeX8zcF77K",
     "camelName": "shadowstep"
   },
   "38692": {
@@ -17259,6 +19213,46 @@
     },
     "_id": "b8BTYqaI17sr4sip",
     "camelName": "deepFreeze"
+  },
+  "44780": {
+    "id": 44780,
+    "name": "Arcane Barrage",
+    "imageUrl": "/files/images/icons/Ability_Mage_ArcaneBarrage.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        44425,
+        44780,
+        44781
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Launches several missiles at the enemy target, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">693</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">845</span> Arcane damage.",
+      "tooltipUrl": "/spells/44780/tooltip.html"
+    },
+    "_id": "AMA5RmMy28p2gpX7",
+    "camelName": "arcaneBarrage"
   },
   "45438": {
     "id": 45438,
@@ -18470,6 +20464,43 @@
     "_id": "TdguFfG1q4tFKKeo",
     "camelName": "holyLight"
   },
+  "49051": {
+    "id": 49051,
+    "name": "Steady Shot",
+    "imageUrl": "/files/images/icons/Ability_Hunter_SteadyShot.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        56641,
+        34120,
+        49051,
+        49052
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 5,
+      "text": "5% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Hunter Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": 1.5,
+      "type": "Regular",
+      "text": "1.5 seconds"
+    },
+    "tooltip": {
+      "text": "A steady shot that causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">115</span>% weapon damage. Causes an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">230</span> against Dazed targets. ",
+      "tooltipUrl": "/spells/49051/tooltip.html"
+    },
+    "_id": "9IKbgGXFNmwpsHvJ",
+    "camelName": "steadyShot"
+  },
   "49230": {
     "id": 49230,
     "name": "Earth Shock",
@@ -19086,6 +21117,82 @@
     "_id": "FQOcfVgk8uIhhsWz",
     "camelName": "waterShield"
   },
+  "52437": {
+    "id": 52437,
+    "name": "Sudden Death",
+    "imageUrl": "/files/images/icons/Ability_Warrior_ImprovedDisciplines.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        52437
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Your melee hits have a chance of allowing the use of Execute regardless of the target's health state.",
+      "tooltipUrl": "/spells/52437/tooltip.html"
+    },
+    "_id": "s4S4Grx9NtMalAvj",
+    "camelName": "suddenDeath"
+  },
+  "53209": {
+    "id": 53209,
+    "name": "Chimera Shot",
+    "imageUrl": "/files/images/icons/Ability_Hunter_ChimeraShot2.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        53209
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 12,
+      "text": "12% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Hunter Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": -1000,
+      "type": "Regular",
+      "text": "-1000 second"
+    },
+    "cooldown": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "You deal <span class=\"ascension-tooltip-spell-tooltip-text-number\">130</span>% weapon damage, refreshing the current Stings on your target and triggering extra effects if the Stings are active:\r\n\r\nSerpent Sting - Instantly deals <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span>% of the damage done by your Serpent Sting. \r\n\r\nViper Sting - Instantly restores mana to you equal to <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> sec. This effect cannot occur more than once per <span class=\"ascension-tooltip-spell-tooltip-text-number\">1 minute</span>.\r\n\r\nThis ability shares a cooldown with Explosive Shot. ",
+      "tooltipUrl": "/spells/53209/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 60,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 2135,
+      "classId": 1,
+      "specializationId": 4,
+      "visualColumn": 2
+    },
+    "_id": "FhGPNY6XVbAq3wF1",
+    "camelName": "chimeraShot"
+  },
   "53385": {
     "id": 53385,
     "name": "Divine Storm",
@@ -19269,6 +21376,39 @@
     "_id": "mhNjyA2PMKLUkrnX",
     "camelName": "livingBomb"
   },
+  "56112": {
+    "id": 56112,
+    "name": "Furious Attacks",
+    "imageUrl": "/files/images/icons/Ability_Warrior_FuriousResolve.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        56112
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Your normal melee attacks have a chance to reduce all healing done to the target by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>.  This can stack up to [$u] times.",
+      "tooltipUrl": "/spells/56112/tooltip.html"
+    },
+    "_id": "IuZALE1llDI3QrIp",
+    "camelName": "furiousAttacks"
+  },
   "57520": {
     "id": 57520,
     "name": "Wrecking Crew",
@@ -19296,6 +21436,54 @@
     },
     "_id": "x3YitMXEYIFqvqtn",
     "camelName": "wreckingCrew"
+  },
+  "57566": {
+    "id": 57566,
+    "name": "Fel Intelligence",
+    "imageUrl": "/files/images/icons/Spell_Shadow_Brainwash.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Increases party and raid members Intellect by <span class=\"ascension-tooltip-spell-tooltip-text-number\">38</span>.",
+      "tooltipUrl": "/spells/57566/tooltip.html"
+    },
+    "_id": "b18yEck9sPXcKQpN",
+    "camelName": "felIntelligence"
+  },
+  "57720": {
+    "id": 57720,
+    "name": "Totem of Wrath",
+    "imageUrl": "/files/images/icons/Spell_Fire_TotemOfWrath.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        30706,
+        57720,
+        57721,
+        57722
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 5,
+      "text": "5% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 300,
+      "type": "Regular",
+      "text": "300 seconds"
+    },
+    "tooltip": {
+      "text": "Summons a Totem of Wrath with <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> health at the feet of the caster.  The totem increases spell power by <span class=\"ascension-tooltip-spell-tooltip-text-number\">27</span> for all party and raid members, and increases the critical strike chance of all spells and attacks made against all nearby targets by <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>%.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">5 minutes</span>.\r\rThis ability is usable while shapeshifted.",
+      "tooltipUrl": "/spells/57720/tooltip.html"
+    },
+    "_id": "lgfCWNVZBQyu2ehp",
+    "camelName": "totemOfWrath"
   },
   "57946": {
     "id": 57946,
@@ -19534,6 +21722,39 @@
     },
     "_id": "9fLPxeKrynBQB1Bf",
     "camelName": "flametongueTotem"
+  },
+  "58683": {
+    "id": 58683,
+    "name": "Savage Combat",
+    "imageUrl": "/files/images/icons/Ability_Creature_Disease_03.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        58684,
+        58683
+      ],
+      "text": "Rank 2"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "tooltipUrl": "/spells/58683/tooltip.html"
+    },
+    "_id": "VUQS5qunX2ebq2dI",
+    "camelName": "savageCombat"
   },
   "58771": {
     "id": 58771,
@@ -20205,6 +22426,72 @@
     "_id": "iuYWkpILMvOVqeHz",
     "camelName": "riptide"
   },
+  "63685": {
+    "id": 63685,
+    "name": "Freeze",
+    "imageUrl": "/files/images/icons/Spell_Frost_FrostNova.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        63685
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Increases the damage done by your Lightning Bolt, Chain Lightning, Lava Lash and Shock spells on targets afflicted by your Frostbrand Attack effect, and your Frost Shock has a chance to root the target in ice for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>. when used on targets at or further than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15</span> yards from you.",
+      "tooltipUrl": "/spells/63685/tooltip.html"
+    },
+    "_id": "Q79vVzOJwuvg4ZdV",
+    "camelName": "freeze"
+  },
+  "74396": {
+    "id": 74396,
+    "name": "Fingers of Frost",
+    "imageUrl": "/files/images/icons/Ability_Mage_WintersGrasp.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        74396
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Gives your Chill effects a chance to grant you the Fingers of Frost effect, which treats your next spells cast as if the target were Frozen.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.",
+      "tooltipUrl": "/spells/74396/tooltip.html"
+    },
+    "_id": "6tMdHGhTDWIKEIj1",
+    "camelName": "fingersOfFrost"
+  },
   "499894": {
     "id": 499894,
     "name": "Blackpaw",
@@ -20308,6 +22595,173 @@
     },
     "_id": "fW3WztQiTZNxyRN0",
     "camelName": "deflection"
+  },
+  "965660": {
+    "id": 965660,
+    "name": "Improved Stormstrike",
+    "imageUrl": "/files/images/icons/Spell_Shaman_ImprovedStormstrike.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        965660
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Increases Fire and Frost damage taken from the caster by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>%.",
+      "tooltipUrl": "/spells/965660/tooltip.html"
+    },
+    "_id": "cRC3QkAufTgARmkT",
+    "camelName": "improvedStormstrike"
+  },
+  "965695": {
+    "id": 965695,
+    "name": "Stormstrike",
+    "imageUrl": "/files/images/icons/Ability_Shaman_Stormstrike.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        965695
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly attack with both weapons.  In addition, your next <span class=\"ascension-tooltip-spell-tooltip-text-number\">0</span> non-periodic Nature damage spells and abilities to the target are increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>%. Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>.",
+      "tooltipUrl": "/spells/965695/tooltip.html"
+    },
+    "_id": "ZP6yUDM7cZdCeArf",
+    "camelName": "stormstrike"
+  },
+  "965958": {
+    "id": 965958,
+    "name": "Cobra Venom",
+    "imageUrl": "/files/images/icons/Ability_Hunter_CobraStrikes.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        965958
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Coats a weapon with poison that lasts for <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> hour.\r\nEach strike has a <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>% chance of poisoning the enemy for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{5*<span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.06</span>*AP}</span> Nature damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.  Stacks up to <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> times on a single target.",
+      "tooltipUrl": "/spells/965958/tooltip.html"
+    },
+    "_id": "VVLdPJRg8rGEqKI0",
+    "camelName": "cobraVenom"
+  },
+  "965986": {
+    "id": 965986,
+    "name": "Electrified",
+    "imageUrl": "/files/images/icons/Spell_Shaman_StaticShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        965986
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Your Stormstrike deals an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% damage as Fire when your weapons are imbued with Flametongue and an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% damage as Frost when your weapons are imbued with Frostbrand. In addition, your auto-attacks deal an additional <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{AAPP*.025}</span> Nature damage for <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span> after using Stormstrike.",
+      "tooltipUrl": "/spells/965986/tooltip.html"
+    },
+    "_id": "JQlhd36i5QAZCs0P",
+    "camelName": "electrified"
+  },
+  "966151": {
+    "id": 966151,
+    "name": "Earth, Wind, and Fire",
+    "imageUrl": "/files/images/icons/Ability_DualWieldSpecialization.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        966151
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Increases your Fire, Frost, and Nature damage by <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>%.",
+      "tooltipUrl": "/spells/966151/tooltip.html"
+    },
+    "_id": "NFaDpdOOfQSXzw5E",
+    "camelName": "earthWindAndFire"
+  },
+  "979602": {
+    "id": 979602,
+    "name": "Book of Ascension",
+    "imageUrl": "/files/images/icons/inv_custom_trainerBook.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Right Click to summon and dismiss your personal guide of Ascension.",
+      "tooltipUrl": "/spells/979602/tooltip.html"
+    },
+    "_id": "9QHqh15PRWUcnDPQ",
+    "camelName": "bookOfAscension"
   },
   "985005": {
     "id": 985005,
@@ -20485,6 +22939,56 @@
     "_id": "outsmqt0AFW0ygI7",
     "camelName": "titanScrollGolganneth"
   },
+  "993963": {
+    "id": 993963,
+    "name": "Eonar's Blessing",
+    "imageUrl": "/files/images/icons/Spell_Nature_WispSplodeGreen.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        993963
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 5,
+      "type": "Regular",
+      "text": "5 seconds"
+    },
+    "tooltip": {
+      "text": "Grants <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>% of the creature's health as health and mana regeneration per second.",
+      "tooltipUrl": "/spells/993963/tooltip.html"
+    },
+    "_id": "MjlAjYS2A7XPneVS",
+    "camelName": "eonarsBlessing"
+  },
+  "998786": {
+    "id": 998786,
+    "name": "Lone Wolf",
+    "imageUrl": "/files/images/icons/Ability_Hunter_ImprovedTracking.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Damage with hunter abilities increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>%",
+      "tooltipUrl": "/spells/998786/tooltip.html"
+    },
+    "_id": "mX3EDx3ulP6fusbf",
+    "camelName": "loneWolf"
+  },
   "999116": {
     "id": 999116,
     "name": "Chaotic Runesaber",
@@ -20557,6 +23061,34 @@
     "_id": "LfB0Xwm2PHkJi2ZS",
     "camelName": "highRisk"
   },
+  "1004119": {
+    "id": 1004119,
+    "name": "No-Risk (PvP)",
+    "imageUrl": "/files/images/icons/Achievement_Reputation_01.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        1004119
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "No-Risk mode is enabled. \r\n\r\nYou will not drop items on death.\r\n\r\nYou can switch risk modes in any Capital City.",
+      "tooltipUrl": "/spells/1004119/tooltip.html"
+    },
+    "_id": "s8eXO5Dh8Ti11sCX",
+    "camelName": "noRiskPvP"
+  },
   "9930870": {
     "id": 9930870,
     "name": "Honorable",
@@ -20623,5 +23155,59 @@
     },
     "_id": "ONg1eTmzIDX2Bv7F",
     "camelName": "signOfTheDuelist"
+  },
+  "9931030": {
+    "id": 9931030,
+    "name": "Treasure Hunter: Heroic Outland Dungeons",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        9931030
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Tower 100",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "You're able to find up to |cFF0070DDHeroic Dungeon|r items in the world!",
+      "tooltipUrl": "/spells/9931030/tooltip.html"
+    },
+    "_id": "ZDVFRzHIM98yM4KP",
+    "camelName": "treasureHunterHeroicOutlandDungeons"
+  },
+  "9931032": {
+    "id": 9931032,
+    "name": "PvE Mode",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        9931032
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Cannot be attacked by other players.",
+      "tooltipUrl": "/spells/9931032/tooltip.html"
+    },
+    "_id": "LTb5jEkpYsxDW03v",
+    "camelName": "pvEMode"
   }
 }

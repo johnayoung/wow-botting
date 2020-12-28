@@ -3,14 +3,15 @@ const robot = require('robotjs');
 module.exports = {
   condition: (s) =>
     s.targetInMeleeRange &&
-    s.spells.heroicStrike.castable &&
-    s.spells.heroicStrike.equipped &&
-    s.rageCurrent > 30,
+    s.targetDebuffs.frostbolt &&
+    s.spells.blastWave.castable &&
+    s.spells.blastWave.equipped &&
+    s.manaCurrent >= 500,
   effect: (s) => {
     s.targetIsDead = true;
     return s;
   },
-  cost: (s) => 10,
+  cost: (s) => 6,
   act: (k) => robot.keyTap(k),
-  log: (l) => l.info('Casting Heroic Strike'),
+  log: (l) => l.info('Casting Blast Wave'),
 };

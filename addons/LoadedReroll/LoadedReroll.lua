@@ -8,14 +8,14 @@ LoadedReroll = LibStub("AceAddon-3.0"):NewAddon("AceConsole-3.0",
                                                 "AceSerializer-3.0")
 
 -- Config Variables
-local NUMBER_OF_FRAMES = 100
+local NUMBER_OF_FRAMES = 120
 local SETUP_SEQUENCE = false
 local FRAME_ROWS = 1
 local CELL_SIZE = 3 -- Size of data squares in px.
 local CELL_SPACING = 0 -- Spacing in px between data squares.
 
 -- Containers
-spellsToTarget = {"Sinister Strike", "Charge", "Sprint", "Evasion"}
+spellsToTarget = {"Defensive Stance", "Sinister Strike", "Holy Light", "Charge"}
 secondarySpells = {"Charge"}
 sortedSpells = {} -- Spells sorted to know where they fall
 

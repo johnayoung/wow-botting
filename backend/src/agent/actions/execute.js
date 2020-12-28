@@ -26,7 +26,8 @@ module.exports = {
     return s;
   },
   cost: (s) => {
-    if (s.spell.suddenDeath.active === true) {
+    if (s.buffs.suddenDeath) {
+      console.log('we have sudden death');
       return 6;
     }
     return 8;

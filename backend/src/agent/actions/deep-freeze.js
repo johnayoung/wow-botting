@@ -2,9 +2,7 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.spell.fingersOfFrost.active &&
-    s.spells.deepFreeze.castable &&
-    s.spells.deepFreeze.equipped,
+    s.isFrozen && s.spells.deepFreeze.castable && s.spells.deepFreeze.equipped,
   effect: (s) => {
     s.targetIsDead = true;
     return s;

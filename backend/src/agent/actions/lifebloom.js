@@ -3,8 +3,8 @@ const robot = require('robotjs');
 module.exports = {
   condition: (s) =>
     s.playerInCombat &&
-    s.spell.metamorphosis.active !== true &&
-    s.spell.lifebloom.active === false &&
+    !s.buffs.metamorphosis &&
+    !s.buffs.lifebloom &&
     s.spells.lifebloom.castable &&
     s.spells.lifebloom.equipped &&
     s.health <= 60 &&

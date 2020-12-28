@@ -11,7 +11,7 @@ const logger = require('pino')({
 const actionConfig = require('./actions');
 const { createPlan } = require('./planner');
 
-function performPlan(plan, mapping) {
+function performPlan(plan, mapping, state) {
   const { actions } = plan;
 
   actions.forEach((actionName) => {
@@ -20,7 +20,7 @@ function performPlan(plan, mapping) {
 
     log(logger);
 
-    return act(key);
+    return act(key, state);
   });
 }
 
@@ -65,7 +65,7 @@ async function run({ state, rotation = defaultRotation }) {
         return null;
       }
 
-      return performPlan(plan, spells);
+      return performPlan(plan, spells, state);
     } catch (e) {
       logger.error(e);
       return e;

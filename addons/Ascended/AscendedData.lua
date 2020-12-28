@@ -19,6 +19,61 @@ if not buffsWithStacks then
     }
 end
 
+if not LineOfSight then
+    LoSTable = {}
+    function LineOfSight(targetCheck, time)
+        local time = time or 0.7
+        targetGUID = UnitGUID(targetCheck) or 0
+
+        for i = 1, #LoSTable do
+            if time < (GetTime() - LoSTable[i].time) then
+                table.remove(LoSTable, i)
+                break
+            end
+        end
+
+        function LoSCheck(self, event, ...)
+            local targetGUID = targetGUID
+            local Log = {...}
+            local AlreadyTabled = false
+            if Log[2] and Log[2] == "SPELL_CAST_FAILED" and targetGUID then
+                if Log[4] and Log[4] == UnitGUID("player") then
+                    if Log[15] and Log[15] == SPELL_FAILED_LINE_OF_SIGHT then
+                        for j = 1, #LoSTable do
+                            if targetGUID == LoSTable[j].unit then
+                                AlreadyTabled = true
+                                break
+                            end
+                        end
+                        if not AlreadyTabled then
+                            table.insert(LoSTable,
+                                         {unit = targetGUID, time = GetTime()})
+                            targetGUID = nil
+                            _G.NovaLineOfSight:UnregisterAllEvents()
+                        end
+                    end
+                end
+            end
+
+        end
+
+        if not NovaLineOfSight then
+            frameLOS = CreateFrame("frame", "NovaLineOfSight")
+            frameLOS:SetScript("OnEvent", LoSCheck)
+        end
+
+        for k = 1, #LoSTable do
+            if targetGUID and targetGUID == LoSTable[k].unit then
+                return false
+            end
+        end
+
+        _G.NovaLineOfSight:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+        return true
+
+    end
+end
+
 if SetLocals == nil then
     local InterruptSpells = {
         118, 116, 61305, 28271, 28272, 61780, 61721, 2637, 33786, 5185, 8936,
@@ -76,10 +131,60 @@ if SetLocals == nil then
         982, -- Revive Pet		(cast)
         111771, -- Demonic Gateway			(cast)
         118297, -- Immolate				(cast)
-        124465 -- Vampiric Touch			(cast)
+        124465, -- Vampiric Touch			(cast)
+        38692 -- Fireball ?
         -- 32375 -- Mass Dispel				(cast) 
     }
     function castInt() return InterruptSpells end
+
+    local dispelCurseCC = {
+        51514 -- Hex
+    }
+    function dCurseCC() return dispelCurseCC end
+    local dispelMagicCC = {
+        115001, -- Remorseless Winter
+        2637, -- Hibernate
+        110698, -- Hammer of Justice (Paladin)
+        117526, -- Binding Shot
+        3355, -- Freezing Trap
+        145206, -- Aqua Bomb
+        1513, -- Scare Beast
+        118271, -- Combustion Impact
+        44572, -- Deep Freeze
+        31661, -- Dragon's Breath
+        118, -- Polymorph
+        10326, -- Turn Evil
+        61305, -- Polymorph: Black Cat
+        28272, -- Polymorph: Pig
+        61721, -- Polymorph: Rabbit
+        61780, -- Polymorph: Turkey
+        28271, -- Polymorph: Turtle
+        82691, -- Ring of Frost
+        11129, -- Combustion
+        123393, -- Breath of Fire (Glyph of Breath of Fire)
+        115078, -- Paralysis
+        105421, -- Blinding Light
+        115752, -- Blinding Light (Glyph of Blinding Light)
+        105593, -- Fist of Justice
+        853, -- Hammer of Justice
+        119072, -- Holy Wrath
+        20066, -- Repentance
+        64044, -- Psychic Horror
+        8122, -- Psychic Scream
+        113792, -- Psychic Terror (Psyfiend)
+        9484, -- Shackle Undead
+        118905, -- Static Charge (Capacitor Totem)
+        5782, -- Fear
+        118699, -- Fear
+        5484, -- Howl of Terror
+        6789, -- Mortal Coil
+        30283, -- Shadowfury
+        104045, -- Sleep (Metamorphosis)
+        115268, -- Mesmerize (Shivarra)
+        113092, -- Frost Bomb
+        6358 -- Seduction (Succubus)
+    }
+    function dMagicCC() return dispelMagicCC end
 
     SetLocals = true
 end

@@ -40,6 +40,19 @@ const keyBindings = {
   33: 'f10',
   34: 'f11',
   35: 'f12',
+  // Shapeshift bar
+  36: 'g',
+  37: 'r',
+  38: 't',
+  39: 'v',
+  40: 'w',
+  41: 'a',
+  42: 'q',
+  43: 'z',
+  44: 'c',
+  45: '4',
+  46: '5',
+  47: '6',
 };
 
 function getSpellState(app, config, reader, spells, start, end) {

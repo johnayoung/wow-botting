@@ -19,7 +19,7 @@ function configureDataCoords() {
 
   return new Promise((resolve, reject) => {
     // const numberOfFrames = parseInt(metaData.toString().slice(-2));
-    const numberOfFrames = 120;
+    const numberOfFrames = 130;
     const frameRows = parseInt(metaData.toString().slice(-5, -3));
     // Size of data frames. Only needs a rough estimation for the bitmap. Resolution and rounding alters dimensions, so there is a multiplier of 2 to correct for potentially missed pixels.
     const cellSize = parseInt(metaData.toString().slice(-7, -5)) * 2;

@@ -9,7 +9,7 @@ Ascended = LibStub("AceAddon-3.0"):NewAddon("AceConsole-3.0", "AceEvent-3.0",
 local rc = LibStub("LibRangeCheck-2.0")
 
 -- Config Variables
-local NUMBER_OF_FRAMES = 120
+local NUMBER_OF_FRAMES = 130
 local SETUP_SEQUENCE = false
 local FRAME_ROWS = 1
 local CELL_SIZE = 3 -- Size of data squares in px.
@@ -19,6 +19,7 @@ local NUMBER_OF_BUFFS = 20
 local NUMBER_OF_DEBUFFS = 20
 
 -- Action bar configuration for which spells are tracked
+-- https://wowwiki.fandom.com/wiki/ActionSlot
 local MAIN_MIN = 1
 local MAIN_MAX = 12
 local RIGHT_ONE_MIN = 25
@@ -31,6 +32,10 @@ local BOTTOM_LEFT_MIN = 61
 local BOTTOM_LEFT_MAX = 72
 local BATTLESTANCE_MIN = 73
 local BATTLESTANCE_MAX = 84
+local DEFENSIVESTANCE_MIN = 85
+local DEFENSIVESTANCE_MAX = 96
+local BERSERKERSTANCE_MIN = 97
+local BERSERKERSTANCE_MAX = 108
 
 state = {}
 healthAndPower = {
@@ -247,14 +252,6 @@ function Ascended:CreateFrames(n)
             end
             startFrame = startFrame + #targetDebuffs
 
-            -- Player abilities
-            -- local bar1 = getActionBarSpellIds(BATTLESTANCE_MIN)
-            -- for i = 1, #bar1 do
-            --     local spell = bar1[i]
-            --     local frame = startFrame + i - 1
-            --     MakePixelSquareArr(integerToColor(spell), frame)
-            -- end
-            -- startFrame = startFrame + #bar1
             local bar1 = getActionBarSpellIds(MAIN_MIN)
             for i = 1, #bar1 do
                 local spell = bar1[i]
@@ -279,6 +276,14 @@ function Ascended:CreateFrames(n)
             end
             startFrame = startFrame + #bar3
 
+            local shapeShiftBar = getActionBarSpellIds(DEFENSIVESTANCE_MIN)
+            for i = 1, #shapeShiftBar do
+                local spell = shapeShiftBar[i]
+                local frame = startFrame + i - 1
+                MakePixelSquareArr(integerToColor(spell), frame)
+            end
+            startFrame = startFrame + #shapeShiftBar
+
             -- Member combat status
             local memberStatus = memberStatus()
             MakePixelSquareArr(integerToColor(memberStatus), startFrame)
@@ -294,15 +299,20 @@ function Ascended:CreateFrames(n)
             MakePixelSquareArr(integerToColor(memberMeleeRange), startFrame)
             startFrame = startFrame + 1
 
+            -- Dispel
+            local dispelTarget = getDispel()
+            MakePixelSquareArr(integerToColor(dispelTarget), startFrame)
+            startFrame = startFrame + 1
+
             -- Misc
             local misc = miscellaneousBinaries()
             MakePixelSquareArr(integerToColor(misc), startFrame)
             startFrame = startFrame + 1
 
-            -- -- Interruptible Target
-            -- local targetsToInterrupt = getInterruptTargets()
-            -- MakePixelSquareArr(integerToColor(targetsToInterrupt), startFrame)
-            -- startFrame = startFrame + 1
+            -- Interruptible Target
+            local targetsToInterrupt = getInterruptTargets()
+            MakePixelSquareArr(integerToColor(targetsToInterrupt), startFrame)
+            startFrame = startFrame + 1
 
         end
 
@@ -455,7 +465,7 @@ if GameBinaries == nil then
     end
 
     function hasWeaponEnchant()
-        local hwv, hwd = GetWeaponEnchantInfo()
+        local hwv, hwd, hwc, hweid, owv, owd = GetWeaponEnchantInfo()
 
         if hwv then
             return 1
@@ -479,6 +489,22 @@ if GameBinaries == nil then
         end
     end
 
+    function haveDebuff(UnitID, SpellID, TimeLeft, Filter)
+        if not TimeLeft then TimeLeft = 0 end
+
+        if type(SpellID) == "number" then SpellID = {SpellID} end
+        for i = 1, #SpellID do
+            local spell, rank = GetSpellInfo(SpellID[i])
+            if spell then
+                local debuff =
+                    select(7, UnitDebuff(UnitID, spell, rank, Filter))
+                if debuff and (debuff == 0 or debuff - GetTime() > TimeLeft) then
+                    return true
+                end
+            end
+        end
+    end
+
     function getActiveBuffWithStacks(unitId, buff, stacks)
         for i = 1, 20 do
             local b, rank, icon, count = UnitBuff(unitId, i);
@@ -489,6 +515,16 @@ if GameBinaries == nil then
                     end
                 end
             end
+        end
+    end
+
+    function isFrozen()
+        local fof = haveBuff("player", {44544, 74396}, 0)
+
+        if fof or haveDebuff("target", {122, 33395, 44572, 113724, 102051}, 0) then
+            return 1
+        else
+            return 0
         end
     end
 
@@ -541,10 +577,14 @@ if GameBinaries == nil then
 
         local getMaelstromStacks = getActiveBuffWithStacks("player",
                                                            "Maelstrom Weapon", 5)
+        local getWildWrath = getActiveBuffWithStacks("player", "Wild Wrath", 1)
+        local getIsFrozen = isFrozen()
 
         local misc = {
             {name = "hasWeaponEnchant", action = hasWeaponEnchant()},
-            {name = "maelstromWeapon", action = getMaelstromStacks}
+            {name = "maelstromWeapon", action = getMaelstromStacks},
+            {name = "wildWrath", action = getWildWrath},
+            {name = "isFrozen", action = getIsFrozen}
         }
 
         for i = 1, #misc do
@@ -729,40 +769,63 @@ if PlayerAbilities == nil then
         return statusCount
     end
 
+    function getDispel()
+        for i = 1, #members do
+            if members[i] ~= nil then
+                local needsMagicDispel = haveDebuff(members[i], dMagicCC(), 3)
+                local badDispel = haveDebuff(members[i], {34914, 30108, 131736},
+                                             0)
+
+                if needsMagicDispel and
+                    (not badDispel or calculateHP("player") > 90) then
+                    return i
+                end
+            end
+        end
+        return 0
+    end
+
     function getInterruptTargets()
+        local targetsToInterrupt = {"target", "focus", "mouseover"}
         local count = 0
         local ddislow = 0
         local interrupthealer = 0
         -- Check that dmg is low enough
-        for i = 1, #cTar do
+        for i = 1, #targetsToInterrupt do
             if UnitExists(cTar[i]) and
                 (100 * UnitHealth(cTar[i]) / UnitHealthMax(cTar[i])) < 80 then
                 ddislow = 1
             end
         end
 
-        for i = 1, #cTar do
-            local isHostile = UnitExists(cTar[i]) and ddislow == 1 and
-                                  UnitCanAttack("player", cTar[i])
+        for i = 1, #targetsToInterrupt do
+            local isHostile =
+                UnitExists(targetsToInterrupt[i]) and ddislow == 1 and
+                    UnitCanAttack("player", targetsToInterrupt[i])
+
             if isHostile then
-                local castName, _, _, castStartTime, castEndTime, _, _,
+                local castName, _, _, _, castStartTime, castEndTime, _,
                       castInterruptable = UnitCastingInfo(cTar[i])
-                print(cTar[i])
-                print(castStartTime)
+
                 for _, v in ipairs(castInt()) do
-                    local timeSinceStart =
-                        (GetTime() * 1000 - castStartTime) / 1000 +
-                            (tonumber((select(3, GetNetStats()) +
-                                          select(4, GetNetStats())) / 2000))
-                    local timeLeft = ((GetTime() * 1000 - castEndTime) * -1) /
-                                         1000
-                    local castTime = castEndTime - castStartTime
-                    local currentPercent = timeSinceStart / castTime * 100000
-                    if currentPercent > maxMSinterrupt and currentPercent <
-                        minMSinterrupt then
-                        local status = 1
-                        local value = makeIndexBase2(status, i)
-                        count = count + value
+                    if castStartTime ~= nil then
+                        local castTime =
+                            (GetTime() * 1000 - castStartTime) / 1000
+                        local latency =
+                            tonumber(select(3, GetNetStats()) / 1000)
+
+                        local timeSinceStart = castTime + latency
+                        local timeLeft =
+                            ((GetTime() * 1000 - castEndTime) * -1) / 1000
+                        local castTime = castEndTime - castStartTime
+                        local currentPercent =
+                            timeSinceStart / castTime * 100000
+                        if currentPercent > maxMSinterrupt and currentPercent <
+                            minMSinterrupt then
+                            local status = i
+                            local value = makeIndexBase2(status, i)
+                            count = count + value
+                        end
                     end
                 end
             end
