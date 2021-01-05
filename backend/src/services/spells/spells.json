@@ -1027,6 +1027,55 @@
     "_id": "N0FDr3XZ2mflB37S",
     "camelName": "holyLight"
   },
+  "676": {
+    "id": 676,
+    "name": "Disarm",
+    "imageUrl": "/files/images/icons/Ability_Warrior_Disarm.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        676
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 60,
+      "type": "Regular",
+      "text": "1 minute"
+    },
+    "duration": {
+      "seconds": 7,
+      "type": "Regular",
+      "text": "7 seconds"
+    },
+    "tooltip": {
+      "text": "Disarm the enemy, removing all weapons, shield or other equipment carried for <span class=\"ascension-tooltip-spell-tooltip-text-number\">7 seconds</span>.",
+      "tooltipUrl": "/spells/676/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 18,
+      "abilityEssenceCost": 2,
+      "classId": 8,
+      "specializationId": 26
+    },
+    "_id": "3LczpnXkx3tsJueT",
+    "camelName": "disarm"
+  },
   "686": {
     "id": 686,
     "name": "Shadow Bolt",
@@ -1253,6 +1302,41 @@
     },
     "_id": "WEBTW2tsruA0dTV9",
     "camelName": "shadowBolt"
+  },
+  "712": {
+    "id": 712,
+    "name": "Summon Succubus",
+    "imageUrl": "/files/images/icons/Spell_Shadow_SummonSuccubus.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        712
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 80,
+      "text": "80% of base mana"
+    },
+    "castTime": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Summons a Succubus under the command of the Warlock. Requires Drain Soul or Shadowburn to use.",
+      "tooltipUrl": "/spells/712/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 3,
+      "classId": 7,
+      "specializationId": 22
+    },
+    "_id": "MUh8eBJeDkdr4auR",
+    "camelName": "summonSuccubus"
   },
   "768": {
     "id": 768,
@@ -3326,6 +3410,40 @@
     "_id": "Xq0bI40bHaIznLIv",
     "camelName": "counterspell"
   },
+  "2457": {
+    "id": 2457,
+    "name": "Battle Stance",
+    "imageUrl": "/files/images/icons/Ability_Warrior_OffensiveStance.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        2457
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "A balanced combat stance that increases the armor penetration of all of your attacks by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% and gives your Rend damage over time effect a chance to critically hit.",
+      "tooltipUrl": "/spells/2457/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 1,
+      "abilityEssenceCost": 2,
+      "classId": 8,
+      "specializationId": 24
+    },
+    "_id": "hzxZqaIALdgK5qa1",
+    "camelName": "battleStance"
+  },
   "2484": {
     "id": 2484,
     "name": "Earthbind Totem",
@@ -5182,6 +5300,18 @@
     },
     "_id": "WXmGLQODKPbV2KNM",
     "camelName": "rend"
+  },
+  "6603": {
+    "id": 6603,
+    "name": "Auto Attack",
+    "imageUrl": "/files/images/icons/INV_Sword_04.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Automatically attacks a target in melee with an equipped weapon until cancelled.",
+      "tooltipUrl": "/spells/6603/tooltip.html"
+    },
+    "_id": "mwJYF0I1J2aqT5un",
+    "camelName": "autoAttack"
   },
   "6673": {
     "id": 6673,
@@ -8084,6 +8214,53 @@
     "_id": "a8LKrQsrlOEJWrEt",
     "camelName": "thorns"
   },
+  "10157": {
+    "id": 10157,
+    "name": "Arcane Intellect",
+    "imageUrl": "/files/images/icons/Spell_Holy_MagicalSentry.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        1459,
+        1460,
+        1461,
+        10156,
+        10157,
+        23028,
+        27126,
+        27127,
+        42995,
+        43002
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 31,
+      "text": "31% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 1800,
+      "type": "Regular",
+      "text": "1800 seconds"
+    },
+    "tooltip": {
+      "text": "Increases the target's Intellect by <span class=\"ascension-tooltip-spell-tooltip-text-number\">31</span> for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 minutes</span>.",
+      "tooltipUrl": "/spells/10157/tooltip.html"
+    },
+    "_id": "t3RjtskevuUiX8ZG",
+    "camelName": "arcaneIntellect"
+  },
   "10159": {
     "id": 10159,
     "name": "Cone of Cold",
@@ -10971,6 +11148,39 @@
     "_id": "ZLbJXy6RU81Gx2sh",
     "camelName": "icyVeins"
   },
+  "12654": {
+    "id": 12654,
+    "name": "Ignite",
+    "imageUrl": "/files/images/icons/Spell_Fire_Incinerate.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        12654
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 50000,
+      "type": "Anywhere",
+      "text": "50000 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 4,
+      "type": "Regular",
+      "text": "4 seconds"
+    },
+    "tooltip": {
+      "text": "Your critical strikes from Fire damage spells cause the target to burn for an additional percentage of your spell's damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">4 seconds</span>.",
+      "tooltipUrl": "/spells/12654/tooltip.html"
+    },
+    "_id": "AKW9NQPIly2NZ2aJ",
+    "camelName": "ignite"
+  },
   "12721": {
     "id": 12721,
     "name": "Deep Wounds",
@@ -11961,6 +12171,43 @@
     },
     "_id": "mCGSaWNIlFpdQKEE",
     "camelName": "silence"
+  },
+  "16188": {
+    "id": 16188,
+    "name": "Nature's Swiftness",
+    "imageUrl": "/files/images/icons/Spell_Nature_RavenForm.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        16188
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 120,
+      "type": "Regular",
+      "text": "2 minutes"
+    },
+    "tooltip": {
+      "text": "When activated, your next Shaman Nature spell with a base casting time less than <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> sec. becomes an instant cast spell and increases your cast speed by <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">20 seconds</span>. Shares a cooldown with Elemental Mastery.",
+      "tooltipUrl": "/spells/16188/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 591,
+      "classId": 6,
+      "specializationId": 20,
+      "visualColumn": 3
+    },
+    "_id": "ZqvC7a2lBj29IZ0x",
+    "camelName": "naturesSwiftness"
   },
   "16339": {
     "id": 16339,
@@ -13752,6 +13999,18 @@
     "_id": "VLIYBmrnlPy72mMB",
     "camelName": "moonkinForm"
   },
+  "24907": {
+    "id": 24907,
+    "name": "Moonkin Aura",
+    "imageUrl": "/files/images/icons/Spell_Nature_MoonGlow.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Increases spell critical effect chance by <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>%.",
+      "tooltipUrl": "/spells/24907/tooltip.html"
+    },
+    "_id": "rnageFovCZiaeup8",
+    "camelName": "moonkinAura"
+  },
   "25208": {
     "id": 25208,
     "name": "Rend",
@@ -15046,6 +15305,53 @@
     "_id": "aeOtEZB03RbaaAPU",
     "camelName": "chainLightning"
   },
+  "25448": {
+    "id": 25448,
+    "name": "Lightning Bolt",
+    "imageUrl": "/files/images/icons/Spell_Nature_Lightning.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 11,
+      "other": [
+        403,
+        529,
+        548,
+        915,
+        943,
+        6041,
+        10391,
+        10392,
+        15207,
+        15208,
+        25448,
+        25449,
+        49237,
+        49238
+      ],
+      "text": "Rank 11"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 10,
+      "text": "10% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "seconds": 2.2,
+      "type": "Regular",
+      "text": "2.2 seconds"
+    },
+    "tooltip": {
+      "text": "Casts a bolt of lightning at the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">495</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">565</span> Nature damage.",
+      "tooltipUrl": "/spells/25448/tooltip.html"
+    },
+    "_id": "nqj0LIXsHETFZF0I",
+    "camelName": "lightningBolt"
+  },
   "25449": {
     "id": 25449,
     "name": "Lightning Bolt",
@@ -15144,6 +15450,57 @@
     },
     "_id": "NlAAzekRpjT2tPLB",
     "camelName": "earthShock"
+  },
+  "25457": {
+    "id": 25457,
+    "name": "Flame Shock",
+    "imageUrl": "/files/images/icons/Spell_Fire_FlameShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        8050,
+        8052,
+        8053,
+        10447,
+        10448,
+        29228,
+        25457,
+        49232,
+        49233
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 17,
+      "text": "17% of base mana"
+    },
+    "range": {
+      "yards": 25,
+      "type": "Twenty-Five yards",
+      "text": "25 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "duration": {
+      "seconds": 18,
+      "type": "Regular",
+      "text": "18 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly sears the target with fire, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">433</span> Fire damage immediately and <span class=\"ascension-tooltip-spell-tooltip-text-number\">732</span> Fire damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">18 seconds</span>. This periodic damage may critically strike and will occur more rapidly based on the caster's spell haste. This ability shares a cooldown with Holy Shock.",
+      "tooltipUrl": "/spells/25457/tooltip.html"
+    },
+    "_id": "7H5sH8FlGlNHVQ0C",
+    "camelName": "flameShock"
   },
   "25464": {
     "id": 25464,
@@ -16114,6 +16471,55 @@
     "_id": "3HKQRnZCwmy7qPrX",
     "camelName": "multiShot"
   },
+  "27068": {
+    "id": 27068,
+    "name": "Wyvern Sting",
+    "imageUrl": "/files/images/icons/INV_Spear_02.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        19386,
+        24132,
+        24133,
+        27068,
+        49011,
+        49012
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "range": {
+      "yards": 35,
+      "type": "Hunter Range",
+      "text": "35 yards"
+    },
+    "castTime": {
+      "seconds": -1000,
+      "type": "Regular",
+      "text": "-1000 second"
+    },
+    "cooldown": {
+      "seconds": 60,
+      "type": "Regular",
+      "text": "1 minute"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "A stinging shot that puts the target to sleep for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.  Any damage will cancel the effect.  When the target wakes up, the Sting causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">945</span> Nature damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">6 seconds</span>.  Only one Sting per Hunter can be active on the target at a time.",
+      "tooltipUrl": "/spells/27068/tooltip.html"
+    },
+    "_id": "5Og6ODH0ZyEBVwjg",
+    "camelName": "wyvernSting"
+  },
   "27070": {
     "id": 27070,
     "name": "Fireball",
@@ -16322,6 +16728,54 @@
       "tooltipUrl": "/spells/27078/tooltip.html"
     },
     "_id": "naOMWhnpbxvpWeK8",
+    "camelName": "fireBlast"
+  },
+  "27079": {
+    "id": 27079,
+    "name": "Fire Blast",
+    "imageUrl": "/files/images/icons/Spell_Fire_Fireball.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 9,
+      "other": [
+        2136,
+        2137,
+        2138,
+        8412,
+        8413,
+        10197,
+        10199,
+        27078,
+        27079,
+        42872,
+        42873
+      ],
+      "text": "Rank 9"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 21,
+      "text": "21% of base mana"
+    },
+    "range": {
+      "yards": 20,
+      "type": "Twenty yards",
+      "text": "20 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 8,
+      "type": "Regular",
+      "text": "8 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts the enemy for <span class=\"ascension-tooltip-spell-tooltip-text-number\">763</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">903</span> Fire damage. ",
+      "tooltipUrl": "/spells/27079/tooltip.html"
+    },
+    "_id": "YxikqLzfYAglnVIo",
     "camelName": "fireBlast"
   },
   "27087": {
@@ -16592,6 +17046,51 @@
     "_id": "Br9E8R8VE5nHWtF4",
     "camelName": "blastWave"
   },
+  "27134": {
+    "id": 27134,
+    "name": "Ice Barrier",
+    "imageUrl": "/files/images/icons/Spell_Ice_Lament.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        11426,
+        13031,
+        13032,
+        13033,
+        27134,
+        33405,
+        43038,
+        43039
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 21,
+      "text": "21% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Instantly shields you, absorbing <span class=\"ascension-tooltip-spell-tooltip-text-number\">833</span> damage.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  While the shield holds, spellcasting will not be delayed by damage.",
+      "tooltipUrl": "/spells/27134/tooltip.html"
+    },
+    "_id": "L8y4BFbaObQu6fmG",
+    "camelName": "iceBarrier"
+  },
   "27135": {
     "id": 27135,
     "name": "Holy Light",
@@ -16730,6 +17229,18 @@
     },
     "_id": "smmE9HMQBiRRosEX",
     "camelName": "blessingOfMight"
+  },
+  "27149": {
+    "id": 27149,
+    "name": "Devotion Aura",
+    "imageUrl": "/files/images/icons/Spell_Holy_DevotionAura.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Gives <span class=\"ascension-tooltip-spell-tooltip-text-number\">600</span> additional armor to party and raid members within <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span> yards.  Players may only have one Aura on them per Paladin at any one time.",
+      "tooltipUrl": "/spells/27149/tooltip.html"
+    },
+    "_id": "LBCf3m3w1AGsS44T",
+    "camelName": "devotionAura"
   },
   "27179": {
     "id": 27179,
@@ -17070,6 +17581,41 @@
     },
     "_id": "OcoCZYNCJ4MeMU3R",
     "camelName": "createHealthstone"
+  },
+  "27250": {
+    "id": 27250,
+    "name": "Create Firestone",
+    "imageUrl": "/files/images/icons/INV_Ammo_FireTar.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        6366,
+        17951,
+        17952,
+        17953,
+        27250,
+        60219,
+        60220
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 54,
+      "text": "54% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "While applied to target weapon it increases damage dealt by spells by <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>% and spell critical strike rating by <span class=\"ascension-tooltip-spell-tooltip-text-number\">35</span>.  Lasts for <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> hour.",
+      "tooltipUrl": "/spells/27250/tooltip.html"
+    },
+    "_id": "CUC5lLW0Xca22FR7",
+    "camelName": "createFirestone"
   },
   "27364": {
     "id": 27364,
@@ -19766,6 +20312,34 @@
     "_id": "RNXu7ovU6K5KqfiT",
     "camelName": "holyNova"
   },
+  "48108": {
+    "id": 48108,
+    "name": "Hot Streak",
+    "imageUrl": "/files/images/icons/Ability_Mage_HotStreak.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        48108
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Any time you score <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> spell criticals in a row using using Fireball, Fire Blast, Scorch, Living Bomb, or Frostfire Bolt, you have a chance the next Pyroblast spell cast within <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 seconds</span> will be instant cast.",
+      "tooltipUrl": "/spells/48108/tooltip.html"
+    },
+    "_id": "fBG5XZIC5nHvKwFw",
+    "camelName": "hotStreak"
+  },
   "48161": {
     "id": 48161,
     "name": "Power Word: Fortitude",
@@ -20842,6 +21416,43 @@
     },
     "_id": "LLBpkCKCqB9mkYn0",
     "camelName": "haveRaptorClaw"
+  },
+  "51490": {
+    "id": 51490,
+    "name": "Thunderstorm",
+    "imageUrl": "/files/images/icons/Spell_Shaman_ThunderStorm.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        51490
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 40,
+      "type": "Regular",
+      "text": "40 seconds"
+    },
+    "tooltip": {
+      "text": "You call down a bolt of lightning, energizing you and damaging nearby enemies within <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> yards. Restores <span class=\"ascension-tooltip-spell-tooltip-text-number\">8</span>% mana to you and deals <span class=\"ascension-tooltip-spell-tooltip-text-number\">728</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">830</span> Nature damage to all nearby enemies, knocking them back <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span> yards. This spell is usable while stunned. ",
+      "tooltipUrl": "/spells/51490/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 60,
+      "abilityEssenceCost": 4,
+      "talentEssenceCost": 1,
+      "talentId": 2053,
+      "classId": 6,
+      "specializationId": 18,
+      "visualColumn": 2
+    },
+    "_id": "5pTvnt5IbhGQyo7u",
+    "camelName": "thunderstorm"
   },
   "51533": {
     "id": 51533,
@@ -22458,6 +23069,34 @@
     },
     "_id": "Q79vVzOJwuvg4ZdV",
     "camelName": "freeze"
+  },
+  "64343": {
+    "id": 64343,
+    "name": "Impact",
+    "imageUrl": "/files/images/icons/Spell_Fire_MeteorStorm.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        64343
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Your next Fire Blast stuns the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 seconds</span>.",
+      "tooltipUrl": "/spells/64343/tooltip.html"
+    },
+    "_id": "C8BhevU2NxHfiUXv",
+    "camelName": "impact"
   },
   "74396": {
     "id": 74396,

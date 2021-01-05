@@ -11,5 +11,5 @@ module.exports = {
   },
   cost: (s) => 9,
   act: (k) => robot.keyTap(k),
-  log: (l) => l.info('Casting Lightning Shield'),
+  log: (l) => l.info('Casting Inner Fire'),
 };

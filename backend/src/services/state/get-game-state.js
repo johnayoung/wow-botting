@@ -25,7 +25,7 @@ function getGameState(app) {
   const pixel = {
     xMin: 0,
     yMin: 0,
-    xMax: 489,
+    xMax: 386,
     yMax: 35,
   };
 
@@ -118,6 +118,7 @@ function getGameState(app) {
     'maelstromWeapon',
     'wildWrath',
     'isFrozen',
+    'targetPurgeable',
   ];
   const miscBinary = reader.getIntAtCell(config[startFrame]);
   const miscList = getBinaryList(miscBinary, miscValue);

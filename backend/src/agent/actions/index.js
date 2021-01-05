@@ -5,6 +5,7 @@ const battleShout = require('./battle-shout');
 const blastWave = require('./blast-wave');
 const blessingOfMight = require('./blessing-of-might');
 const blessingOfSanctuary = require('./blessing-of-sanctuary');
+const bloodlust = require('./bloodlust');
 const bloodthirst = require('./bloodthirst');
 const chainLightning = require('./chain-lightning');
 const chimeraShot = require('./chimera-shot');
@@ -16,6 +17,7 @@ const crusaderStrike = require('./crusader-strike');
 const deepFreeze = require('./deep-freeze');
 const desperatePrayer = require('./desperate-prayer');
 const devastate = require('./devastate');
+const disarm = require('./disarm');
 const divineStorm = require('./divine-storm');
 const dragonsBreath = require('./dragons-breath');
 const earthShield = require('./earth-shield');
@@ -24,6 +26,8 @@ const eviscerate = require('./eviscerate');
 const execute = require('./execute');
 const ferociousBite = require('./ferocious-bite');
 const fireball = require('./fireball');
+const fireBlast = require('./fire-blast');
+const flameShock = require('./flame-shock');
 const flametongueWeapon = require('./flametongue-weapon');
 const frostbolt = require('./frostbolt');
 const frostbrandWeapon = require('./frostbrand-weapon');
@@ -44,9 +48,12 @@ const hamstring = require('./hamstring');
 const innerFire = require('./inner-fire');
 const kidneyShot = require('./kidney-shot');
 const lightningShield = require('./lightning-shield');
+const livingBomb = require('./living-bomb');
 const multiShot = require('./multi-shot');
 const overpower = require('./overpower');
 const pull = require('./pull');
+const purge = require('./purge');
+const pyroblast = require('./pyroblast');
 const rejuvenation = require('./rejuvenation');
 const rend = require('./rend');
 const riptide = require('./riptide');
@@ -58,10 +65,12 @@ const slow = require('./slow');
 const stormstrike = require('./stormstrike');
 const sweepingStrikes = require('./sweeping-strikes');
 const thunderClap = require('./thunder-clap');
+const thunderstorm = require('./thunderstorm');
 const waterShield = require('./water-shield');
 const whirlwind = require('./whirlwind');
 const windfuryWeapon = require('./windfury-weapon');
 const windShear = require('./wind-shear');
+const wyvernSting = require('./wyvern-sting');
 const wrath = require('./wrath');
 
 module.exports = {
@@ -72,6 +81,7 @@ module.exports = {
   blastWave,
   blessingOfMight,
   blessingOfSanctuary,
+  bloodlust,
   bloodthirst,
   chainLightning,
   chimeraShot,
@@ -83,14 +93,17 @@ module.exports = {
   deepFreeze,
   desperatePrayer,
   devastate,
+  disarm,
   divineStorm,
-  // dragonsBreath,
+  dragonsBreath,
   earthShield,
   earthShock,
   eviscerate,
   execute,
   ferociousBite,
   fireball,
+  fireBlast,
+  flameShock,
   flametongueWeapon,
   frostbolt,
   frostbrandWeapon,
@@ -101,6 +114,7 @@ module.exports = {
   innervate,
   lesserHealingWave,
   lifebloom,
+  livingBomb,
   lightningBolt,
   multiShot,
   powerWordFortitude,
@@ -114,6 +128,8 @@ module.exports = {
   mutilate,
   overpower,
   pull,
+  purge,
+  pyroblast,
   rejuvenation,
   rend,
   riptide,
@@ -125,9 +141,11 @@ module.exports = {
   stormstrike,
   // sweepingStrikes,
   thunderClap,
+  thunderstorm,
   waterShield,
   whirlwind,
   windfuryWeapon,
   windShear,
+  wyvernSting,
   wrath,
 };

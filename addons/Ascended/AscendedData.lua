@@ -186,5 +186,19 @@ if SetLocals == nil then
     }
     function dMagicCC() return dispelMagicCC end
 
+    local immunDMG = {
+        33786, -- Cyclone
+        113506, -- Cyclone
+        45438, -- Ice Block
+        110700, -- Divine Shield (Paladin)
+        110696, -- Ice Block (Mage)
+        19263, -- Deterrence
+        45438, -- Ice Block
+        122464, -- Dematerialize
+        -- 122470,		-- touch of karma
+        642 -- Divine Shield
+    }
+    function iDMG() return immunDMG end
+
     SetLocals = true
 end

@@ -11,6 +11,6 @@ module.exports = {
     return s;
   },
   cost: (s) => 9,
-  act: (k) => robot.keyTap(k),
+  act: (k) => robot.keyTap('f5'),
   log: (l) => l.info('Casting Hamstring'),
 };

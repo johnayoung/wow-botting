@@ -1,17 +1,19 @@
 const robot = require('robotjs');
 
+const ability = 'thunderstorm';
+
 module.exports = {
   condition: (s) =>
     s.targetInMeleeRange &&
     s.playerInCombat &&
-    s.spells.dragonsBreath.castable &&
-    s.spells.dragonsBreath.equipped &&
-    s.manaCurrent >= 500,
+    s.spells[ability].castable &&
+    s.spells[ability].equipped &&
+    s.manaCurrent >= 5,
   effect: (s) => {
     s.targetIsDead = true;
     return s;
   },
-  cost: (s) => 8,
+  cost: (s) => 7,
   act: (k) => robot.keyTap(k),
-  log: (l) => l.info('Casting Dragons Breath'),
+  log: (l) => l.info(`Casting ${ability}`),
 };

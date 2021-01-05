@@ -2,7 +2,7 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.buffs.rejuvenation &&
+    !s.buffs.rejuvenation &&
     s.spells.rejuvenation.castable &&
     s.spells.rejuvenation.equipped &&
     s.health < 85 &&

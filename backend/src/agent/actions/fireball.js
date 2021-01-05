@@ -6,7 +6,7 @@ module.exports = {
     s.maelstromWeapon &&
     s.spells.fireball.castable &&
     s.playerInCombat &&
-    s.mana > 30 &&
+    s.mana > 10 &&
     // s.spell.maelstromWeapon.active &&
     s.spells.fireball.equipped,
   effect: (s) => {

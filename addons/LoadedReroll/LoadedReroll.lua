@@ -15,7 +15,7 @@ local CELL_SIZE = 3 -- Size of data squares in px.
 local CELL_SPACING = 0 -- Spacing in px between data squares.
 
 -- Containers
-spellsToTarget = {"Defensive Stance", "Sinister Strike", "Holy Light", "Charge"}
+spellsToTarget = {"Fireball", "Fire Blast", "Hamstring", "Charge"}
 secondarySpells = {"Charge"}
 sortedSpells = {} -- Spells sorted to know where they fall
 

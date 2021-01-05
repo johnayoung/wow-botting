@@ -1,18 +1,18 @@
 const robot = require('robotjs');
 
+const ability = 'fireBlast';
+
 module.exports = {
   condition: (s) =>
     s.playerInCombat &&
-    s.targetInMeleeRange &&
-    s.spells.mutilate.castable &&
-    s.spells.mutilate.equipped &&
-    // s.comboPoints < 4 &&
-    s.energyCurrent > 80,
+    s.spells[ability].castable &&
+    s.spells[ability].equipped &&
+    s.manaCurrent >= 100,
   effect: (s) => {
     s.targetIsDead = true;
     return s;
   },
   cost: (s) => 8,
   act: (k) => robot.keyTap(k),
-  log: (l) => l.info('Casting Mutilate'),
+  log: (l) => l.info(`Casting ${ability}`),
 };

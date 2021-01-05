@@ -528,6 +528,22 @@ if GameBinaries == nil then
         end
     end
 
+    function purgeable(unitID)
+        local purgeable = {
+            29166, 132158, 53271, 12472, 12043, 44549, 54428, 6940, 44544,
+            148039, 774, 10060, 6346, 16166, 16188, 117014, 79206, 48108,
+            124682, 1022, 6940, 1044, 974, 108978
+        }
+        if UnitExists(unitID) then
+            if calculateHP(unitID) < 30 and not haveBuff(unitID, iDMG(), 1) and
+                haveBuff(unitID, purgeable, 1.5) then
+                return 1
+            else
+                return 0
+            end
+        end
+    end
+
     -- Returns bitmask values.
     -- MakeIndexBase2(true, 4) --> returns 16
     -- MakeIndexBase2(false, 9) --> returns 0
@@ -579,12 +595,14 @@ if GameBinaries == nil then
                                                            "Maelstrom Weapon", 5)
         local getWildWrath = getActiveBuffWithStacks("player", "Wild Wrath", 1)
         local getIsFrozen = isFrozen()
+        local getTargetPurgeable = purgeable("target")
 
         local misc = {
             {name = "hasWeaponEnchant", action = hasWeaponEnchant()},
             {name = "maelstromWeapon", action = getMaelstromStacks},
             {name = "wildWrath", action = getWildWrath},
-            {name = "isFrozen", action = getIsFrozen}
+            {name = "isFrozen", action = getIsFrozen},
+            {name = "targetPurgeable", action = getTargetPurgeable}
         }
 
         for i = 1, #misc do
