@@ -27,10 +27,13 @@ async function findAndUnlearnSpell(coords, spell) {
 
   if (title === 'World of Warcraft') {
     await moveToAndClick(clickSpell);
-    robot.setMouseDelay(100);
+    await robot.setMouseDelay(100);
     await moveToAndClick(unlearnSpell);
-    robot.setMouseDelay(100);
-    return robot.keyTap('c');
+    await robot.setMouseDelay(200);
+    await robot.keyTap('c');
+    await robot.keyTap('c');
+
+    return;
   }
 
   console.log('pausing clicker');

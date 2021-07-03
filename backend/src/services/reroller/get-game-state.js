@@ -9,8 +9,6 @@ const raw = readFileSync(
 );
 const config = JSON.parse(raw);
 
-const spellsToTarget = ['Stealth', 'Sprint', 'Evasion', 'Gouge'];
-
 function getGameState(app) {
   const pixel = {
     xMin: 0,

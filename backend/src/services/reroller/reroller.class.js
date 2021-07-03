@@ -7,16 +7,16 @@ const { handleUnlearn } = clicker;
 
 const coordinates = {
   clickSpell: [
-    { x: '1568', y: '408' },
-    { x: '1568', y: '456' },
-    { x: '1568', y: '504' },
-    { x: '1568', y: '550' },
+    { x: '1315', y: '436' },
+    { x: '1315', y: '472' },
+    { x: '1315', y: '509' },
+    { x: '1315', y: '547' },
   ],
   unlearnSpell: [
-    { x: '1414', y: '509' },
-    { x: '1414', y: '554' },
-    { x: '1414', y: '602' },
-    { x: '1414', y: '650' },
+    { x: '1315', y: '514' },
+    { x: '1315', y: '550' },
+    { x: '1315', y: '587' },
+    { x: '1315', y: '625' },
   ],
 };
 
@@ -59,7 +59,7 @@ exports.Reroller = class Reroller {
   }
 
   async setup(app) {
-    // this.state = setInterval(() => start(app, this.agentState), 1000);
+    // this.state = setInterval(() => start(app, this.agentState), 300);
   }
 
   async find(params) {

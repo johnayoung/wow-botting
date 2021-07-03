@@ -9,5 +9,5 @@ module.exports = function (app) {
   app.configure(agent);
   app.configure(spells);
   app.configure(abilities);
-  // app.configure(reroller);
+  app.configure(reroller);
 };
