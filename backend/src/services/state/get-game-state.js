@@ -25,7 +25,7 @@ function getGameState(app) {
   const pixel = {
     xMin: 0,
     yMin: 0,
-    xMax: 386,
+    xMax: 489,
     yMax: 35,
   };
 

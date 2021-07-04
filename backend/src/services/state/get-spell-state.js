@@ -91,7 +91,7 @@ function getSpellState(app, config, reader, spells, start, end) {
 
       data[camelName] = meta;
     } else {
-      // console.log(`${spellId} not found.`);
+      // console.log(`${spellId} at ${counter} not found.`);
       // data[`${type}${position}`] = {};
       // try {
       //   app.service('spells').get(spellId);

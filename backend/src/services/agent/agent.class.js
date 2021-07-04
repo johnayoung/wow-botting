@@ -9,8 +9,6 @@ function start(app, agentState) {
   const { profile } = agentState;
   const gameState = getGameState(app);
 
-  // console.log(gameState);
-
   const rotation = require(`../../agent/profiles/${profile}`);
 
   const { mapping, actions, goals, overrides } = rotation;
@@ -28,7 +26,7 @@ exports.Agent = class Agent {
 
     this.agentState = {
       status: 'stopped',
-      updateInterval: 100,
+      updateInterval: 150,
       profile: 'mage',
     };
 

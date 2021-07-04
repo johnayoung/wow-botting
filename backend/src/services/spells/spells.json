@@ -1665,6 +1665,59 @@
     "_id": "Zsx8TGOUPwNpeoPR",
     "camelName": "hammerOfJustice"
   },
+  "879": {
+    "id": 879,
+    "name": "Exorcism",
+    "imageUrl": "/files/images/icons/Spell_Holy_Excorcism_02.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        879,
+        5614,
+        5615,
+        10312,
+        10313,
+        10314,
+        27138,
+        48800,
+        48801
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "seconds": 1.5,
+      "type": "Regular",
+      "text": "1.5 seconds"
+    },
+    "cooldown": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Causes <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{91+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.14</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.24</span>*P} to {91+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.14</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.24</span>*P}</span> Holy damage to an enemy target. Using Exorcism on an Undead or Demon will stun the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.",
+      "tooltipUrl": "/spells/879/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 2,
+      "classId": 3,
+      "specializationId": 9
+    },
+    "_id": "bM2kh4PqBkObaMDF",
+    "camelName": "exorcism"
+  },
   "883": {
     "id": 883,
     "name": "Call Pet",
@@ -3609,6 +3662,49 @@
     "_id": "CELBBPP0o9H9gEvc",
     "camelName": "powerWordFortitude"
   },
+  "2812": {
+    "id": 2812,
+    "name": "Holy Wrath",
+    "imageUrl": "/files/images/icons/Spell_Holy_Excorcism.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        2812,
+        10318,
+        27139,
+        48816,
+        48817
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 20,
+      "text": "20% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Sends bolts of holy power in all directions, causing <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{399+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*P} to {399+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*P}</span> Holy damage and stunning all Undead and Demon targets within <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> yds for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.",
+      "tooltipUrl": "/spells/2812/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 50,
+      "abilityEssenceCost": 2,
+      "classId": 3,
+      "specializationId": 9
+    },
+    "_id": "EPfOwgaNmVxxvEKH",
+    "camelName": "holyWrath"
+  },
   "2825": {
     "id": 2825,
     "name": "Bloodlust",
@@ -4568,6 +4664,44 @@
     "_id": "bGsHJWhG3oXnD40h",
     "camelName": "healingTouch"
   },
+  "5215": {
+    "id": 5215,
+    "name": "Prowl",
+    "imageUrl": "/files/images/icons/Ability_Ambush.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        5215
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Allows the Druid to prowl around, but reduces your movement speed by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span>%.  Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.",
+      "tooltipUrl": "/spells/5215/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 2,
+      "specializationId": 1
+    },
+    "_id": "Dyo6DGBW0tbaVQtj",
+    "camelName": "prowl"
+  },
   "5232": {
     "id": 5232,
     "name": "Mark of the Wild",
@@ -4940,6 +5074,45 @@
     },
     "_id": "Gl3qyt7309lBEuPS",
     "camelName": "manaSpringTotem"
+  },
+  "6117": {
+    "id": 6117,
+    "name": "Mage Armor",
+    "imageUrl": "/files/images/icons/Spell_MageArmor.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        6117
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 26,
+      "text": "26% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "Reduces spell damage taken by -<span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>% and allows <span class=\"ascension-tooltip-spell-tooltip-text-number\">25</span>% of your mana regeneration to continue while casting.  Only one type of Mage Armor spell can be active at any time.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/6117/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 34,
+      "abilityEssenceCost": 2,
+      "classId": 2,
+      "specializationId": 6
+    },
+    "_id": "6TRUdlrI2yxqQiId",
+    "camelName": "mageArmor"
   },
   "6178": {
     "id": 6178,
@@ -5693,6 +5866,24 @@
     "_id": "owLxzyAUHwXA9fE9",
     "camelName": "innerFire"
   },
+  "7294": {
+    "id": 7294,
+    "name": "Retribution Aura",
+    "imageUrl": "/files/images/icons/Spell_Holy_AuraOfLight.png",
+    "type": "Ability",
+    "tooltip": {
+      "text": "Causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> Holy damage to any enemy that strikes a party or raid member within <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span> yards.  Players may only have one Aura on them per Paladin at any one time.",
+      "tooltipUrl": "/spells/7294/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 16,
+      "abilityEssenceCost": 2,
+      "classId": 3,
+      "specializationId": 11
+    },
+    "_id": "YbBxJXtWwxy9WGYl",
+    "camelName": "retributionAura"
+  },
   "7300": {
     "id": 7300,
     "name": "Frost Armor",
@@ -6194,6 +6385,44 @@
     },
     "_id": "A66eHJYYfhq85iDF",
     "camelName": "purge"
+  },
+  "8017": {
+    "id": 8017,
+    "name": "Rockbiter Weapon",
+    "imageUrl": "/files/images/icons/Spell_Nature_RockBiter.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        8017,
+        8018,
+        8019,
+        10399,
+        810339
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Imbue your weapon, increasing attack power by <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>. The attack power granted is doubled for two-handed weapons. Lasts <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 minutes</span>.",
+      "tooltipUrl": "/spells/8017/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 10,
+      "abilityEssenceCost": 3,
+      "classId": 6,
+      "specializationId": 19
+    },
+    "_id": "7FPJKAwA0ap7WKWC",
+    "camelName": "rockbiterWeapon"
   },
   "8024": {
     "id": 8024,
@@ -11422,6 +11651,40 @@
     "_id": "aSSVr4TBv6sFxF3B",
     "camelName": "iceBarrier"
   },
+  "13161": {
+    "id": 13161,
+    "name": "Aspect of the Beast",
+    "imageUrl": "/files/images/icons/Ability_Mount_PinkTiger.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        13161
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "The hunter takes on the aspects of a beast, becoming untrackable and increasing melee attack power of the hunter and the hunter's pet by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%.  Only one Aspect can be active at a time.",
+      "tooltipUrl": "/spells/13161/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "classId": 1,
+      "specializationId": 3
+    },
+    "_id": "jBav1jJYvgOdd5Bz",
+    "camelName": "aspectOfTheBeast"
+  },
   "13163": {
     "id": 13163,
     "name": "Aspect of the Monkey",
@@ -12681,6 +12944,52 @@
     "_id": "wIKY5grCRF7U4qQa",
     "camelName": "berserkerRage"
   },
+  "18562": {
+    "id": 18562,
+    "name": "Swiftmend",
+    "imageUrl": "/files/images/icons/INV_Relics_IdolofRejuvenation.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        18562
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 16,
+      "text": "16% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to <span class=\"ascension-tooltip-spell-tooltip-text-number\">12</span> sec. of Rejuvenation or <span class=\"ascension-tooltip-spell-tooltip-text-number\">18</span> sec. of Regrowth.",
+      "tooltipUrl": "/spells/18562/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 844,
+      "specializationId": 2,
+      "visualColumn": 2
+    },
+    "_id": "0UxB2FijSrt7AnNH",
+    "camelName": "swiftmend"
+  },
   "19028": {
     "id": 19028,
     "name": "Soul Link",
@@ -13067,6 +13376,59 @@
     "_id": "3Yf2ATT82kVm6CO4",
     "camelName": "trueshotAura"
   },
+  "19740": {
+    "id": 19740,
+    "name": "Blessing of Might",
+    "imageUrl": "/files/images/icons/Spell_Holy_FistOfJustice.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        19740,
+        19834,
+        19835,
+        19836,
+        19837,
+        19838,
+        25291,
+        27140,
+        48931,
+        48932
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 5,
+      "text": "5% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 1800,
+      "type": "Regular",
+      "text": "1800 seconds"
+    },
+    "tooltip": {
+      "text": "Places a Blessing on the friendly target, increasing attack power by <span class=\"ascension-tooltip-spell-tooltip-text-number\">12</span> for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 minutes</span>.  Players may only have one Blessing on them per Paladin at any one time.",
+      "tooltipUrl": "/spells/19740/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 1,
+      "abilityEssenceCost": 3,
+      "classId": 3,
+      "specializationId": 11
+    },
+    "_id": "eqKBMm52jnMpONvS",
+    "camelName": "blessingOfMight"
+  },
   "19746": {
     "id": 19746,
     "name": "Concentration Aura",
@@ -13084,6 +13446,54 @@
     },
     "_id": "A4hEyTuFm63XIGiH",
     "camelName": "concentrationAura"
+  },
+  "19750": {
+    "id": 19750,
+    "name": "Flash of Light",
+    "imageUrl": "/files/images/icons/Spell_Holy_FlashHeal.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        19750,
+        19939,
+        19940,
+        19941,
+        19942,
+        19943,
+        27137,
+        48784,
+        48785
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "seconds": 1.5,
+      "type": "Regular",
+      "text": "1.5 seconds"
+    },
+    "tooltip": {
+      "text": "Heals a friendly target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">70</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">82</span>.",
+      "tooltipUrl": "/spells/19750/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 2,
+      "classId": 3,
+      "specializationId": 9
+    },
+    "_id": "l3tmot1ECLylYX0t",
+    "camelName": "flashOfLight"
   },
   "20166": {
     "id": 20166,
@@ -13118,6 +13528,50 @@
     },
     "_id": "SCM5GQ0rX0E4eqsp",
     "camelName": "sealOfWisdom"
+  },
+  "20271": {
+    "id": 20271,
+    "name": "Judgement of Light",
+    "imageUrl": "/files/images/icons/Spell_Holy_RighteousFury.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        20271
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 5,
+      "text": "5% of base mana"
+    },
+    "range": {
+      "yards": 10,
+      "type": "Ten yards",
+      "text": "10 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Unleashes the energy of a Seal spell to judge an enemy for <span class=\"ascension-tooltip-spell-tooltip-text-number\">20 seconds</span>, granting attacks made against the judged enemy a chance of healing the attacker for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>% of their maximum health.  Refer to individual Seals for additional Judgement effect.  Only one Judgement per Paladin can be active at any one time.",
+      "tooltipUrl": "/spells/20271/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 1,
+      "abilityEssenceCost": 2,
+      "classId": 3,
+      "specializationId": 11
+    },
+    "_id": "T5h4fQb7MBjqyxhp",
+    "camelName": "judgementOfLight"
   },
   "20375": {
     "id": 20375,
@@ -13155,6 +13609,86 @@
     },
     "_id": "G3JEC02fmlP7Ooxq",
     "camelName": "sealOfCommand"
+  },
+  "20473": {
+    "id": 20473,
+    "name": "Holy Shock",
+    "imageUrl": "/files/images/icons/Spell_Holy_SearingLight.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        20473
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 18,
+      "text": "18% of base mana"
+    },
+    "range": {
+      "yards": 20,
+      "type": "Short/Long Range",
+      "text": "20 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Blasts the target with Holy energy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">307</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">332</span> Holy damage to an enemy, or <span class=\"ascension-tooltip-spell-tooltip-text-number\">327</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">348</span> healing to an ally. This ability shares a cooldown with Shaman Shock spells. ",
+      "tooltipUrl": "/spells/20473/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 1502,
+      "classId": 3,
+      "specializationId": 9,
+      "visualColumn": 2
+    },
+    "_id": "wdsftzWOFbEc26xW",
+    "camelName": "holyShock"
+  },
+  "20577": {
+    "id": 20577,
+    "name": "Cannibalize",
+    "imageUrl": "/files/images/icons/Ability_Racial_Cannibalize.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        20577
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Interact Range",
+      "text": "5 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 120,
+      "type": "Regular",
+      "text": "2 minutes"
+    },
+    "tooltip": {
+      "text": "When activated, regenerates <span class=\"ascension-tooltip-spell-tooltip-text-number\">7</span>% of total health every <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> sec for <span class=\"ascension-tooltip-spell-tooltip-text-number\">10 seconds</span>.  Only works on Humanoid or Undead corpses within <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> yds.  Any movement, action, or damage taken while Cannibalizing will cancel the effect.",
+      "tooltipUrl": "/spells/20577/tooltip.html"
+    },
+    "_id": "1Dz20olKrQzT1ykC",
+    "camelName": "cannibalize"
   },
   "20589": {
     "id": 20589,
@@ -13882,6 +14416,55 @@
     },
     "_id": "wzOJ5sd2QeuxVTLc",
     "camelName": "ferociousBite"
+  },
+  "24275": {
+    "id": 24275,
+    "name": "Hammer of Wrath",
+    "imageUrl": "/files/images/icons/Ability_ThunderClap.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        24275,
+        24274,
+        24239,
+        27180,
+        48805,
+        48806
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 12,
+      "text": "12% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Hurls a hammer that strikes an enemy for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{334+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*P} to {334+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.20</span>*P}</span> Holy damage. Only usable on enemies that have <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>% or less health.",
+      "tooltipUrl": "/spells/24275/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 44,
+      "abilityEssenceCost": 2,
+      "classId": 3,
+      "specializationId": 11
+    },
+    "_id": "0y4srtm917py8f2c",
+    "camelName": "hammerOfWrath"
   },
   "24398": {
     "id": 24398,
@@ -16326,6 +16909,90 @@
     "_id": "SDDc4DFXxC8etGDA",
     "camelName": "giftOfTheWild"
   },
+  "27000": {
+    "id": 27000,
+    "name": "Claw",
+    "imageUrl": "/files/images/icons/Ability_Druid_Rake.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        1082,
+        3029,
+        5201,
+        9849,
+        9850,
+        27000,
+        48569,
+        48570
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Claw the enemy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">190</span> additional damage.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/27000/tooltip.html"
+    },
+    "_id": "x2jDUiTLwwEvlo7Y",
+    "camelName": "claw"
+  },
+  "27003": {
+    "id": 27003,
+    "name": "Rake",
+    "imageUrl": "/files/images/icons/Ability_Druid_Disembowel.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        1822,
+        1823,
+        1824,
+        9904,
+        27003,
+        48573,
+        48574
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 35,
+      "text": "35 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 9,
+      "type": "Regular",
+      "text": "9 seconds"
+    },
+    "tooltip": {
+      "text": "Rake the target for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{AP/<span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>+99} bleed damage and an additional {152*<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>+AP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0</span>.225}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">9 seconds</span>.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/27003/tooltip.html"
+    },
+    "_id": "a2yfFWi4hv9dGmCs",
+    "camelName": "rake"
+  },
   "27016": {
     "id": 27016,
     "name": "Serpent Sting",
@@ -17183,6 +17850,132 @@
     "_id": "WrqfnrcJZplbTIeb",
     "camelName": "holyLight"
   },
+  "27137": {
+    "id": 27137,
+    "name": "Flash of Light",
+    "imageUrl": "/files/images/icons/Spell_Holy_FlashHeal.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        19750,
+        19939,
+        19940,
+        19941,
+        19942,
+        19943,
+        27137,
+        48784,
+        48785
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 7,
+      "text": "7% of base mana"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "seconds": 1.5,
+      "type": "Regular",
+      "text": "1.5 seconds"
+    },
+    "tooltip": {
+      "text": "Heals a friendly target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">508</span> to <span class=\"ascension-tooltip-spell-tooltip-text-number\">575</span>.",
+      "tooltipUrl": "/spells/27137/tooltip.html"
+    },
+    "_id": "fXyN9t05848VNCdG",
+    "camelName": "flashOfLight"
+  },
+  "27138": {
+    "id": 27138,
+    "name": "Exorcism",
+    "imageUrl": "/files/images/icons/Spell_Holy_Excorcism_02.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        879,
+        5614,
+        5615,
+        10312,
+        10313,
+        10314,
+        27138,
+        48800,
+        48801
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "seconds": 1.5,
+      "type": "Regular",
+      "text": "1.5 seconds"
+    },
+    "cooldown": {
+      "seconds": 15,
+      "type": "Regular",
+      "text": "15 seconds"
+    },
+    "tooltip": {
+      "text": "Causes <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{653+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.14</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.24</span>*P} to {653+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.14</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.24</span>*P}</span> Holy damage to an enemy target. Using Exorcism on an Undead or Demon will stun the target for <span class=\"ascension-tooltip-spell-tooltip-text-number\">3 seconds</span>.",
+      "tooltipUrl": "/spells/27138/tooltip.html"
+    },
+    "_id": "NJMaheDZgBPcZx0Q",
+    "camelName": "exorcism"
+  },
+  "27139": {
+    "id": 27139,
+    "name": "Holy Wrath",
+    "imageUrl": "/files/images/icons/Spell_Holy_Excorcism.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        2812,
+        10318,
+        27139,
+        48816,
+        48817
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 20,
+      "text": "20% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Sends bolts of holy power in all directions, causing <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{777+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*P} to {777+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.15</span>*P}</span> Holy damage and stunning all Undead and Demon targets within <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> yds for .",
+      "tooltipUrl": "/spells/27139/tooltip.html"
+    },
+    "_id": "zufyEQCOxQsLJU1J",
+    "camelName": "holyWrath"
+  },
   "27140": {
     "id": 27140,
     "name": "Blessing of Might",
@@ -17241,6 +18034,18 @@
     },
     "_id": "LBCf3m3w1AGsS44T",
     "camelName": "devotionAura"
+  },
+  "27150": {
+    "id": 27150,
+    "name": "Retribution Aura",
+    "imageUrl": "/files/images/icons/Spell_Holy_AuraOfLight.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Causes <span class=\"ascension-tooltip-spell-tooltip-text-number\">62</span> Holy damage to any enemy that strikes a party or raid member within <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span> yards.  Players may only have one Aura on them per Paladin at any one time.",
+      "tooltipUrl": "/spells/27150/tooltip.html"
+    },
+    "_id": "5ttlE7NR3PMtcQ8v",
+    "camelName": "retributionAura"
   },
   "27179": {
     "id": 27179,
@@ -17616,6 +18421,48 @@
     },
     "_id": "CUC5lLW0Xca22FR7",
     "camelName": "createFirestone"
+  },
+  "27260": {
+    "id": 27260,
+    "name": "Demon Armor",
+    "imageUrl": "/files/images/icons/Spell_Shadow_RagingScream.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 8,
+      "other": [
+        687,
+        696,
+        706,
+        1086,
+        11733,
+        11734,
+        11735,
+        27260,
+        47793,
+        47889
+      ],
+      "text": "Rank 8"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 31,
+      "text": "31% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "Protects the caster, increasing armor by <span class=\"ascension-tooltip-spell-tooltip-text-number\">365</span>, and increasing the amount of health generated through spells and effects by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%. The healing effect does not stack with other similar effects. Only one type of Armor spell can be active on the Warlock at any time.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/27260/tooltip.html"
+    },
+    "_id": "xFfkDpQkT3eD0QSs",
+    "camelName": "demonArmor"
   },
   "27364": {
     "id": 27364,
@@ -21417,6 +22264,18 @@
     "_id": "LLBpkCKCqB9mkYn0",
     "camelName": "haveRaptorClaw"
   },
+  "51412": {
+    "id": 51412,
+    "name": "Big Battle Bear",
+    "imageUrl": "/files/images/icons/Ability_Mount_PolarBear_Black.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Summons and dismisses riding mount called Big Battle Bear.  This mount changes depending on your Riding skill and location.",
+      "tooltipUrl": "/spells/51412/tooltip.html"
+    },
+    "_id": "LDHPdPSa56eFw6hA",
+    "camelName": "bigBattleBear"
+  },
   "51490": {
     "id": 51490,
     "name": "Thunderstorm",
@@ -21878,6 +22737,36 @@
     },
     "_id": "j59PA5kW4jnr1WxR",
     "camelName": "pummel"
+  },
+  "53488": {
+    "id": 53488,
+    "name": "The Art of War",
+    "imageUrl": "/files/images/icons/Ability_Paladin_ArtofWar.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 2,
+      "other": [
+        53486,
+        53488,
+        853486
+      ],
+      "text": "Rank 2"
+    },
+    "tooltip": {
+      "text": "Increases the damage of your Judgement, Crusader Strike and Divine Storm abilities by <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>%. When those abilities and your main hand auto attack deal damage you have a <span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span>% chance to reduce the cast time of your next next Flash of Light or Exorcism by <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> sec. This effect has a <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span> second cooldown.",
+      "tooltipUrl": "/spells/53488/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 40,
+      "talentEssenceCost": 1,
+      "talentId": 2176,
+      "classId": 3,
+      "specializationId": 11,
+      "visualColumn": 1,
+      "maxRank": 2
+    },
+    "_id": "qZPHuIyX7w0a1kfI",
+    "camelName": "theArtOfWar"
   },
   "53817": {
     "id": 53817,
@@ -23234,6 +24123,50 @@
     },
     "_id": "fW3WztQiTZNxyRN0",
     "camelName": "deflection"
+  },
+  "965426": {
+    "id": 965426,
+    "name": "Meditate",
+    "imageUrl": "/files/images/icons/Ability_Rogue_MasterOfSubtlety.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        965426
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 30,
+      "text": "30 energy"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Finishing move that consumes combo points on any nearby target to restore <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span>% of your base mana every <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> sec. Lasts longer per combo point:\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> point  : <span class=\"ascension-tooltip-spell-tooltip-text-number\">18</span>% base mana over <span class=\"ascension-tooltip-spell-tooltip-text-number\">6</span> \r\nsecs\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">36</span>% base mana over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12</span> \r\nsecs \r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">54</span>% base mana over <span class=\"ascension-tooltip-spell-tooltip-text-number\">18</span> \r\nsecs\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">72</span>% base mana over <span class=\"ascension-tooltip-spell-tooltip-text-number\">24</span> \r\nsecs\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">90</span>% base mana over <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 secs</span>",
+      "tooltipUrl": "/spells/965426/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 10,
+      "abilityEssenceCost": 2,
+      "classId": 5,
+      "specializationId": 15
+    },
+    "_id": "EhZyTNCA8cfso9Vq",
+    "camelName": "meditate"
   },
   "965660": {
     "id": 965660,

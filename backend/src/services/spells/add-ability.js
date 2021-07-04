@@ -1,20 +1,22 @@
 const identifier = '_id';
 
-module.exports = (options = {}) => async (context) => {
-  try {
-    const { app, result } = context;
+module.exports =
+  (options = {}) =>
+  async (context) => {
+    try {
+      const { app, result } = context;
 
-    if (result) {
-      const service = app.service('abilities');
+      if (result) {
+        const service = app.service('abilities');
 
-      await service.create(result);
-    } else {
-      console.log('nothing to add');
+        await service.create(result);
+      } else {
+        console.log('nothing to add');
+      }
+
+      return context;
+    } catch (e) {
+      console.log(e);
+      return context;
     }
-
-    return context;
-  } catch (e) {
-    console.log(e);
-    return context;
-  }
-};
+  };

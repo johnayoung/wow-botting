@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 const _ = require('lodash');
 const activeWin = require('active-win');
+
 const logger = require('pino')({
   name: 'log-action',
   prettyPrint: {
@@ -53,10 +54,24 @@ async function run({ state, rotation = defaultRotation }) {
 
   const goal = determineGoal(state, goals);
 
-  const { title } = await activeWin().catch((e) => 'cant get window');
 
-  // return setPlan(state, actions, goal);
-  if (title === 'World of Warcraft') {
+  const {title} = await activeWin();
+
+  // try {
+  //   const plan = setPlan(state, spells, goal);
+
+  //   if (!plan) {
+  //     logger.info('No plan. Idling.');
+  //     return null;
+  //   }
+
+  //   return performPlan(plan, spells, state);
+  // } catch (e) {
+  //   logger.error(e);
+  //   return e;
+  // }
+
+  if (title === 'Ascension') {
     try {
       const plan = setPlan(state, spells, goal);
 
