@@ -5715,6 +5715,45 @@
     "_id": "6aYUu9Ayrwa3mlJv",
     "camelName": "eviscerate"
   },
+  "6774": {
+    "id": 6774,
+    "name": "Slice and Dice",
+    "imageUrl": "/files/images/icons/Ability_Rogue_SliceDice.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        5171,
+        6774
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 25,
+      "text": "25 energy"
+    },
+    "range": {
+      "yards": 100,
+      "type": "Vision Range",
+      "text": "100 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "Finishing move that increases melee attack speed by <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>%.  Lasts longer per combo point:\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> point  : <span class=\"ascension-tooltip-spell-tooltip-text-number\">9 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">18 seconds</span>\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-number\">21 seconds</span>",
+      "tooltipUrl": "/spells/6774/tooltip.html"
+    },
+    "_id": "BfAgW4Zz3ShWNMkW",
+    "camelName": "sliceAndDice"
+  },
   "6778": {
     "id": 6778,
     "name": "Healing Touch",
@@ -19846,44 +19885,6 @@
     "_id": "I7yXhSPGdV3Tk12s",
     "camelName": "aspectOfTheViper"
   },
-  "34413": {
-    "id": 34413,
-    "name": "Mutilate",
-    "imageUrl": "/files/images/icons/Ability_Rogue_ShadowStrikes.png",
-    "type": "Ability",
-    "ranks": {
-      "current": 4,
-      "other": [
-        1329,
-        34411,
-        34412,
-        34413,
-        48663,
-        48666
-      ],
-      "text": "Rank 4"
-    },
-    "cost": {
-      "type": "Energy",
-      "value": 50,
-      "text": "50 energy"
-    },
-    "range": {
-      "yards": 5,
-      "type": "Combat Range",
-      "text": "Melee Range"
-    },
-    "castTime": {
-      "type": "Instant",
-      "text": "Instant"
-    },
-    "tooltip": {
-      "text": "Instantly attacks with both weapons for <span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>% weapon damage plus an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">44</span> with each weapon.  Damage is increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">45</span>% against Poisoned targets.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> combo points.",
-      "tooltipUrl": "/spells/34413/tooltip.html"
-    },
-    "_id": "YeEMmht1XfJrDng1",
-    "camelName": "mutilate"
-  },
   "34428": {
     "id": 34428,
     "name": "Victory Rush",
@@ -23656,53 +23657,6 @@
     "_id": "v9i89Hf1EY1VvJD0",
     "camelName": "shadowmeld"
   },
-  "60103": {
-    "id": 60103,
-    "name": "Lava Lash",
-    "imageUrl": "/files/images/icons/Ability_Shaman_Lavalash.png",
-    "type": "Talent",
-    "ranks": {
-      "current": 1,
-      "other": [
-        60103
-      ],
-      "text": "Rank 1"
-    },
-    "cost": {
-      "type": "Base Mana Percentage",
-      "value": 4,
-      "text": "4% of base mana"
-    },
-    "range": {
-      "yards": 5,
-      "type": "Combat Range",
-      "text": "Melee Range"
-    },
-    "castTime": {
-      "type": "Instant",
-      "text": "Instant"
-    },
-    "cooldown": {
-      "seconds": 6,
-      "type": "Regular",
-      "text": "6 seconds"
-    },
-    "tooltip": {
-      "text": "You charge your off-hand weapon with lava, instantly dealing <span class=\"ascension-tooltip-spell-tooltip-text-number\">125</span>% off-hand Weapon damage. Damage is increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">25</span>% if your off-hand weapon is enchanted with Flametongue. Requires a one-handed weapon.",
-      "tooltipUrl": "/spells/60103/tooltip.html"
-    },
-    "learnableTalent": {
-      "requiredLevel": 45,
-      "abilityEssenceCost": 3,
-      "talentEssenceCost": 1,
-      "talentId": 2249,
-      "classId": 6,
-      "specializationId": 19,
-      "visualColumn": 2
-    },
-    "_id": "CY6dMcAwLcEqQV8L",
-    "camelName": "lavaLash"
-  },
   "60503": {
     "id": 60503,
     "name": "Taste for Blood",
@@ -24112,6 +24066,53 @@
     "_id": "wff4fpT0jbadoHCk",
     "camelName": "potionOfExperience"
   },
+  "860103": {
+    "id": 860103,
+    "name": "Ice Lash",
+    "imageUrl": "/files/images/icons/Ability_Shaman_Lavalash.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        60103
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 4,
+      "text": "4% of base mana"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 6,
+      "type": "Regular",
+      "text": "6 seconds"
+    },
+    "tooltip": {
+      "text": "You charge your off-hand weapon with lava, instantly dealing <span class=\"ascension-tooltip-spell-tooltip-text-number\">125</span>% off-hand Weapon damage. Damage is increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">25</span>% if your off-hand weapon is enchanted with Flametongue. Requires a one-handed weapon.",
+      "tooltipUrl": "/spells/60103/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 45,
+      "abilityEssenceCost": 3,
+      "talentEssenceCost": 1,
+      "talentId": 2249,
+      "classId": 6,
+      "specializationId": 19,
+      "visualColumn": 2
+    },
+    "_id": "CY6dMcAwLcEqQV8L",
+    "camelName": "iceLash"
+  },
   "919297": {
     "id": 919297,
     "name": "Deflection",
@@ -24123,6 +24124,44 @@
     },
     "_id": "fW3WztQiTZNxyRN0",
     "camelName": "deflection"
+  },
+  "954064": {
+    "id": 954064,
+    "name": "Mutilate (Titan)",
+    "imageUrl": "/files/images/icons/Ability_Rogue_ShadowStrikes.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        1329,
+        34411,
+        34412,
+        34413,
+        48663,
+        48666
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 50,
+      "text": "50 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Instantly attacks with both weapons for <span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>% weapon damage plus an additional <span class=\"ascension-tooltip-spell-tooltip-text-number\">44</span> with each weapon.  Damage is increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">45</span>% against Poisoned targets.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> combo points.",
+      "tooltipUrl": "/spells/34413/tooltip.html"
+    },
+    "_id": "YeEMmht1XfJrDng1",
+    "camelName": "mutilateTitan"
   },
   "965426": {
     "id": 965426,

@@ -18,4 +18,5 @@ module.exports = {
   },
   act: (k) => robot.keyTap(k),
   log: (l) => l.info('Casting Bloodthirst'),
+  
 };

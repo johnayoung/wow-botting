@@ -15,7 +15,7 @@ module.exports = {
   },
   cost: (s) => {
     if (s.maelstromWeapon) {
-      return 7;
+      return 6;
     }
     return 10;
   },

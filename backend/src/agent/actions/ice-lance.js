@@ -3,7 +3,6 @@ const robot = require('robotjs');
 
 module.exports = {
   condition: (s) =>
-    s.isFrozen &&
     s.playerInCombat &&
     s.spells.iceLance.castable &&
     s.spells.iceLance.equipped,
@@ -12,7 +11,13 @@ module.exports = {
     s.targetIsDead = true;
     return s;
   },
-  cost: (s) => 7,
+  cost: (s) => {
+    if (s.isFrozen) {
+      return 7;
+    }
+
+    return 10;
+  },
   act: (k) => robot.keyTap(k),
   log: (l) => l.info('Casting Ice Lance'),
 };

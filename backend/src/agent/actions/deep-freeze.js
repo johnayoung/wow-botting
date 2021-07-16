@@ -7,7 +7,7 @@ module.exports = {
     s.targetIsDead = true;
     return s;
   },
-  cost: (s) => 7,
+  cost: (s) => 5,
   act: (k) => robot.keyTap(k),
   log: (l) => l.info('Casting Deep Freeze'),
 };

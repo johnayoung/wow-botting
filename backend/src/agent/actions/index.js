@@ -37,6 +37,7 @@ const frostbrandWeapon = require('./frostbrand-weapon');
 const ghostlyStrike = require('./ghostly-strike');
 const iceArmor = require('./ice-armor');
 const iceLance = require('./ice-lance');
+const iceLash = require('./ice-lash');
 const innervate = require('./innervate');
 const judgementOfLight = require('./judgement-of-light');
 const lesserHealingWave = require('./lesser-healing-wave');
@@ -47,12 +48,15 @@ const mangleCat = require('./mangle-cat');
 const markOfTheWild = require('./mark-of-the-wild');
 const metamorphosis = require('./metamorphosis');
 const meditate = require('./meditate');
+const mortalStrike = require('./mortal-strike');
+const mutilateTitan = require('./mutilate-titan');
 const mutilate = require('./mutilate');
 const heroicStrike = require('./heroic-strike');
 const hamstring = require('./hamstring');
 const innerFire = require('./inner-fire');
 const kidneyShot = require('./kidney-shot');
 const lightningShield = require('./lightning-shield');
+const lavaLash = require('./lava-lash');
 const livingBomb = require('./living-bomb');
 const multiShot = require('./multi-shot');
 const overpower = require('./overpower');
@@ -68,6 +72,7 @@ const sealOfWisdom = require('./seal-of-wisdom');
 const serpentSting = require('./serpent-sting');
 const sinisterStrike = require('./sinister-strike');
 const shadowBolt = require('./shadow-bolt');
+const sliceAndDice = require('./slice-and-dice');
 const slow = require('./slow');
 const stormstrike = require('./stormstrike');
 const sweepingStrikes = require('./sweeping-strikes');
@@ -120,23 +125,27 @@ module.exports = {
   ghostlyStrike,
   hamstring,
   iceArmor,
-  // iceLance,
+  iceLash,
+  iceLance,
   innervate,
   judgementOfLight,
   lesserHealingWave,
   lifebloom,
   livingBomb,
   lightningBolt,
+  mortalStrike,
   multiShot,
   powerWordFortitude,
   heroicStrike,
   innerFire,
   kidneyShot,
+  lavaLash,
   lightningShield,
   mangleCat,
   markOfTheWild,
   meditate,
   metamorphosis,
+  mutilateTitan,
   mutilate,
   overpower,
   pull,
@@ -151,6 +160,7 @@ module.exports = {
   serpentSting,
   sinisterStrike,
   shadowBolt,
+  sliceAndDice,
   slow,
   stormstrike,
   // sweepingStrikes,

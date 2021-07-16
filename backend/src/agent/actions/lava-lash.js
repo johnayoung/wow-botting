@@ -1,11 +1,10 @@
 const robot = require('robotjs');
 
-const ability = 'stormstrike';
+const ability = 'lavaLash';
 
 module.exports = {
   condition: (s) =>
     s.playerInCombat &&
-    s.targetInMeleeRange &&
     s.spells[ability].castable &&
     s.spells[ability].equipped &&
     s.manaCurrent >= 100,
@@ -13,7 +12,7 @@ module.exports = {
     s.targetIsDead = true;
     return s;
   },
-  cost: (s) => 6,
+  cost: (s) => 8,
   act: (k) => robot.keyTap(k),
   log: (l) => l.info(`Casting ${ability}`),
 };
