@@ -236,6 +236,50 @@
     "_id": "niFvLl6Gj6XA3M6I",
     "camelName": "coneOfCold"
   },
+  "130": {
+    "id": 130,
+    "name": "Slow Fall",
+    "imageUrl": "/files/images/icons/Spell_Magic_FeatherFall.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        130
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 6,
+      "text": "6% of base mana"
+    },
+    "range": {
+      "yards": 30,
+      "type": "Medium Range",
+      "text": "30 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Slows friendly party or raid target's falling speed for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.",
+      "tooltipUrl": "/spells/130/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 12,
+      "abilityEssenceCost": 1,
+      "classId": 2,
+      "specializationId": 6
+    },
+    "_id": "Pt4of3cwJGy3Hedo",
+    "camelName": "slowFall"
+  },
   "168": {
     "id": 168,
     "name": "Frost Armor",
@@ -795,6 +839,42 @@
     "_id": "zFcaqw9EK2njUA4w",
     "camelName": "innerFire"
   },
+  "597": {
+    "id": 597,
+    "name": "Conjure Food",
+    "imageUrl": "/files/images/icons/INV_Misc_Food_09.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        587,
+        597,
+        990,
+        6129,
+        10144,
+        10145,
+        28612,
+        33717
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 40,
+      "text": "40% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Conjures <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> loaves of bread, providing the mage and [$ghis:her;] allies with something to eat.\r\n\r\nConjured items disappear if logged out for more than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 minutes</span>.",
+      "tooltipUrl": "/spells/597/tooltip.html"
+    },
+    "_id": "iykP5YVI1tx32Ojm",
+    "camelName": "conjureFood"
+  },
   "604": {
     "id": 604,
     "name": "Dampen Magic",
@@ -1302,6 +1382,48 @@
     },
     "_id": "WEBTW2tsruA0dTV9",
     "camelName": "shadowBolt"
+  },
+  "706": {
+    "id": 706,
+    "name": "Demon Armor",
+    "imageUrl": "/files/images/icons/Spell_Shadow_RagingScream.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        687,
+        696,
+        706,
+        1086,
+        11733,
+        11734,
+        11735,
+        27260,
+        47793,
+        47889
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 31,
+      "text": "31% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "Protects the caster, increasing armor by <span class=\"ascension-tooltip-spell-tooltip-text-number\">115</span>, and increasing the amount of health generated through spells and effects by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%. The healing effect does not stack with other similar effects. Only one type of Armor spell can be active on the Warlock at any time.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/706/tooltip.html"
+    },
+    "_id": "nvhmXRWJbQAbkYCG",
+    "camelName": "demonArmor"
   },
   "712": {
     "id": 712,
@@ -2261,6 +2383,93 @@
     "_id": "jOYtezlg7SdcSw7m",
     "camelName": "rejuvenation"
   },
+  "1082": {
+    "id": 1082,
+    "name": "Claw",
+    "imageUrl": "/files/images/icons/Ability_Druid_Rake.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        1082,
+        3029,
+        5201,
+        9849,
+        9850,
+        27000,
+        48569,
+        48570
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Claw the enemy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">27</span> additional damage.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/1082/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 20,
+      "abilityEssenceCost": 2,
+      "specializationId": 1
+    },
+    "_id": "dAXvZrSNngZiCCL8",
+    "camelName": "claw"
+  },
+  "1086": {
+    "id": 1086,
+    "name": "Demon Armor",
+    "imageUrl": "/files/images/icons/Spell_Shadow_RagingScream.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        687,
+        696,
+        706,
+        1086,
+        11733,
+        11734,
+        11735,
+        27260,
+        47793,
+        47889
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 31,
+      "text": "31% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "Protects the caster, increasing armor by <span class=\"ascension-tooltip-spell-tooltip-text-number\">165</span>, and increasing the amount of health generated through spells and effects by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%. The healing effect does not stack with other similar effects. Only one type of Armor spell can be active on the Warlock at any time.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/1086/tooltip.html"
+    },
+    "_id": "EiTk3ScV2luDYDLh",
+    "camelName": "demonArmor"
+  },
   "1088": {
     "id": 1088,
     "name": "Shadow Bolt",
@@ -3175,6 +3384,41 @@
     "_id": "y84gobACUD7h946t",
     "camelName": "gouge"
   },
+  "1804": {
+    "id": 1804,
+    "name": "Pick Lock",
+    "imageUrl": "/files/images/icons/Spell_Nature_MoonKey.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        1804
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Interact Range",
+      "text": "5 yards"
+    },
+    "castTime": {
+      "seconds": 5,
+      "type": "Regular",
+      "text": "5 seconds"
+    },
+    "tooltip": {
+      "text": "Allows opening of locked chests and doors.",
+      "tooltipUrl": "/spells/1804/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 10,
+      "abilityEssenceCost": 2,
+      "classId": 5,
+      "specializationId": 17
+    },
+    "_id": "CTZ9ggU0JJ0NrU0O",
+    "camelName": "pickLock"
+  },
   "1953": {
     "id": 1953,
     "name": "Blink",
@@ -3833,6 +4077,46 @@
     },
     "_id": "9R7Zw3lb7wZ68Qyp",
     "camelName": "sprint"
+  },
+  "3029": {
+    "id": 3029,
+    "name": "Claw",
+    "imageUrl": "/files/images/icons/Ability_Druid_Rake.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        1082,
+        3029,
+        5201,
+        9849,
+        9850,
+        27000,
+        48569,
+        48570
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Claw the enemy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">39</span> additional damage.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/3029/tooltip.html"
+    },
+    "_id": "2LxFrKflJ7vmTg2Z",
+    "camelName": "claw"
   },
   "3409": {
     "id": 3409,
@@ -4664,6 +4948,46 @@
     "_id": "bGsHJWhG3oXnD40h",
     "camelName": "healingTouch"
   },
+  "5201": {
+    "id": 5201,
+    "name": "Claw",
+    "imageUrl": "/files/images/icons/Ability_Druid_Rake.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        1082,
+        3029,
+        5201,
+        9849,
+        9850,
+        27000,
+        48569,
+        48570
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Claw the enemy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">57</span> additional damage.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/5201/tooltip.html"
+    },
+    "_id": "gmJG4mnf454hnsvg",
+    "camelName": "claw"
+  },
   "5215": {
     "id": 5215,
     "name": "Prowl",
@@ -5113,6 +5437,42 @@
     },
     "_id": "6TRUdlrI2yxqQiId",
     "camelName": "mageArmor"
+  },
+  "6129": {
+    "id": 6129,
+    "name": "Conjure Food",
+    "imageUrl": "/files/images/icons/INV_Misc_Food_08.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        587,
+        597,
+        990,
+        6129,
+        10144,
+        10145,
+        28612,
+        33717
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 40,
+      "text": "40% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Conjures <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> loaves of pumpernickel, providing the mage and [$ghis:her;] allies with something to eat.\r\n\r\nConjured items disappear if logged out for more than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 minutes</span>.",
+      "tooltipUrl": "/spells/6129/tooltip.html"
+    },
+    "_id": "ppjdVjiD8vbQ1hbA",
+    "camelName": "conjureFood"
   },
   "6178": {
     "id": 6178,
@@ -5801,6 +6161,47 @@
     },
     "_id": "VS3TB9zLBhCGR1IC",
     "camelName": "healingTouch"
+  },
+  "6800": {
+    "id": 6800,
+    "name": "Shred",
+    "imageUrl": "/files/images/icons/Spell_Shadow_VampiricAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        5221,
+        6800,
+        8992,
+        9829,
+        9830,
+        27001,
+        27002,
+        48571,
+        48572
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 60,
+      "text": "60 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Shred the target, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">248</span>% damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">87</span> to the target.  Must be behind the target.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.  Effects which increase Bleed damage also increase Shred damage.",
+      "tooltipUrl": "/spells/6800/tooltip.html"
+    },
+    "_id": "pxrDikFrtsMlcurZ",
+    "camelName": "shred"
   },
   "6907": {
     "id": 6907,
@@ -7991,6 +8392,47 @@
     "_id": "DRDBs1GKtItGH9f6",
     "camelName": "curePoison"
   },
+  "8992": {
+    "id": 8992,
+    "name": "Shred",
+    "imageUrl": "/files/images/icons/Spell_Shadow_VampiricAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        5221,
+        6800,
+        8992,
+        9829,
+        9830,
+        27001,
+        27002,
+        48571,
+        48572
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 60,
+      "text": "60 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Shred the target, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">248</span>% damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">119</span> to the target.  Must be behind the target.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.  Effects which increase Bleed damage also increase Shred damage.",
+      "tooltipUrl": "/spells/8992/tooltip.html"
+    },
+    "_id": "YoQrqOW63OGomS0Y",
+    "camelName": "shred"
+  },
   "9758": {
     "id": 9758,
     "name": "Healing Touch",
@@ -8038,6 +8480,47 @@
     },
     "_id": "3BSL4GVPcQKk7j92",
     "camelName": "healingTouch"
+  },
+  "9830": {
+    "id": 9830,
+    "name": "Shred",
+    "imageUrl": "/files/images/icons/Spell_Shadow_VampiricAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        5221,
+        6800,
+        8992,
+        9829,
+        9830,
+        27001,
+        27002,
+        48571,
+        48572
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 60,
+      "text": "60 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Shred the target, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">248</span>% damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">218</span> to the target.  Must be behind the target.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.  Effects which increase Bleed damage also increase Shred damage.",
+      "tooltipUrl": "/spells/9830/tooltip.html"
+    },
+    "_id": "iRdvWYkasxdKN99P",
+    "camelName": "shred"
   },
   "9839": {
     "id": 9839,
@@ -8194,6 +8677,86 @@
     },
     "_id": "8AMDbA4jby4gkV0X",
     "camelName": "rejuvenation"
+  },
+  "9849": {
+    "id": 9849,
+    "name": "Claw",
+    "imageUrl": "/files/images/icons/Ability_Druid_Rake.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        1082,
+        3029,
+        5201,
+        9849,
+        9850,
+        27000,
+        48569,
+        48570
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Claw the enemy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">88</span> additional damage.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/9849/tooltip.html"
+    },
+    "_id": "nJGtT6EcoFwTChzq",
+    "camelName": "claw"
+  },
+  "9850": {
+    "id": 9850,
+    "name": "Claw",
+    "imageUrl": "/files/images/icons/Ability_Druid_Rake.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        1082,
+        3029,
+        5201,
+        9849,
+        9850,
+        27000,
+        48569,
+        48570
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 45,
+      "text": "45 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Claw the enemy, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">115</span> additional damage.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.",
+      "tooltipUrl": "/spells/9850/tooltip.html"
+    },
+    "_id": "h7JuFFYU9aJSNfh9",
+    "camelName": "claw"
   },
   "9853": {
     "id": 9853,
@@ -8437,6 +9000,52 @@
     "_id": "g08IDhkH8xwXvUji",
     "camelName": "healingTouch"
   },
+  "9894": {
+    "id": 9894,
+    "name": "Rip",
+    "imageUrl": "/files/images/icons/Ability_GhoulFrenzy.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        1079,
+        9492,
+        9493,
+        9752,
+        9894,
+        9896,
+        27008,
+        49799,
+        49800
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 30,
+      "text": "30 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 12,
+      "type": "Regular",
+      "text": "12 seconds"
+    },
+    "tooltip": {
+      "text": "Finishing move that causes damage over time.  Damage increases per combo point and by your attack power:\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> point: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">13</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.01</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">13</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.02</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">13</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.03</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">13</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.04</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">13</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.05</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.",
+      "tooltipUrl": "/spells/9894/tooltip.html"
+    },
+    "_id": "6peSrIZh2FWxWDM3",
+    "camelName": "rip"
+  },
   "9910": {
     "id": 9910,
     "name": "Thorns",
@@ -8481,6 +9090,78 @@
     },
     "_id": "a8LKrQsrlOEJWrEt",
     "camelName": "thorns"
+  },
+  "10144": {
+    "id": 10144,
+    "name": "Conjure Food",
+    "imageUrl": "/files/images/icons/INV_Misc_Food_11.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        587,
+        597,
+        990,
+        6129,
+        10144,
+        10145,
+        28612,
+        33717
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 40,
+      "text": "40% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Conjures <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> loaves of sourdough, providing the mage and [$ghis:her;] allies with something to eat.\r\n\r\nConjured items disappear if logged out for more than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 minutes</span>.",
+      "tooltipUrl": "/spells/10144/tooltip.html"
+    },
+    "_id": "E8VVeua8uk9aHF7F",
+    "camelName": "conjureFood"
+  },
+  "10145": {
+    "id": 10145,
+    "name": "Conjure Food",
+    "imageUrl": "/files/images/icons/INV_Misc_Food_33.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        587,
+        597,
+        990,
+        6129,
+        10144,
+        10145,
+        28612,
+        33717
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 40,
+      "text": "40% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Conjures <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> sweet rolls, providing the mage and [$ghis:her;] allies with something to eat.\r\n\r\nConjured items disappear if logged out for more than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 minutes</span>.",
+      "tooltipUrl": "/spells/10145/tooltip.html"
+    },
+    "_id": "spNOkOnMyyguKWtT",
+    "camelName": "conjureFood"
   },
   "10157": {
     "id": 10157,
@@ -9000,6 +9681,18 @@
     },
     "_id": "dyx32y5ghkncpjUA",
     "camelName": "handOfProtection"
+  },
+  "10291": {
+    "id": 10291,
+    "name": "Devotion Aura",
+    "imageUrl": "/files/images/icons/Spell_Holy_DevotionAura.png",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Gives <span class=\"ascension-tooltip-spell-tooltip-text-number\">270</span> additional armor to party and raid members within <span class=\"ascension-tooltip-spell-tooltip-text-number\">40</span> yards.  Players may only have one Aura on them per Paladin at any one time.",
+      "tooltipUrl": "/spells/10291/tooltip.html"
+    },
+    "_id": "brm2sV0N7Tl8gPhw",
+    "camelName": "devotionAura"
   },
   "10308": {
     "id": 10308,
@@ -11243,6 +11936,90 @@
     "_id": "cliXSYPeo20u1xLP",
     "camelName": "drainLife"
   },
+  "11733": {
+    "id": 11733,
+    "name": "Demon Armor",
+    "imageUrl": "/files/images/icons/Spell_Shadow_RagingScream.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        687,
+        696,
+        706,
+        1086,
+        11733,
+        11734,
+        11735,
+        27260,
+        47793,
+        47889
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 31,
+      "text": "31% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "Protects the caster, increasing armor by <span class=\"ascension-tooltip-spell-tooltip-text-number\">215</span>, and increasing the amount of health generated through spells and effects by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%. The healing effect does not stack with other similar effects. Only one type of Armor spell can be active on the Warlock at any time.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/11733/tooltip.html"
+    },
+    "_id": "LusznSrG5e67uWjQ",
+    "camelName": "demonArmor"
+  },
+  "11734": {
+    "id": 11734,
+    "name": "Demon Armor",
+    "imageUrl": "/files/images/icons/Spell_Shadow_RagingScream.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        687,
+        696,
+        706,
+        1086,
+        11733,
+        11734,
+        11735,
+        27260,
+        47793,
+        47889
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 31,
+      "text": "31% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 1,
+      "type": "Regular",
+      "text": "1 seconds"
+    },
+    "tooltip": {
+      "text": "Protects the caster, increasing armor by <span class=\"ascension-tooltip-spell-tooltip-text-number\">265</span>, and increasing the amount of health generated through spells and effects by <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>%. The healing effect does not stack with other similar effects. Only one type of Armor spell can be active on the Warlock at any time.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/11734/tooltip.html"
+    },
+    "_id": "dnfVRl6NWpcx7hkn",
+    "camelName": "demonArmor"
+  },
   "11735": {
     "id": 11735,
     "name": "Demon Armor",
@@ -11903,6 +12680,141 @@
     "_id": "d8iLeaysdZ44RfhM",
     "camelName": "arcaneShot"
   },
+  "14303": {
+    "id": 14303,
+    "name": "Immolation Trap",
+    "imageUrl": "/files/images/icons/Spell_Fire_FlameShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 3,
+      "other": [
+        13795,
+        14302,
+        14303,
+        14304,
+        14305,
+        27023,
+        49055,
+        49056
+      ],
+      "text": "Rank 3"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 9,
+      "text": "9% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Place a fire trap that will burn the first enemy to approach for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{([$R]AAPP*(<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>/<span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>)+<span class=\"ascension-tooltip-spell-tooltip-text-number\">120</span>)*$<duration>}</span> Fire damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  Trap will exist for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.  Only one trap can be active at a time.  ",
+      "tooltipUrl": "/spells/14303/tooltip.html"
+    },
+    "_id": "9t53UGLZDrHY44yq",
+    "camelName": "immolationTrap"
+  },
+  "14304": {
+    "id": 14304,
+    "name": "Immolation Trap",
+    "imageUrl": "/files/images/icons/Spell_Fire_FlameShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 4,
+      "other": [
+        13795,
+        14302,
+        14303,
+        14304,
+        14305,
+        27023,
+        49055,
+        49056
+      ],
+      "text": "Rank 4"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 9,
+      "text": "9% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Place a fire trap that will burn the first enemy to approach for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{([$R]AAPP*(<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>/<span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>)+<span class=\"ascension-tooltip-spell-tooltip-text-number\">183</span>)*$<duration>}</span> Fire damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  Trap will exist for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.  Only one trap can be active at a time.  ",
+      "tooltipUrl": "/spells/14304/tooltip.html"
+    },
+    "_id": "Xa9s2nVqH4hj0lYt",
+    "camelName": "immolationTrap"
+  },
+  "14305": {
+    "id": 14305,
+    "name": "Immolation Trap",
+    "imageUrl": "/files/images/icons/Spell_Fire_FlameShock.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 5,
+      "other": [
+        13795,
+        14302,
+        14303,
+        14304,
+        14305,
+        27023,
+        49055,
+        49056
+      ],
+      "text": "Rank 5"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 9,
+      "text": "9% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "duration": {
+      "seconds": 30,
+      "type": "Regular",
+      "text": "30 seconds"
+    },
+    "tooltip": {
+      "text": "Place a fire trap that will burn the first enemy to approach for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{([$R]AAPP*(<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>/<span class=\"ascension-tooltip-spell-tooltip-text-number\">100</span>)+<span class=\"ascension-tooltip-spell-tooltip-text-number\">276</span>)*$<duration>}</span> Fire damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 seconds</span>.  Trap will exist for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 seconds</span>.  Only one trap can be active at a time.  ",
+      "tooltipUrl": "/spells/14305/tooltip.html"
+    },
+    "_id": "IEJY6GMs3zmjSp2n",
+    "camelName": "immolationTrap"
+  },
   "14311": {
     "id": 14311,
     "name": "Freezing Trap",
@@ -12307,6 +13219,43 @@
     },
     "_id": "atQAUUQsTmGwJUWk",
     "camelName": "holyFire"
+  },
+  "15286": {
+    "id": 15286,
+    "name": "Vampiric Embrace",
+    "imageUrl": "/files/images/icons/Spell_Shadow_UnsummonBuilding.png",
+    "type": "Talent",
+    "ranks": {
+      "current": 1,
+      "other": [
+        15286
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 1800,
+      "type": "Regular",
+      "text": "1800 seconds"
+    },
+    "tooltip": {
+      "text": "Fills you with the embrace of Shadow energy, causing you to be healed for <span class=\"ascension-tooltip-spell-tooltip-text-number\">12</span>% and other party members to be healed for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2.4</span>% of any single-target Priest Shadow spell damage you deal for <span class=\"ascension-tooltip-spell-tooltip-text-number\">30 minutes</span>.",
+      "tooltipUrl": "/spells/15286/tooltip.html"
+    },
+    "learnableTalent": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 2,
+      "talentEssenceCost": 1,
+      "talentId": 484,
+      "classId": 4,
+      "specializationId": 14,
+      "visualColumn": 2
+    },
+    "_id": "uslgOaOwrC9yfgN4",
+    "camelName": "vampiricEmbrace"
   },
   "15430": {
     "id": 15430,
@@ -13533,6 +14482,40 @@
     },
     "_id": "l3tmot1ECLylYX0t",
     "camelName": "flashOfLight"
+  },
+  "20165": {
+    "id": 20165,
+    "name": "Seal of Light",
+    "imageUrl": "/files/images/icons/Spell_Holy_HealingAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        20165
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 14,
+      "text": "14% of base mana"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Fills you with divine light for -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>, giving each melee auto attack a chance to heal you for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{0.<span class=\"ascension-tooltip-spell-tooltip-text-number\">065</span>*AP+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.045</span>*NaN to NaNPH}</span>. This effect can only occur once every <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 seconds</span>. Only one Seal can be active at any one time. \r\n\r\nUnleashing this Seal's energy will deal <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{1+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.25</span>*NaN to NaNAPH+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.16</span>*P}</span> Holy damage to an enemy.",
+      "tooltipUrl": "/spells/20165/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 30,
+      "abilityEssenceCost": 3,
+      "classId": 3,
+      "specializationId": 9
+    },
+    "_id": "k4FJ7LdrV3xx32Nn",
+    "camelName": "sealOfLight"
   },
   "20166": {
     "id": 20166,
@@ -16988,6 +17971,88 @@
     "_id": "x2jDUiTLwwEvlo7Y",
     "camelName": "claw"
   },
+  "27001": {
+    "id": 27001,
+    "name": "Shred",
+    "imageUrl": "/files/images/icons/Spell_Shadow_VampiricAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 6,
+      "other": [
+        5221,
+        6800,
+        8992,
+        9829,
+        9830,
+        27001,
+        27002,
+        48571,
+        48572
+      ],
+      "text": "Rank 6"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 60,
+      "text": "60 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Shred the target, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">248</span>% damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">285</span> to the target.  Must be behind the target.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.  Effects which increase Bleed damage also increase Shred damage.",
+      "tooltipUrl": "/spells/27001/tooltip.html"
+    },
+    "_id": "PzGGaLuBQ4GCjnDd",
+    "camelName": "shred"
+  },
+  "27002": {
+    "id": 27002,
+    "name": "Shred",
+    "imageUrl": "/files/images/icons/Spell_Shadow_VampiricAura.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        5221,
+        6800,
+        8992,
+        9829,
+        9830,
+        27001,
+        27002,
+        48571,
+        48572
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 60,
+      "text": "60 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "Shred the target, causing <span class=\"ascension-tooltip-spell-tooltip-text-number\">248</span>% damage plus <span class=\"ascension-tooltip-spell-tooltip-text-number\">491</span> to the target.  Must be behind the target.  Awards <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> combo point.  Effects which increase Bleed damage also increase Shred damage.",
+      "tooltipUrl": "/spells/27002/tooltip.html"
+    },
+    "_id": "d4EGGWfMVzefWNA6",
+    "camelName": "shred"
+  },
   "27003": {
     "id": 27003,
     "name": "Rake",
@@ -17031,6 +18096,52 @@
     },
     "_id": "a2yfFWi4hv9dGmCs",
     "camelName": "rake"
+  },
+  "27008": {
+    "id": 27008,
+    "name": "Rip",
+    "imageUrl": "/files/images/icons/Ability_GhoulFrenzy.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        1079,
+        9492,
+        9493,
+        9752,
+        9894,
+        9896,
+        27008,
+        49799,
+        49800
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Energy",
+      "value": 30,
+      "text": "30 energy"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "duration": {
+      "seconds": 12,
+      "type": "Regular",
+      "text": "12 seconds"
+    },
+    "tooltip": {
+      "text": "Finishing move that causes damage over time.  Damage increases per combo point and by your attack power:\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span> point: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">26</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">1</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.01</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">26</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">2</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.02</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">26</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">3</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.03</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">26</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">4</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.04</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.\r\n   <span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span> points: <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{(<span class=\"ascension-tooltip-spell-tooltip-text-number\">26</span>+[$b1]*<span class=\"ascension-tooltip-spell-tooltip-text-number\">5</span>+<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.05</span>*AP)*$<dur>}</span> damage over <span class=\"ascension-tooltip-spell-tooltip-text-number\">12 seconds</span>.",
+      "tooltipUrl": "/spells/27008/tooltip.html"
+    },
+    "_id": "wLjZ7f2PRLvSIwPj",
+    "camelName": "rip"
   },
   "27016": {
     "id": 27016,
@@ -18693,6 +19804,42 @@
     "_id": "7G6niwpLa7EbWtvM",
     "camelName": "frostWard"
   },
+  "28612": {
+    "id": 28612,
+    "name": "Conjure Food",
+    "imageUrl": "/files/images/icons/INV_Misc_Food_73CinnamonRoll.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 7,
+      "other": [
+        587,
+        597,
+        990,
+        6129,
+        10144,
+        10145,
+        28612,
+        33717
+      ],
+      "text": "Rank 7"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 40,
+      "text": "40% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Conjures <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> cinnamon rolls, providing the mage and [$ghis:her;] allies with something to eat.\r\n\r\nConjured items disappear if logged out for more than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 minutes</span>.",
+      "tooltipUrl": "/spells/28612/tooltip.html"
+    },
+    "_id": "ZpZMCOBb7IO34mbt",
+    "camelName": "conjureFood"
+  },
   "28730": {
     "id": 28730,
     "name": "Arcane Torrent",
@@ -19593,6 +20740,42 @@
     },
     "_id": "18Fkf8fxSInixAQF",
     "camelName": "iceBarrier"
+  },
+  "33717": {
+    "id": 33717,
+    "name": "Conjure Food",
+    "imageUrl": "/files/images/icons/INV_Misc_Food_32.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 8,
+      "other": [
+        587,
+        597,
+        990,
+        6129,
+        10144,
+        10145,
+        28612,
+        33717
+      ],
+      "text": "Rank 8"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 40,
+      "text": "40% of base mana"
+    },
+    "castTime": {
+      "seconds": 3,
+      "type": "Regular",
+      "text": "3 seconds"
+    },
+    "tooltip": {
+      "text": "Conjures <span class=\"ascension-tooltip-spell-tooltip-text-number\">10</span> croissants, providing the mage and [$ghis:her;] allies with something to eat.\r\n\r\nConjured items disappear if logged out for more than <span class=\"ascension-tooltip-spell-tooltip-text-number\">15 minutes</span>.",
+      "tooltipUrl": "/spells/33717/tooltip.html"
+    },
+    "_id": "Yp2LM5A5y9EAwdYQ",
+    "camelName": "conjureFood"
   },
   "33736": {
     "id": 33736,

@@ -63,8 +63,10 @@ const overpower = require('./overpower');
 const pull = require('./pull');
 const purge = require('./purge');
 const pyroblast = require('./pyroblast');
+const rake = require('./rake');
 const rejuvenation = require('./rejuvenation');
 const rend = require('./rend');
+const rip = require('./rip');
 const riptide = require('./riptide');
 const riposte = require('./riposte');
 const rockbiter = require('./rockbiter');
@@ -86,17 +88,17 @@ const wyvernSting = require('./wyvern-sting');
 const wrath = require('./wrath');
 
 module.exports = {
-  arcaneIntellect,
-  arcaneBarrage,
-  arcaneShot,
+  // arcaneIntellect,
+  // arcaneBarrage,
+  // arcaneShot,
   battleShout,
-  blastWave,
-  blessingOfMight,
+  // blastWave,
+  // blessingOfMight,
   blessingOfSanctuary,
-  bloodlust,
-  bloodthirst,
-  chainLightning,
-  chimeraShot,
+  // bloodlust,
+  // bloodthirst,
+  // chainLightning,
+  // chimeraShot,
   claw,
   cleave,
   coneOfCold,
@@ -151,8 +153,10 @@ module.exports = {
   pull,
   purge,
   pyroblast,
+  rake,
   rejuvenation,
   rend,
+  rip,
   riptide,
   riposte,
   rockbiter,
@@ -164,12 +168,12 @@ module.exports = {
   slow,
   stormstrike,
   // sweepingStrikes,
-  thunderClap,
-  thunderstorm,
-  waterShield,
-  whirlwind,
+  // thunderClap,
+  // thunderstorm,
+  // waterShield,
+  // whirlwind,
   windfuryWeapon,
   windShear,
-  wyvernSting,
-  wrath,
+  // wyvernSting,
+  // wrath,
 };

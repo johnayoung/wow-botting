@@ -1,7 +1,7 @@
 const robot = require('robotjs');
 
-const ability = 'claw';
-const energyCost = 35;
+const ability = 'rip';
+const energyCost = 30;
 const comboPointRequirement = 4;
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
     s.spells[ability].castable &&
     s.spells[ability].equipped &&
     s.energyCurrent > energyCost &&
-    s.comboPoints < comboPointRequirement,
+    s.comboPoints >= comboPointRequirement,
   effect: (s) => {
     s.targetIsDead = true;
     return s;
