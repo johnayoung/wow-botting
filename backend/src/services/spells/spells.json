@@ -434,6 +434,51 @@
     "_id": "sfRp4W2R4Q8bMwmZ",
     "camelName": "frostbolt"
   },
+  "284": {
+    "id": 284,
+    "name": "Heroic Strike",
+    "imageUrl": "/files/images/icons/Ability_Rogue_Ambush.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 2,
+      "other": [
+        78,
+        284,
+        285,
+        1608,
+        11564,
+        11565,
+        11566,
+        11567,
+        25286,
+        29707,
+        30324,
+        47449,
+        47450
+      ],
+      "text": "Rank 2"
+    },
+    "cost": {
+      "type": "Rage",
+      "value": 15,
+      "text": "15 rage"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "tooltip": {
+      "text": "A strong attack that increases melee damage by <span class=\"ascension-tooltip-spell-tooltip-text-number\">19</span> and causes a high amount of threat.",
+      "tooltipUrl": "/spells/284/tooltip.html"
+    },
+    "_id": "WK6woDlxCfbvuAVA",
+    "camelName": "heroicStrike"
+  },
   "285": {
     "id": 285,
     "name": "Heroic Strike",
@@ -918,6 +963,49 @@
     },
     "_id": "ANCLArXL7SfbCH24",
     "camelName": "dampenMagic"
+  },
+  "633": {
+    "id": 633,
+    "name": "Lay on Hands",
+    "imageUrl": "/files/images/icons/Spell_Holy_LayOnHands.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        633,
+        2800,
+        10310,
+        27154,
+        48788
+      ],
+      "text": "Rank 1"
+    },
+    "range": {
+      "yards": 40,
+      "type": "Long Range",
+      "text": "40 yards"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 900,
+      "type": "Regular",
+      "text": "15 minutes"
+    },
+    "tooltip": {
+      "text": "Heals a friendly target for an amount equal of <span class=\"ascension-tooltip-spell-tooltip-text-number\">50</span>% of your maximum health. The target cannot be targeted by Divine Shield, Divine Protection, Hand of Protection, or Lay on Hands again for <span class=\"ascension-tooltip-spell-tooltip-text-number\">2 minutes</span>.",
+      "tooltipUrl": "/spells/633/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 10,
+      "abilityEssenceCost": 3,
+      "classId": 3,
+      "specializationId": 9
+    },
+    "_id": "GoNmge828eGwosf6",
+    "camelName": "layOnHands"
   },
   "635": {
     "id": 635,
@@ -2977,6 +3065,55 @@
     "_id": "nhtwECkirZd3EpSL",
     "camelName": "lifeTap"
   },
+  "1495": {
+    "id": 1495,
+    "name": "Mongoose Bite",
+    "imageUrl": "/files/images/icons/Ability_Hunter_SwiftStrike.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        1495,
+        14269,
+        14270,
+        14271,
+        36916,
+        53339
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 3,
+      "text": "3% of base mana"
+    },
+    "range": {
+      "yards": 5,
+      "type": "Combat Range",
+      "text": "Melee Range"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 5,
+      "type": "Regular",
+      "text": "5 seconds"
+    },
+    "tooltip": {
+      "text": "Attack the enemy for <span class=\"ascension-tooltip-spell-tooltip-text-formula\">{[$R]AAPP*<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.69</span>+15}</span> damage.",
+      "tooltipUrl": "/spells/1495/tooltip.html"
+    },
+    "learnableAbility": {
+      "requiredLevel": 1,
+      "abilityEssenceCost": 2,
+      "classId": 1,
+      "specializationId": 5
+    },
+    "_id": "iV38P4JQYHs9vMoz",
+    "camelName": "mongooseBite"
+  },
   "1680": {
     "id": 1680,
     "name": "Whirlwind",
@@ -3740,6 +3877,34 @@
     },
     "_id": "hzxZqaIALdgK5qa1",
     "camelName": "battleStance"
+  },
+  "2481": {
+    "id": 2481,
+    "name": "Find Treasure",
+    "imageUrl": "/files/images/icons/Racial_Dwarf_FindTreasure.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        2481
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 2,
+      "type": "Regular",
+      "text": "2 seconds"
+    },
+    "tooltip": {
+      "text": "Allows the dwarf to sense nearby treasure, making it appear on the minimap.  Lasts -<span class=\"ascension-tooltip-spell-tooltip-text-number\">0.001 seconds</span>.",
+      "tooltipUrl": "/spells/2481/tooltip.html"
+    },
+    "_id": "dtWT7D8TE7lQWHag",
+    "camelName": "findTreasure"
   },
   "2484": {
     "id": 2484,
@@ -14740,6 +14905,34 @@
     "_id": "Y497e3PhkldXwUGk",
     "camelName": "escapeArtist"
   },
+  "20594": {
+    "id": 20594,
+    "name": "Stoneform",
+    "imageUrl": "/files/images/icons/Spell_Shadow_UnholyStrength.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        20594
+      ],
+      "text": "Rank 1"
+    },
+    "castTime": {
+      "type": "Instant",
+      "text": "Instant"
+    },
+    "cooldown": {
+      "seconds": 120,
+      "type": "Regular",
+      "text": "2 minutes"
+    },
+    "tooltip": {
+      "text": "Instantly removes all poison, bleeds, and disease effects. In addition, your armor increased by <span class=\"ascension-tooltip-spell-tooltip-text-number\">20</span>% for <span class=\"ascension-tooltip-spell-tooltip-text-number\">8 seconds</span>. \r\n\r\nShares a <span class=\"ascension-tooltip-spell-tooltip-text-number\">30</span> second cooldown with PvP trinkets.",
+      "tooltipUrl": "/spells/20594/tooltip.html"
+    },
+    "_id": "G01kVSNwB5QslETj",
+    "camelName": "stoneform"
+  },
   "20661": {
     "id": 20661,
     "name": "Execute",
@@ -25157,6 +25350,17 @@
     "_id": "6tMdHGhTDWIKEIj1",
     "camelName": "fingersOfFrost"
   },
+  "499862": {
+    "id": 499862,
+    "name": "Stonehide Elderhorn",
+    "type": "Talent",
+    "tooltip": {
+      "text": "Summons and dismisses your Stonehide Elderhorn.",
+      "tooltipUrl": "/spells/499862/tooltip.html"
+    },
+    "_id": "hbHQMj0JQfQCRRtB",
+    "camelName": "stonehideElderhorn"
+  },
   "499894": {
     "id": 499894,
     "name": "Blackpaw",
@@ -25178,6 +25382,64 @@
     },
     "_id": "eAQM7jv2vFP6jTWI",
     "camelName": "blackpaw"
+  },
+  "777003": {
+    "id": 777003,
+    "name": "Stone of Retreat: Stormwind",
+    "imageUrl": "/files/images/icons/Trade_Engineering.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        777003
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "castTime": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Returns you to the Trade District in Stormwind.",
+      "tooltipUrl": "/spells/777003/tooltip.html"
+    },
+    "_id": "MbJcaavMXOB4j0lc",
+    "camelName": "stoneOfRetreatStormwind"
+  },
+  "777012": {
+    "id": 777012,
+    "name": "Stone of Retreat: Mudsprocket",
+    "imageUrl": "/files/images/icons/Trade_Engineering.png",
+    "type": "Ability",
+    "ranks": {
+      "current": 1,
+      "other": [
+        777012
+      ],
+      "text": "Rank 1"
+    },
+    "cost": {
+      "type": "Base Mana Percentage",
+      "value": 8,
+      "text": "8% of base mana"
+    },
+    "castTime": {
+      "seconds": 10,
+      "type": "Regular",
+      "text": "10 seconds"
+    },
+    "tooltip": {
+      "text": "Returns you to Mudsprocket in Dustwallow Marsh.",
+      "tooltipUrl": "/spells/777012/tooltip.html"
+    },
+    "_id": "gVPbQ5Wgu0v3zYHg",
+    "camelName": "stoneOfRetreatMudsprocket"
   },
   "810339": {
     "id": 810339,

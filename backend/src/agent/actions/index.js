@@ -35,6 +35,7 @@ const flametongueWeapon = require('./flametongue-weapon');
 const frostbolt = require('./frostbolt');
 const frostbrandWeapon = require('./frostbrand-weapon');
 const ghostlyStrike = require('./ghostly-strike');
+const hemorrhage = require('./hemorrhage');
 const iceArmor = require('./ice-armor');
 const iceLance = require('./ice-lance');
 const iceLash = require('./ice-lash');
@@ -48,6 +49,7 @@ const mangleCat = require('./mangle-cat');
 const markOfTheWild = require('./mark-of-the-wild');
 const metamorphosis = require('./metamorphosis');
 const meditate = require('./meditate');
+const mongooseBite = require('./mongoose-bite');
 const mortalStrike = require('./mortal-strike');
 const mutilateTitan = require('./mutilate-titan');
 const mutilate = require('./mutilate');
@@ -96,7 +98,7 @@ module.exports = {
   // blessingOfMight,
   blessingOfSanctuary,
   // bloodlust,
-  // bloodthirst,
+  bloodthirst,
   // chainLightning,
   // chimeraShot,
   claw,
@@ -115,7 +117,7 @@ module.exports = {
   earthShield,
   earthShock,
   eviscerate,
-  exorcism,
+  // exorcism,
   execute,
   ferociousBite,
   fireball,
@@ -126,6 +128,7 @@ module.exports = {
   frostbrandWeapon,
   ghostlyStrike,
   hamstring,
+  hemorrhage,
   iceArmor,
   iceLash,
   iceLance,
@@ -147,6 +150,7 @@ module.exports = {
   markOfTheWild,
   meditate,
   metamorphosis,
+  mongooseBite,
   mutilateTitan,
   mutilate,
   overpower,
@@ -171,7 +175,7 @@ module.exports = {
   // thunderClap,
   // thunderstorm,
   // waterShield,
-  // whirlwind,
+  whirlwind,
   windfuryWeapon,
   windShear,
   // wyvernSting,
